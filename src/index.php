@@ -12,6 +12,11 @@
 
 <body>
     <h1>InfiniTea</h1>
+    <?php
+        require_once 'elements/open_bdd.php';
+        echo '<br>';
+        require_once 'elements/close_bdd.php';
+    ?>
 
 
 </body>
