@@ -7,8 +7,8 @@ $gender = "";
 $date_of_birth = "";
 $date_of_registration = date('Y-m-d'); 
 
-// ON VERIFIE QUE LES CHAMPS OBLIGATOIRES NE SONT PAS VIDES ET ON RECUPERE LES VALEURS DU FORMULAIRE
-if(!empty($_POST)
+// ON VERIFIE POST + QUE LES CHAMPS OBLIGATOIRES NE SONT PAS VIDES ET ON RECUPERE LES VALEURS DU FORMULAIRE
+if($_SERVER['REQUEST_METHOD'] === 'POST'
 && !empty($_POST['first_name']) && !empty($_POST['last_name'])
 && !empty($_POST['email']) && !empty($_POST['password'])){
     $first_name = strip_tags($_POST['first_name']);
@@ -37,7 +37,7 @@ require_once ('../elements/connexion_bdd.php');
     if(!empty($newEmail)){
         require_once("../elements/close_bdd.php");
         $_SESSION["emailAlreadyUsed"] = true;
-        $_SESSION["message"] = "<div id='message'>Cette adresse email est déjà utilisée !</div>";
+        $_SESSION["message"] = "<div id='alert_message'>Cette adresse email est déjà utilisée !</div>";
         
         $_SESSION["first_name"] = $first_name;
         $_SESSION["last_name"] = $last_name;
@@ -70,6 +70,6 @@ require_once ('../elements/connexion_bdd.php');
 
     // MESSAGE DE CONFIRMATION + REDIRECTION    
     $_SESSION["message"] = "<div id='alert_message'>Inscription réussie !</div>";
-    header('Location: ../index.php?page=login'); // A VERIFIER PAR LA SUITE
+    header('Location: ../index.php?page=login'); // REDIRECTION, CHECK URL PLUS TARD
     }    
 ?>
