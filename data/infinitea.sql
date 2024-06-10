@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : ven. 07 juin 2024 à 15:56
+-- Généré le : lun. 10 juin 2024 à 08:02
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -24,25 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `category`
+-- Structure de la table `categories`
 --
 
-CREATE TABLE `category` (
+CREATE TABLE `categories` (
   `id` int NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Déchargement des données de la table `category`
+-- Déchargement des données de la table `categories`
 --
 
-INSERT INTO `category` (`id`, `name`) VALUES
-(1, 'Thé noir'),
-(2, 'Thé vert'),
-(3, 'Thé blanc'),
-(4, 'Thé Oolong'),
-(5, 'Rooibos'),
-(6, 'Infusions');
+INSERT INTO `categories` (`id`, `name`) VALUES
+(1, 'thé noir'),
+(2, 'thé vert'),
+(3, 'thé blanc'),
+(4, 'thé oolong'),
+(5, 'rooibos'),
+(6, 'infusions'),
+(7, 'coffrets'),
+(8, 'accessoires');
 
 -- --------------------------------------------------------
 
@@ -58,8 +60,16 @@ CREATE TABLE `products` (
   `price` varchar(255) NOT NULL,
   `weight` varchar(255) NOT NULL,
   `image_filename` varchar(255) NOT NULL,
-  `added_by` int NOT NULL
+  `added_by` int NOT NULL,
+  `highlight` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `category`, `price_before_reduction`, `price`, `weight`, `image_filename`, `added_by`, `highlight`) VALUES
+(1, 'Thé noir à la rose', 'thé noir', '220€ /kg', '179€ /kg', '220gr', 'the_noir_rose.png', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -93,9 +103,9 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `date_of_birth`,
 --
 
 --
--- Index pour la table `category`
+-- Index pour la table `categories`
 --
-ALTER TABLE `category`
+ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -115,16 +125,16 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT pour la table `category`
+-- AUTO_INCREMENT pour la table `categories`
 --
-ALTER TABLE `category`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+ALTER TABLE `categories`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `users`
