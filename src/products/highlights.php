@@ -19,11 +19,11 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
 // SI DES PRODUITS SONT HIGHLIGHT
 if($highlights){
     echo "Affichage des highlights";
-    foreach ($highlights as $highlight){
-        echo '<pre>';
-        print_r($highlight);
-        echo '</pre>';
-    }
+    // foreach ($highlights as $highlight){
+    //     echo '<pre>';
+    //     print_r($highlight);
+    //     echo '</pre>';
+    // }
 }
 else{
     echo "Aucun produit highlight";

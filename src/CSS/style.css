@@ -9,25 +9,42 @@
 
 /* HEADER */
 /**********/
+header {
+    background-image: url("../images/illustrations/Header.png");
+    /*TEMP POUR TEST */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 50vh;
+
+}
+
+header img {
+    width: 50px;
+    height: 50px;
+}
 
 /* NAVBAR */
 
-nav.menu {
+nav {
     /* background: red; */
 }
 
 #burger {
     list-style-type: none;
-    display: flex;
     display: none;
     flex-direction: column;
     background: teal;
-    text-align: center;
-    /*TEMP*/
-    height: 150px;
+    margin: 0;
+    padding: 0;
+    /*TEMP POUR TEST JS*/
+    height: 160px;
+
 }
 
-h1 {
-    /*TEMP*/
-    font-family: "helveticaregular";
+#burger li {
+    background: red;
+    width: 100%;
+    text-align: center;
+    /*TEMP POUR TEST JS*/
+    height: 40px;
 }

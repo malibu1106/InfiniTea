@@ -1,5 +1,5 @@
-<?php
 
+<?php
     // CONNEXION A LA BDD
 require_once("elements/open_bdd.php");
 

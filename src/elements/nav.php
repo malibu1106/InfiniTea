@@ -1,4 +1,4 @@
-<nav class="menu">
+<nav>
     <button id="burgerButton">☰</button>
     <ul id="burger">
         <li>Accueil</li>

@@ -13,13 +13,12 @@
 
 <body>
     <header>
-        <?php include 'elements/nav.php';?>
+        <?php include 'elements/header.php';?>
     </header>
-    <h1>InfiniTea</h1>
     <?php
+        include 'pages/accueil.php';
 
-
-        include 'pages/products.php';
+        
    
     ?>
 
