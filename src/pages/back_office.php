@@ -9,7 +9,7 @@ $_SESSION['user_id'] = 2;?>
     </div>
 
 <label for="Catégorie" class="block mb-2 text-sm font-medium text-gray-900">Sélectionnez la catégorie</label>
-  <select id="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-700 focus:border-purple-900 block w-full p-2.5">
+  <select id="category" name="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-700 focus:border-purple-900 block w-full p-2.5">
   <?php
 require_once ('elements/open_bdd.php');
 $sql = "SELECT * FROM categories";
