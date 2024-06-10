@@ -9,11 +9,15 @@
 
 /* ROOT */
 :root {
-    --Ftitle: "gregoniaregular";
-    --Ftxt: "helveticaregular";
-    --Fbold: "helveticabold";
-    --txtcolor1: #ededed;
-    --txtcolor2: #383838;
+  --Ftitle: "gregoniaregular";
+  --Ftxt: "helveticaregular";
+  --Fbold: "helveticabold";
+  --txtcolor1: #ededed;
+  --txtcolor2: #383838;
+  --fsize1: 9.375em;
+  --fsize2: 6.25em;
+  --fsize3: 3.125em;
+  --fsize4: 1em;
 }
 
 /* FIRST MOBILE */
@@ -23,41 +27,58 @@
 /* HEADER */
 /**********/
 header {
-    background-image: url("../images/illustrations/Header.png");
-    /*TEMP POUR TEST */
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 50vh;
-
+  background-image: url("../images/illustrations/Header.png");
+  /*TEMP POUR TEST */
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 50vh;
 }
 
 header img {
-    width: 50px;
-    height: 50px;
+  width: 50px;
+  height: 50px;
 }
 
 /* NAVBAR */
 
 nav {
-    /* background: red; */
+  /* background: red; */
 }
 
 #burger {
-    list-style-type: none;
-    display: none;
-    flex-direction: column;
-    background: teal;
-    margin: 0;
-    padding: 0;
-    /*TEMP POUR TEST JS*/
-    height: 160px;
-
+  list-style-type: none;
+  display: none;
+  flex-direction: column;
+  background: teal;
+  margin: 0;
+  padding: 0;
+  /*TEMP POUR TEST JS*/
+  height: 160px;
 }
 
 #burger li {
-    background: red;
-    width: 100%;
-    text-align: center;
-    /*TEMP POUR TEST JS*/
-    height: 40px;
+  background: red;
+  width: 100%;
+  text-align: center;
+  /*TEMP POUR TEST JS*/
+  height: 40px;
+}
+
+h1 {
+  color: var(--txtcolor2);
+  font-family: var(--Ftitle);
+  font-size: var(--fsize1);
+  text-align: center;
+}
+
+h3 {
+  color: var(--txtcolor2);
+  font-family: var(--Ftitle);
+  font-size: var(--fsize3);
+  text-align: center;
+}
+
+header h1 {
+  color: var(--txtcolor1);
+  font-family: (--Ftitle);
 }
