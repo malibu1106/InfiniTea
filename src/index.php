@@ -12,6 +12,9 @@
 </head>
 
 <body>
+    <header>
+        <?php include 'elements/nav.php';?>
+    </header>
     <h1>InfiniTea</h1>
     <?php
 

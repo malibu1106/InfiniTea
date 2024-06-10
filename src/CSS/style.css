@@ -1,0 +1,33 @@
+/* CLEAN CSS */
+@import "body_reset.css";
+/* FONTS */
+@import "fonts.css";
+
+/* FIRST MOBILE */
+/****************/
+/****************/
+
+/* HEADER */
+/**********/
+
+/* NAVBAR */
+
+nav.menu {
+    /* background: red; */
+}
+
+#burger {
+    list-style-type: none;
+    display: flex;
+    display: none;
+    flex-direction: column;
+    background: teal;
+    text-align: center;
+    /*TEMP*/
+    height: 150px;
+}
+
+h1 {
+    /*TEMP*/
+    font-family: "helveticaregular";
+}

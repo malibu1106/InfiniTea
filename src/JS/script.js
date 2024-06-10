@@ -1,0 +1,29 @@
+/* BURGER MENU */
+let menuBurger = document.getElementById('burger'); // LE MENU EN LUI MEME > BALISE <ul>
+let menuBurgerButton = document.getElementById('burgerButton'); // LE BOUTON POUR OUVRIR LE BURGER
+
+if (menuBurgerButton) { // ON VERIFIE LA PRESENCE DU BOUTON POUR EVITER LES ERREURS DE JS
+    menuBurgerButton.addEventListener('click', openMenu);
+}
+
+/*Fonction openMenu*/
+function openMenu() {
+    if (menuBurger.style.display != "flex") {
+        menuBurger.style.display = "flex";
+        menuBurgerButton.style.display = "none";
+    }
+}
+
+/* Ecoute du click sur la page pour fermer le menu si l'utilisateur clique en dehors */
+let menuHeight = 150; //TEMP
+document.addEventListener('click', function (event) {
+    if (event.clientY > menuHeight) { // SI L'UTILISATEUR CLIQUE A UNE HAUTEUR SUPERIEURE A CELLE DU BURGER
+        closeMenu();
+    }
+});
+
+/*Fonction closeMenu*/
+function closeMenu() {
+    menuBurger.style.display = "none";
+    menuBurgerButton.style.display = "flex";
+}

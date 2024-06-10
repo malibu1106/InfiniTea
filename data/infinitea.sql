@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : lun. 10 juin 2024 à 08:32
+-- Généré le : lun. 10 juin 2024 à 09:52
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -57,10 +57,12 @@ CREATE TABLE `products` (
   `name` varchar(255) NOT NULL,
   `category` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
-  `price_before_reduction` varchar(255) NOT NULL,
+  `price_before_reduction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `price` varchar(255) NOT NULL,
   `weight` varchar(255) NOT NULL,
   `image_filename` varchar(255) NOT NULL,
+  `temperature` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `temps` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `added_by` int NOT NULL,
   `highlight` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -69,8 +71,8 @@ CREATE TABLE `products` (
 -- Déchargement des données de la table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `category`, `description`, `price_before_reduction`, `price`, `weight`, `image_filename`, `added_by`, `highlight`) VALUES
-(1, 'Thé noir à la rose', 'thé noir', 'Elégant cru de thé noir de Chine aux pétales de rose où se côtoient et s\'entremêlent les notes boisées et cuir du thé noir rehaussées et arrondies par le parfum de la rose.', '220€ /kg', '179€ /kg', '220gr', 'the_noir_rose.png', 2, 1);
+INSERT INTO `products` (`id`, `name`, `category`, `description`, `price_before_reduction`, `price`, `weight`, `image_filename`, `temperature`, `temps`, `added_by`, `highlight`) VALUES
+(1, 'Thé noir à la rose', 'thé noir', 'Elégant cru de thé noir de Chine aux pétales de rose où se côtoient et s\'entremêlent les notes boisées et cuir du thé noir rehaussées et arrondies par le parfum de la rose.', '220€ /kg', '179€ /kg', '220gr', 'the_noir_rose.png', '90°', '3 minutes', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -95,9 +97,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `date_of_birth`, `date_of_registration`, `email`, `password`, `rights`) VALUES
-(1, 'Super', 'User', NULL, NULL, NULL, 'superuser', '', 'full'),
-(2, 'Mathilde', 'Jourden', NULL, NULL, NULL, '', '', 'self'),
-(3, 'Roberto', 'De Sousa', NULL, NULL, NULL, 'malibu1106@gmail.com', '', 'self');
+(1, 'Super', 'User', NULL, NULL, NULL, 'superuser@gmail.com', 'superuser', 'full'),
+(2, 'Mathilde', 'Jourden', NULL, NULL, NULL, 'mathilde@gmail.com', 'mathilde', 'self'),
+(3, 'Roberto', 'De Sousa', NULL, NULL, NULL, 'roberto@gmail.com', 'roberto', 'self');
 
 --
 -- Index pour les tables déchargées
