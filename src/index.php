@@ -13,9 +13,7 @@
 </head>
 
 <body>
-<h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+
 
     <header>
         <?php include 'elements/header.php';?>

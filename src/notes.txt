@@ -1,0 +1,2 @@
+Pour run le serveur tailwind dans un terminal normal il suffit de faire :
+npm run build-css

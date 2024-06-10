@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : lun. 10 juin 2024 à 13:02
+-- Généré le : lun. 10 juin 2024 à 13:58
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
