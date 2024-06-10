@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : lun. 10 juin 2024 à 08:02
+-- Généré le : lun. 10 juin 2024 à 08:32
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -56,6 +56,7 @@ CREATE TABLE `products` (
   `id` int NOT NULL,
   `name` varchar(255) NOT NULL,
   `category` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
   `price_before_reduction` varchar(255) NOT NULL,
   `price` varchar(255) NOT NULL,
   `weight` varchar(255) NOT NULL,
@@ -68,8 +69,8 @@ CREATE TABLE `products` (
 -- Déchargement des données de la table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `category`, `price_before_reduction`, `price`, `weight`, `image_filename`, `added_by`, `highlight`) VALUES
-(1, 'Thé noir à la rose', 'thé noir', '220€ /kg', '179€ /kg', '220gr', 'the_noir_rose.png', 2, 1);
+INSERT INTO `products` (`id`, `name`, `category`, `description`, `price_before_reduction`, `price`, `weight`, `image_filename`, `added_by`, `highlight`) VALUES
+(1, 'Thé noir à la rose', 'thé noir', 'Elégant cru de thé noir de Chine aux pétales de rose où se côtoient et s\'entremêlent les notes boisées et cuir du thé noir rehaussées et arrondies par le parfum de la rose.', '220€ /kg', '179€ /kg', '220gr', 'the_noir_rose.png', 2, 1);
 
 -- --------------------------------------------------------
 
