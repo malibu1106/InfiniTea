@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : lun. 10 juin 2024 à 09:52
+-- Généré le : lun. 10 juin 2024 à 13:02
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -57,6 +57,7 @@ CREATE TABLE `products` (
   `name` varchar(255) NOT NULL,
   `category` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
+  `composition` varchar(255) NOT NULL,
   `price_before_reduction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `price` varchar(255) NOT NULL,
   `weight` varchar(255) NOT NULL,
@@ -71,8 +72,8 @@ CREATE TABLE `products` (
 -- Déchargement des données de la table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `category`, `description`, `price_before_reduction`, `price`, `weight`, `image_filename`, `temperature`, `temps`, `added_by`, `highlight`) VALUES
-(1, 'Thé noir à la rose', 'thé noir', 'Elégant cru de thé noir de Chine aux pétales de rose où se côtoient et s\'entremêlent les notes boisées et cuir du thé noir rehaussées et arrondies par le parfum de la rose.', '220€ /kg', '179€ /kg', '220gr', 'the_noir_rose.png', '90°', '3 minutes', 2, 1);
+INSERT INTO `products` (`id`, `name`, `category`, `description`, `composition`, `price_before_reduction`, `price`, `weight`, `image_filename`, `temperature`, `temps`, `added_by`, `highlight`) VALUES
+(1, 'Thé noir à la rose', 'thé noir', 'Elégant cru de thé noir de Chine aux pétales de rose où se côtoient et s\'entremêlent les notes boisées et cuir du thé noir rehaussées et arrondies par le parfum de la rose.', '', '220€ /kg', '179€ /kg', '220gr', 'the_noir_rose.png', '90°', '3 minutes', 2, 1);
 
 -- --------------------------------------------------------
 

@@ -2,6 +2,19 @@
 @import "body_reset.css";
 /* FONTS */
 @import "fonts.css";
+/* TAILWIND */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ROOT */
+:root {
+    --Ftitle: "gregoniaregular";
+    --Ftxt: "helveticaregular";
+    --Fbold: "helveticabold";
+    --txtcolor1: #ededed;
+    --txtcolor2: #383838;
+}
 
 /* FIRST MOBILE */
 /****************/
