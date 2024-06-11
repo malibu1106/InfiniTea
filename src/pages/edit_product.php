@@ -1,4 +1,4 @@
-<h3>Editer un Produit</h3>
+<h3 id="titre_editer">Editer un Produit</h3>
 <?php 
 $_SESSION['user_id'] = 2; // TEMP
 $id = $_GET['id'];

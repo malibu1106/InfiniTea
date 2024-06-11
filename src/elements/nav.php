@@ -1,7 +1,7 @@
 <nav>
     <button id="burgerButton">☰</button>
     <ul id="burger">
-        <li>Accueil</li>
+        <a href="../index.php"><li>Accueil</li></a>
         <li>Connexion</li>
         <li>Nos Produits</li>
         <li>Contact</li>

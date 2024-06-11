@@ -8,7 +8,7 @@ $query->execute();
 $products = $query->fetchAll(PDO::FETCH_ASSOC);
 require_once ('elements/close_bdd.php');
 ?>
-<div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+<div id="liste_produit" class="relative overflow-x-auto shadow-md sm:rounded-lg">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 ">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 border-b">
             <tr>

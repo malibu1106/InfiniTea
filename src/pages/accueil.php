@@ -13,7 +13,13 @@ require_once("elements/open_bdd.php");
         // include 'products/products_accessoires.php';
         // include 'products/products_coffrets.php';
         ?>
-        <center>ACCUEIL ICI</center>
+        <center>
+            ACCUEIL ICI<br>
+            <a href="index.php?page=product_list#liste_produit">Back - Liste des produits</a>
+            
+
+
+        </center>
         <?php
 
 //FERMETURE DE LA CONNEXION
