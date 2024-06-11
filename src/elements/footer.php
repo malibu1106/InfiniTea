@@ -9,11 +9,11 @@
         </section>
         <section id="ftxt">
           <div class="flinks">
-            <h3>
+          
                 <a href="#">Prendre rendez-vous en agence</a><br />
                 <a href="#">Mentions légales</a><br />
                 S'abonner à notre newsletter<br>
-            </h3>
+         
         </div>
         
         </section>
