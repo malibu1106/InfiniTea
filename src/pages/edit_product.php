@@ -25,8 +25,13 @@ print_r($product);
 echo '</pre>';
 
 ?>
+<?php // MATHILDE CHECK CSS IMAGE PCK C MOCHE FRR
+echo '<img width="100px" src="';
+echo $product['image_filename'];
+echo '">';?>
 <form method="POST" action="pages/update_product.php" enctype="multipart/form-data"class="max-w-md mx-auto">
     <input type="hidden" name="added_by" value="<?php echo $_SESSION['user_id'];?>">
+    <input type="hidden" name="id" value="<?php echo $id;?>">
     
 <div class="flex">
     <div class="flex items-center h-5 my-5">
@@ -36,9 +41,13 @@ echo '</pre>';
         <label for="helper-checkbox" class="font-medium text-gray-900 ">Modifier l'image</label>
         <p id="helper-checkbox-text" class="text-xs font-normal text-gray-500 ">Souhaitez-vous modifier l'image du produit ?</p>
     </div>
+    
 </div>
 
-<div class="relative z-0 w-full mb-5 group">
+<label class="block mb-2 text-sm font-medium text-gray-900 edit_image" for="image_filename">Ajoutez une image</label>
+    <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 edit_image aria-describedby="image_filename" name="image_filename" id="image_filename" type="file">
+
+<div class="relative z-0 w-full mb-5 group my-5">
       <input name="name" id="name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-purple-700 peer" placeholder="" value="<?=$product['name']?>"required />
       <label for="produit" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-pink-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Nom du produit</label>
     </div>
@@ -80,8 +89,7 @@ echo '<option value="' . $categorie['name'] . '" required>' . $categorie['name']
       <label for="weight" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-pink-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Poids</label>
     </div>
 
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image_filename">Ajoutez une image</label>
-  <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  aria-describedby="image_filename" name="image_filename" id="image_filename" type="file">
+   
  
       <div class="grid md:grid-cols-2 md:gap-6">
     <div class="relative z-0 w-full mb-5 group my-5">
