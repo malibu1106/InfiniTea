@@ -36,10 +36,24 @@ document.querySelectorAll('.edit_image').forEach(el => el.style.display = "none"
 let checkboxEditImage = document.getElementById('helper-checkbox');
 if (checkboxEditImage) {
     checkboxEditImage.addEventListener('change', displayEditImageElements);
-    console.log("addevent ok");
 }
 
 function displayEditImageElements() {
     let displayStyle = checkboxEditImage.checked ? "flex" : "none";
     document.querySelectorAll('.edit_image').forEach(el => el.style.display = displayStyle);
+}
+
+/* CONNEXION - INSCRIPTION */
+/*AFFICHER L'INSCRIPTION ET MASQUER LA CONNEXION*/
+let signupForm = document.getElementById('signupForm');
+let signinForm = document.getElementById('signinForm');
+if (signupForm) { signupForm.style.display = "flex"; }
+let signupButton = document.getElementById('signupButton');
+if (signupButton) {
+    signupButton.addEventListener('click', displaySignupForm);
+}
+function displaySignupForm() {
+    signupForm.style.display = "flex";
+    signupForm.style.display = "none";
+
 }

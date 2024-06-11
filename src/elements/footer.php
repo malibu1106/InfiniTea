@@ -12,14 +12,14 @@
           
                 <a href="#">Prendre rendez-vous en agence</a><br />
                 <a href="#">Mentions légales</a><br />
-                S'abonner à notre newsletter<br>
+                <a href="#">S'abonner à notre newsletter</a><br />
          
         </div>
         
         </section>
         <section id="flogo">
           <h4>Infinitea</h4>       
-          <p>Projet réalisé par <a href="https://github.com/osias-espindola" target="_blank" rel="noopener noreferrer">Roberto</a> & <a href="https://github.com/mathildejrdn" target="_blank" rel="noopener noreferrer">Mathilde</a></p>
+          <p>Projet réalisé par <a href="https://github.com/malibu1106" target="_blank" rel="noopener noreferrer">Roberto</a> & <a href="https://github.com/mathildejrdn" target="_blank" rel="noopener noreferrer">Mathilde</a></p>
         </section>
       </div>
     </footer>

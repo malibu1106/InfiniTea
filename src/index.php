@@ -14,7 +14,10 @@
 
 <body>
     <header>
-        <?php include 'elements/header.php';?>
+        <?php
+        if(!isset($_SESSION['admin'])){
+        include 'elements/header.php';}
+        ?>
     </header>
 
     <?php
@@ -24,6 +27,9 @@
 
     elseif(isset($_GET['page']) && $_GET['page'] === "product_list" ){
         include 'pages/product_list.php';
+    }
+    elseif(isset($_GET['page']) && $_GET['page'] === "connexion" ){
+        include 'pages/connexion.php';
     }
     else{
         include 'pages/accueil.php';
@@ -38,7 +44,10 @@
     ?> 
 
 
-<!-- <?php include 'elements/footer.php';?> -->
+<?php
+        if(!isset($_SESSION['admin'])){
+        include 'elements/footer.php';}
+        ?>
 
    
  
