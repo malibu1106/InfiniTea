@@ -1039,19 +1039,19 @@ header h3 {
   font-family: var(--Funder);
   font-size: var(--fsize3);
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
 }
 
 @keyframes reveal {
   50% {
-    letter-spacing: 8px;
+    letter-spacing: 0.2em;
     background-size: 300% 300%;
   }
 }
 
 @keyframes glow {
   40% {
-    text-shadow: 0 0 8px #fff;
+    text-shadow: 0 0 0.2em #fff;
   }
 }
 
@@ -1076,6 +1076,7 @@ header h3 {
 
 .typewriter {
   text-align: center;
+  margin-top: -5%;
 }
 
 .typewriter h3 {
@@ -1117,6 +1118,10 @@ header h3 {
   animation-delay: 3.5s;
 }
 
+.typewriter h3 span:nth-child(8) {
+  animation-delay: 3.5s;
+}
+
 header {
   background-image: url("../images/illustrations/Header.png");
   /*TEMP POUR TEST */
@@ -1128,10 +1133,104 @@ header {
      object-fit: cover;
 }
 
-header img {
-  width: 200px;
-  height: 200px;
+/* FOOTER */
+
+footer {
+  background-image: url(../images/illustrations/Footer);
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  background-position: bottom;
+  margin-top: 20px;
+  background-attachment: fixed;
+}
+
+#flogo img {
+  width: 3.125em;
+  height: 3.125;
+}
+
+.flexf {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  padding: 5px;
+}
+
+#ftxt {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   margin: auto;
+  padding: 5px;
+}
+
+#ftxt a {
+  text-decoration: none;
+  color: var(--quote);
+}
+
+#ftxt a:hover {
+  text-decoration: underline;
+}
+
+input,
+label {
+  width: calc(100% - 45px);
+  border: 2px solid var(--accentColor);
+  height: 42px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: var(--accentColor);
+  box-sizing: border-box;
+}
+
+input:focus {
+  color: var(--txtColor);
+  font-family: var(--font2);
+}
+
+.emailButton {
+  width: 45px;
+  height: 42px;
+  background: var(--accentColor);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: var(--size3);
+  border: none;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.flinks {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
+  line-height: 30px;
+}
+
+#flogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  padding: 5px;
+}
+
+.fbutton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
 }
 
 .odd\:bg-white:nth-child(odd) {
