@@ -997,10 +997,22 @@ h1 {
 
 h2 {
   color: var(--txtcolor1);
-  font-family: var(--Ftxt);
+  font-family: var(--Fbold);
   font-size: var(--fsize3);
   text-align: center;
   text-transform: uppercase;
+}
+
+h3 {
+  font-family: var(--Ftitle);
+  color: var(--txtcolor2);
+  font-size: var(--fsize3);
+}
+
+h4 {
+  font-family: var(--Ftitle);
+  color: var(--txtcolor2);
+  font-size: var(--fsize4);
 }
 
 /* NAVBAR */
@@ -1124,13 +1136,11 @@ header h3 {
 
 header {
   background-image: url("../images/illustrations/Header.png");
-  /*TEMP POUR TEST */
   background-size: cover;
-  background-repeat: no-repeat;
-  height: calc(100vh);
+  height: 100%;
   background-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
+  image-rendering: high-quality;
+  background-attachment: fixed;
 }
 
 article {
