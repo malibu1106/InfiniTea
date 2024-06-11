@@ -986,25 +986,21 @@ video {
 
 /****************/
 
-/* HEADER */
+/* POLICES */
 
-/**********/
-
-header {
-  background-image: url("../images/illustrations/Header.png");
-  /*TEMP POUR TEST */
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: calc(100vh);
-  background-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
+h1 {
+  color: var(--txtcolor2);
+  font-family: var(--Ftitle);
+  font-size: var(--fsize1);
+  text-align: center;
 }
 
-header img {
-  width: 200px;
-  height: 200px;
-  margin: auto;
+h2 {
+  color: var(--txtcolor1);
+  font-family: var(--Ftxt);
+  font-size: var(--fsize3);
+  text-align: center;
+  text-transform: uppercase;
 }
 
 /* NAVBAR */
@@ -1032,20 +1028,7 @@ nav {
   height: 40px;
 }
 
-h1 {
-  color: var(--txtcolor2);
-  font-family: var(--Ftitle);
-  font-size: var(--fsize1);
-  text-align: center;
-}
-
-h2 {
-  color: var(--txtcolor1);
-  font-family: var(--Ftxt);
-  font-size: var(--fsize3);
-  text-align: center;
-  text-transform: uppercase;
-}
+/* HEADER */
 
 header h1 {
   color: var(--txtcolor1);
@@ -1056,19 +1039,19 @@ header h3 {
   font-family: var(--Funder);
   font-size: var(--fsize3);
   text-align: center;
-  letter-spacing: 5px;
+  letter-spacing: 2px;
 }
 
 @keyframes reveal {
   50% {
-    letter-spacing: 8px;
+    letter-spacing: 0.2em;
     background-size: 300% 300%;
   }
 }
 
 @keyframes glow {
   40% {
-    text-shadow: 0 0 8px #fff;
+    text-shadow: 0 0 0.2em #fff;
   }
 }
 
@@ -1078,7 +1061,176 @@ header h3 {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: reveal 3000ms ease-in-out 200ms, glow 2500ms linear infinite 1000ms;
+  animation: reveal 4500ms ease-in-out 200ms, glow 2500ms linear infinite 500ms;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.typewriter {
+  text-align: center;
+  margin-top: -5%;
+}
+
+.typewriter h3 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.typewriter h3 span {
+  opacity: 0;
+  animation: fadeIn 5s forwards;
+}
+
+.typewriter h3 span:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.typewriter h3 span:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.typewriter h3 span:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.typewriter h3 span:nth-child(4) {
+  animation-delay: 2s;
+}
+
+.typewriter h3 span:nth-child(5) {
+  animation-delay: 2.5s;
+}
+
+.typewriter h3 span:nth-child(6) {
+  animation-delay: 3s;
+}
+
+.typewriter h3 span:nth-child(7) {
+  animation-delay: 3.5s;
+}
+
+.typewriter h3 span:nth-child(8) {
+  animation-delay: 3.5s;
+}
+
+header {
+  background-image: url("../images/illustrations/Header.png");
+  /*TEMP POUR TEST */
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh);
+  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+/* FOOTER */
+
+footer {
+  background-image: url(../images/illustrations/Footer);
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  background-position: bottom;
+  margin-top: 20px;
+  background-attachment: fixed;
+}
+
+#flogo img {
+  width: 3.125em;
+  height: 3.125;
+}
+
+.flexf {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  padding: 5px;
+}
+
+#ftxt {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: auto;
+  padding: 5px;
+}
+
+#ftxt a {
+  text-decoration: none;
+  color: var(--quote);
+}
+
+#ftxt a:hover {
+  text-decoration: underline;
+}
+
+input,
+label {
+  width: calc(100% - 45px);
+  border: 2px solid var(--accentColor);
+  height: 42px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: var(--accentColor);
+  box-sizing: border-box;
+}
+
+input:focus {
+  color: var(--txtColor);
+  font-family: var(--font2);
+}
+
+.emailButton {
+  width: 45px;
+  height: 42px;
+  background: var(--accentColor);
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: var(--size3);
+  border: none;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.flinks {
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: left;
+  line-height: 30px;
+}
+
+#flogo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  padding: 5px;
+}
+
+.fbutton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
 }
 
 .odd\:bg-white:nth-child(odd) {

@@ -30,7 +30,10 @@
 
         
    
-    ?>
+    ?> 
+
+
+<?php include 'elements/footer.php';?>
 
    
  
