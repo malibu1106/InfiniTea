@@ -38,6 +38,8 @@
     ?> 
 
 <?php include 'pages/connexion.php' ;?>
+<?php include 'pages/inscription.php' ;?>
+
 <!-- <?php include 'elements/footer.php';?> -->
 
    
