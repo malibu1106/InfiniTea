@@ -694,24 +694,14 @@ video {
   margin-right: auto;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
-.my-7 {
-  margin-top: 1.75rem;
-  margin-bottom: 1.75rem;
-}
-
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .my-2 {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
 }
 
 .mb-2 {
@@ -894,7 +884,7 @@ header {
   /*TEMP POUR TEST */
   background-size: cover;
   background-repeat: no-repeat;
-  height: 50vh;
+  height: calc(100vh);
 }
 
 header img {
@@ -905,7 +895,7 @@ header img {
 /* NAVBAR */
 
 nav {
-  /* background: red; */
+  background: red;
 }
 
 #burger {
@@ -934,6 +924,13 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  color: var(--txtcolor2);
+  font-family: var(--Ftitle);
+  font-size: var(--fsize2);
+  text-align: center;
+}
+
 h3 {
   color: var(--txtcolor2);
   font-family: var(--Ftitle);
@@ -943,7 +940,6 @@ h3 {
 
 header h1 {
   color: var(--txtcolor1);
-  font-family: (--Ftitle);
 }
 
 .focus\:border-purple-700:focus {
