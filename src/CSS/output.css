@@ -976,7 +976,7 @@ video {
   --txtcolor2: #383838;
   --fsize1: 9.375em;
   --fsize2: 6.25em;
-  --fsize3: 3.125em;
+  --fsize3: 3.5em;
   --fsize4: 1em;
 }
 
@@ -1076,13 +1076,13 @@ header h3 {
 
 .typewriter {
   text-align: center;
-  margin-top: -5%;
+  box-sizing: border-box;
 }
 
 .typewriter h3 {
   display: inline-block;
   overflow: hidden;
-  white-space: nowrap;
+  word-break: break-word;
 }
 
 .typewriter h3 span {
@@ -1131,6 +1131,11 @@ header {
   background-position: center;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+article {
+  width: 100%;
+  margin: auto;
 }
 
 /* FOOTER */
