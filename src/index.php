@@ -22,7 +22,12 @@
         include 'pages/edit_product.php';
     }
 
-    else{include 'pages/change.php';}
+    elseif(isset($_GET['page']) && $_GET['page'] === "product_list" ){
+        include 'pages/product_list.php';
+    }
+    else{
+        include 'pages/accueil.php';
+    }
 
     
    
@@ -33,7 +38,7 @@
     ?> 
 
 
-<?php include 'elements/footer.php';?>
+<!-- <?php include 'elements/footer.php';?> -->
 
    
  

@@ -20,10 +20,6 @@ $query->execute();
 $categories = $query->fetchAll(PDO::FETCH_ASSOC);
 
 require_once ('elements/close_bdd.php');
-echo '<pre>';
-print_r($product);
-echo '</pre>';
-
 ?>
 <?php // MATHILDE CHECK CSS IMAGE PCK C MOCHE FRR
 echo '<img width="100px" src="';
@@ -35,7 +31,7 @@ echo '">';?>
     
 <div class="flex">
     <div class="flex items-center h-5 my-5">
-        <input id="helper-checkbox" aria-describedby="helper-checkbox-text" type="checkbox" value="" class="w-4 h-4 text-purple-700  border-gray-300 rounded focus:ring-purple-800 ">
+        <input id="helper-checkbox" name="image_checkbox" aria-describedby="helper-checkbox-text" type="checkbox" value="" class="w-4 h-4 text-purple-700  border-gray-300 rounded focus:ring-purple-800 ">
     </div>
     <div class="ms-2 text-sm">
         <label for="helper-checkbox" class="font-medium text-gray-900 ">Modifier l'image</label>
