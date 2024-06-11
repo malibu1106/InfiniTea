@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : lun. 10 juin 2024 à 13:58
+-- Généré le : mar. 11 juin 2024 à 12:27
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -73,7 +73,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `category`, `description`, `composition`, `price_before_reduction`, `price`, `weight`, `image_filename`, `temperature`, `temps`, `added_by`, `highlight`) VALUES
-(1, 'Thé noir à la rose', 'thé noir', 'Elégant cru de thé noir de Chine aux pétales de rose où se côtoient et s\'entremêlent les notes boisées et cuir du thé noir rehaussées et arrondies par le parfum de la rose.', '', '220€ /kg', '179€ /kg', '220gr', 'the_noir_rose.png', '90°', '3 minutes', 2, 1);
+(1, 'Thé noir à la rose', 'thé noir', 'Elégant cru de thé noir de Chine aux pétales de rose où se côtoient et s\'entremêlent les notes boisées et cuir du thé noir rehaussées et arrondies par le parfum de la rose.', '', '220€ /kg', '179€ /kg', '220gr', 'the_noir_rose.png', '90°', '3 minutes', 2, 1),
+(2, 'Test changement nom', 'thé blanc', 'gre', 'gre', 'gre', 'gre', 'gre', '../images/produits/gqTd9vwVXNxltukxDxSx.png', 'gre', 'gre', 1, 0),
+(3, 'Test changement avec image', 'thé blanc', 'gre', 'gre', 'gre', 'gre', 'gre', '../images/produits/K4SG1Bti2EhVNfF4M96Z.png', 'gre', 'gre', 1, 1),
+(4, 'gre', 'thé blanc', 'the blanc test edit', 'the blanc test compo', '73€', '65€', '320g', '../images/produits/y2RDueszpWmSUJgTXPtA.png', '90°', '3m', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -138,7 +141,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `users`
