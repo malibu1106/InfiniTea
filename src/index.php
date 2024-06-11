@@ -37,7 +37,7 @@
    
     ?> 
 
-
+<?php include 'pages/connexion.php' ;?>
 <!-- <?php include 'elements/footer.php';?> -->
 
    
