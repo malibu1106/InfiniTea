@@ -16,19 +16,14 @@
     <header>
         <?php include 'elements/header.php';?>
     </header>
-    <?php
-        include 'pages/edit_product.php';
 
-        
-   
-    ?>
     
-    <!-- <?php
+    <?php
         include 'pages/change.php';
 
         
    
-    ?> -->
+    ?>
 
    
  
