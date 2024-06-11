@@ -66,8 +66,8 @@ echo '<option value="' . $categorie['name'] . '" required>' . $categorie['name']
 
     <label for="highlight" class="block mb-2 text-sm font-medium text-gray-900">Ce produit est-il mis en avant?</label>
   <select id="highlight" name="highlight" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-700 focus:border-purple-900 block w-full p-2.5">
-<option value="TRUE">oui</option>
-<option value="FALSE">non</option>
+<option value="1">oui</option>
+<option value="0">non</option>
   </select>
   <button type="submit" class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-purple-900 dark:hover:bg-pink-500 my-2">Envoyer</button>
 </form>
