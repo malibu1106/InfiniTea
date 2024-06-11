@@ -986,25 +986,21 @@ video {
 
 /****************/
 
-/* HEADER */
+/* POLICES */
 
-/**********/
-
-header {
-  background-image: url("../images/illustrations/Header.png");
-  /*TEMP POUR TEST */
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: calc(100vh);
-  background-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
+h1 {
+  color: var(--txtcolor2);
+  font-family: var(--Ftitle);
+  font-size: var(--fsize1);
+  text-align: center;
 }
 
-header img {
-  width: 200px;
-  height: 200px;
-  margin: auto;
+h2 {
+  color: var(--txtcolor1);
+  font-family: var(--Ftxt);
+  font-size: var(--fsize3);
+  text-align: center;
+  text-transform: uppercase;
 }
 
 /* NAVBAR */
@@ -1032,20 +1028,7 @@ nav {
   height: 40px;
 }
 
-h1 {
-  color: var(--txtcolor2);
-  font-family: var(--Ftitle);
-  font-size: var(--fsize1);
-  text-align: center;
-}
-
-h2 {
-  color: var(--txtcolor1);
-  font-family: var(--Ftxt);
-  font-size: var(--fsize3);
-  text-align: center;
-  text-transform: uppercase;
-}
+/* HEADER */
 
 header h1 {
   color: var(--txtcolor1);
@@ -1078,7 +1061,7 @@ header h3 {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: reveal 4500ms ease-in-out 200ms, glow 2500ms linear infinite 1000ms;
+  animation: reveal 4500ms ease-in-out 200ms, glow 2500ms linear infinite 500ms;
 }
 
 @keyframes fadeIn {
@@ -1132,6 +1115,23 @@ header h3 {
 
 .typewriter h3 span:nth-child(7) {
   animation-delay: 3.5s;
+}
+
+header {
+  background-image: url("../images/illustrations/Header.png");
+  /*TEMP POUR TEST */
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: calc(100vh);
+  background-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+header img {
+  width: 200px;
+  height: 200px;
+  margin: auto;
 }
 
 .odd\:bg-white:nth-child(odd) {
