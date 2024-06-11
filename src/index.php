@@ -16,12 +16,12 @@
     <div id="debug">
         <?php print_r($_SESSION);?>
     </div>
-    <header>
+    
         <?php
-        if(!isset($_SESSION['admin'])){
-        include 'elements/header.php';}
+        
+        include 'elements/header.php';
         ?>
-    </header>
+    
     <div id="main">
     <?php
     if(isset($_GET['page']) && $_GET['page'] === "edit_product" ){
@@ -55,9 +55,8 @@
 </div>
 
 <?php
-        if(!isset($_SESSION['admin'])){
-        include 'elements/footer.php';}
-        ?>
+        
+        include 'elements/footer.php';?>
 
    
  

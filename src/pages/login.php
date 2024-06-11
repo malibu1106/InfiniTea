@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['email']) && !empty($_
             $_SESSION["user_id"] = $user['id']; 
             $_SESSION["first_name"] = $user['first_name']; 
             $_SESSION["last_name"] = $user['last_name']; 
-            $_SESSION["rights"] = $user['rights']; // STOCK rights DANS $_SESSION ( UTILISE PAR LA SUITE POUR SOIT AFFICHER LE BACK OFFICE, SOIT LE SITE NORMAL)
+            $_SESSION["admin"] = $user['rights']; // STOCK rights DANS $_SESSION ( UTILISE PAR LA SUITE POUR SOIT AFFICHER LE BACK OFFICE, SOIT LE SITE NORMAL)
             header('Location: ../index.php');} // REDIRECTION, CHECK URL PLUS TARD
 
     // SI LE MOT DE PASSE EST INCORRECT
