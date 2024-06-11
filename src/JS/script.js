@@ -27,3 +27,19 @@ function closeMenu() {
     menuBurger.style.display = "none";
     menuBurgerButton.style.display = "flex";
 }
+
+
+/* BACK OFFICE - EDIT PRODUCT */
+/*AFFICHER OU MASQUER INPUT FILE SELON EDIT IMAGE OU NON*/
+document.querySelectorAll('.edit_image').forEach(el => el.style.display = "none");
+
+let checkboxEditImage = document.getElementById('helper-checkbox');
+if (checkboxEditImage) {
+    checkboxEditImage.addEventListener('change', displayEditImageElements);
+    console.log("addevent ok");
+}
+
+function displayEditImageElements() {
+    let displayStyle = checkboxEditImage.checked ? "flex" : "none";
+    document.querySelectorAll('.edit_image').forEach(el => el.style.display = displayStyle);
+}
