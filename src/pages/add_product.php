@@ -1,6 +1,5 @@
 <h3>Ajouter un Produit</h3>
-<?php 
-$_SESSION['user_id'] = 2;?>
+
 <form method="POST" action="pages/create_new_product.php" enctype="multipart/form-data"class="max-w-md mx-auto">
     <input type="hidden" name="added_by" value="<?php echo $_SESSION['user_id'];?>">
 <div class="relative z-0 w-full mb-5 group">

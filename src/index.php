@@ -24,11 +24,32 @@
     
     <div id="main">
     <?php
-    if(isset($_GET['page']) && $_GET['page'] === "edit_product" ){
+    if(isset($_GET['page']) && ($_GET['page'] === "edit_product") && !empty($_SESSION['admin'])){
+        if($_SESSION['admin'] === "self"){
+            include 'pages/back_office.php';
+        }
+        elseif($_SESSION['admin'] === "full"){
+            include 'pages/back_office_full.php';
+        }
         include 'pages/edit_product.php';
     }
+    elseif(isset($_GET['page']) && ($_GET['page'] === "add_product") && !empty($_SESSION['admin'])){
+        if($_SESSION['admin'] === "self"){
+            include 'pages/back_office.php';
+        }
+        elseif($_SESSION['admin'] === "full"){
+            include 'pages/back_office_full.php';
+        }
+        include 'pages/add_product.php';
+    }
 
-    elseif(isset($_GET['page']) && $_GET['page'] === "product_list" ){
+    elseif(isset($_GET['page']) && ($_GET['page'] === "product_list") && !empty($_SESSION['admin'])){
+        if($_SESSION['admin'] === "self"){
+            include 'pages/back_office.php';
+        }
+        elseif($_SESSION['admin'] === "full"){
+            include 'pages/back_office_full.php';
+        }
         include 'pages/product_list.php';
     }
     elseif(isset($_GET['page']) && $_GET['page'] === "connexion" ){
@@ -39,6 +60,16 @@
     }
     elseif(isset($_GET['page']) && $_GET['page'] === "logout" ){
         include 'pages/logout.php';
+    }
+    elseif(!empty($_SESSION['admin'])){
+        if($_SESSION['admin'] === "self"){
+            include 'pages/back_office.php';
+            include 'pages/accueil.php';
+        }
+        elseif($_SESSION['admin'] === "full"){
+            include 'pages/back_office_full.php';
+            include 'pages/accueil.php';
+        }
     }
     else{
         include 'pages/accueil.php';
@@ -55,8 +86,8 @@
 </div>
 
 <?php
-        
-        include 'elements/footer.php';?>
+if(empty($_SESSION['admin'])){        
+        include 'elements/footer.php';}?>
 
    
  
