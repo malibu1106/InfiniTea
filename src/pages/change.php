@@ -26,7 +26,7 @@
                 </td>
                
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editer</a>
+                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editer</a>  <a href="#" class="font-medium text-red-700 ">X Supprimer</a>
                 </td>
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -37,7 +37,7 @@
                     White
                 </td>
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editer</a>
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editer</a>  <a href="#" class="font-medium text-red-700 ">X Supprimer</a>
                 </td>
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -49,7 +49,7 @@
                 </td>
             
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editer</a>
+                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editer</a>  <a href="#" class="font-medium text-red-700 ">X Supprimer</a>
                 </td>
             </tr>
             <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
@@ -61,7 +61,7 @@
                 </td>
           
                 <td class="px-6 py-4">
-                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editer</a>  <a href="#" class="font-medium text-red-700 ">Supprimer</a>
+                    <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editer</a>  <a href="#" class="font-medium text-red-700 ">X Supprimer</a>
                 </td>
             </tr>
             
