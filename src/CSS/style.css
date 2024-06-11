@@ -44,12 +44,14 @@ h3 {
   font-family: var(--Ftitle);
   color: var(--txtcolor2);
   font-size: var(--fsize3);
+  text-align: center;
 }
 
 h4 {
-  font-family: var(--Ftitle);
+  font-family: var(--Funder);
   color: var(--txtcolor2);
   font-size: var(--fsize4);
+  text-align: center;
 }
 /* NAVBAR */
 

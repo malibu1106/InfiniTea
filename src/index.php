@@ -43,6 +43,8 @@
    
     ?> 
 
+<?php include 'pages/connexion.php' ;?>
+<?php include 'pages/inscription.php' ;?>
 
 <?php
         if(!isset($_SESSION['admin'])){
