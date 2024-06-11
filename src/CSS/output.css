@@ -980,6 +980,23 @@ video {
   transition-duration: 300ms;
 }
 
+/* DEBUG */
+
+/* DEBUG */
+
+/* DEBUG */
+
+/* DEBUG */
+
+#debug {
+  width: 400px;
+  height: 200px;
+  position: absolute;
+  background: red;
+  right: 0;
+  top: 0;
+}
+
 /* ROOT */
 
 :root {
@@ -1035,7 +1052,8 @@ h4 {
 /* NAVBAR */
 
 nav {
-  background: red;
+  color: var(--txtcolor1);
+  font-size: 1.6em;
   position: fixed;
   top: 0;
   z-index: 100;
@@ -1046,7 +1064,7 @@ nav {
   list-style-type: none;
   display: none;
   flex-direction: column;
-  background: teal;
+  background: rgba(0, 0, 0, 0.8);
   margin: 0;
   padding: 0;
   /*TEMP POUR TEST JS*/
@@ -1054,7 +1072,6 @@ nav {
 }
 
 #burger li {
-  background: red;
   width: 100%;
   text-align: center;
   /*TEMP POUR TEST JS*/
@@ -1089,8 +1106,7 @@ header h3 {
 }
 
 .glowing {
-  background: 50% 100% / 50% 50% no-repeat
-    radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

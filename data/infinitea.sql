@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : mar. 11 juin 2024 à 12:27
+-- Généré le : mar. 11 juin 2024 à 14:16
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -101,9 +101,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `date_of_birth`, `date_of_registration`, `email`, `password`, `rights`) VALUES
-(1, 'Super', 'User', NULL, NULL, NULL, 'superuser@gmail.com', 'superuser', 'full'),
-(2, 'Mathilde', 'Jourden', NULL, NULL, NULL, 'mathilde@gmail.com', 'mathilde', 'self'),
-(3, 'Roberto', 'De Sousa', NULL, NULL, NULL, 'roberto@gmail.com', 'roberto', 'self');
+(4, 'super', 'user', '', NULL, NULL, 'superuser@infinitea.com', '$2y$10$k2QgjJHq5lkBc74k8esgUuprTQVz11F9vwIWmqqcCytc0Gi09zQ96', 'full'),
+(5, 'Mathilde', 'Jourden', '', NULL, NULL, 'mathilde@infinitea.com', '$2y$10$ft6XjbvMZfi2c2LDbzOPD.Lgqs7stmm5j.u5LqWYFPriQYk3OFIq2', 'self'),
+(6, 'Roberto', 'De Sousa', '', NULL, NULL, 'roberto@infinitea.com', '$2y$10$riE4fdj3x0RNji6WfvLTNe/dD3/QF9OllkGCACcdjHbdtmMeTYsyu', 'self');
 
 --
 -- Index pour les tables déchargées
@@ -147,7 +147,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

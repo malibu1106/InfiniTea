@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['email']) && !empty($_
     $password = $_POST['password'];
 
     // CONNEXION A LA BDD
-    require_once("../elements/connexion_bdd.php");
+    require_once("../elements/open_bdd.php");
 
     // REQUETE AVEC CE QU'IL NOUS FAUT A STOCKER EN $_SESSION SI BESOIN 
     $sql = "SELECT id, first_name, last_name, password, rights FROM users WHERE email = :email";

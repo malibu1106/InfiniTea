@@ -4,7 +4,7 @@ session_start();
 
 // ON INITIALISE LES VARIABLES DES CHAMPS OPTIONNELS DU FORMULAIRE, ON LES PUSH DANS TOUS LES CAS DANS LA BDD POUR SIMPLIFIER LE TRAITEMENT
 $gender = "";
-$date_of_birth = "";
+$date_of_birth = date('Y-m-d');
 $date_of_registration = date('Y-m-d'); 
 
 // ON VERIFIE POST + QUE LES CHAMPS OBLIGATOIRES NE SONT PAS VIDES ET ON RECUPERE LES VALEURS DU FORMULAIRE
@@ -23,7 +23,7 @@ if(!empty($_POST['date_of_birth'])){
         $date_of_birth = strip_tags($_POST['date_of_birth']);}
 
 // CONNEXION A LA BDD
-require_once ('../elements/connexion_bdd.php');
+require_once ('../elements/open_bdd.php');
 
 
     // REQUETE POUR VOIR SI UNE ADRESSE IDENTIQUE EXISTE DEJA OU PAS

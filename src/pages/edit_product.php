@@ -21,10 +21,10 @@ $categories = $query->fetchAll(PDO::FETCH_ASSOC);
 
 require_once ('elements/close_bdd.php');
 ?>
-<?php // MATHILDE CHECK CSS IMAGE PCK C MOCHE FRR
-echo '<img width="100px" src="';
-echo $product['image_filename'];
-echo '">';?>
+<?php 
+$image_filename = $product['image_filename'];
+echo "<img width='25%' style='display: block; margin: auto;' src='$image_filename'>";
+?>
 <form method="POST" action="pages/update_product.php" enctype="multipart/form-data"class="max-w-md mx-auto">
     <input type="hidden" name="added_by" value="<?php echo $_SESSION['user_id'];?>">
     <input type="hidden" name="id" value="<?php echo $id;?>">

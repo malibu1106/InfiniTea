@@ -13,13 +13,16 @@
 </head>
 
 <body>
+    <div id="debug">
+        <?php print_r($_SESSION);?>
+    </div>
     <header>
         <?php
         if(!isset($_SESSION['admin'])){
         include 'elements/header.php';}
         ?>
     </header>
-
+    <div id="main">
     <?php
     if(isset($_GET['page']) && $_GET['page'] === "edit_product" ){
         include 'pages/edit_product.php';
@@ -30,6 +33,12 @@
     }
     elseif(isset($_GET['page']) && $_GET['page'] === "connexion" ){
         include 'pages/connexion.php';
+    }
+    elseif(isset($_GET['page']) && $_GET['page'] === "inscription" ){
+        include 'pages/inscription.php';
+    }
+    elseif(isset($_GET['page']) && $_GET['page'] === "logout" ){
+        include 'pages/logout.php';
     }
     else{
         include 'pages/accueil.php';
@@ -43,8 +52,7 @@
    
     ?> 
 
-<?php include 'pages/connexion.php' ;?>
-<?php include 'pages/inscription.php' ;?>
+</div>
 
 <?php
         if(!isset($_SESSION['admin'])){
