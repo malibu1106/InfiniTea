@@ -17,11 +17,18 @@
         <?php include 'elements/header.php';?>
     </header>
     <?php
+        include 'pages/change.php';
+
+        
+   
+    ?>
+    <?php
         include 'pages/back_office.php';
 
         
    
     ?>
+   
 
 
 </body>
