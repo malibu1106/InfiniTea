@@ -49,7 +49,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name']) && !empty($_P
     // CONNEXION A LA BDD
     require_once("../elements/open_bdd.php");
 
-    if(!empty($_FILES['image_filename'])){
+    if(isset($_POST['image_checkbox'])){
         $sql = "SELECT image_filename FROM products WHERE id=:id";
 
     // Préparation de la requête
@@ -134,7 +134,7 @@ else{
     $_SESSION["message"] = "<div id='alert_message'>Erreur de traitement !</div>";
     // header('Location: ../index.php?page=back_office'); // REDIRECTION, CHECK URL PLUS TARD
 }
-
+header('Location: ../index.php?page=product_list');
 
 
 ?>
