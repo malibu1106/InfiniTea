@@ -84,6 +84,11 @@
     ?> 
 
 </div>
+<?php
+        
+        include 'elements/newsletter.php';
+        ?>
+
 
 <?php
 if(empty($_SESSION['admin'])){        

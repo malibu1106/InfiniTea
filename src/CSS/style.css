@@ -63,7 +63,7 @@ h3 {
 }
 
 h4 {
-  font-family: var(--Funder);
+  font-family: var(--Fbold);
   color: var(--txtcolor2);
   font-size: var(--fsize4);
   text-align: center;

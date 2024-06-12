@@ -21,7 +21,7 @@
         <section id="ftxt">
           <div class="flinks">
           
-                <a href="#">Contact</a><br />
+                <a href="#">Contac'thé-nous</a><br />
                 <a href="#">Mentions légales</a><br />
                 <a href="#">Politique de cookies</a><br />
          
