@@ -84,10 +84,17 @@
     ?> 
 
 </div>
+
+<?php
+        
+        include 'elements/selection.php';
+        ?>
+
 <?php
         
         include 'elements/newsletter.php';
         ?>
+
 
 
 <?php

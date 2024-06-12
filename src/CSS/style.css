@@ -34,6 +34,7 @@
   --fsize2: 6.25em;
   --fsize3: 3.5em;
   --fsize4: 1em;
+  --accentcolor1: green;
 }
 
 /* FIRST MOBILE */
@@ -67,6 +68,7 @@ h4 {
   color: var(--txtcolor2);
   font-size: var(--fsize4);
   text-align: center;
+  color: var(--accentcolor1);
 }
 
 /* NAVBAR */
@@ -214,7 +216,50 @@ article {
 #main {
   margin-top: 40px;
 }
+/*SELECTION*/
 
+.bg-noir {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/selection/theiere_noir.png");
+}
+.bg-blanc {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/selection/theiere_blanc.png");
+}
+.bg-vert {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/selection/theiere_vert.png");
+}
+.bg-oolong {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/selection/theiere_oolong.png");
+}
+.bg-rooibos {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/selection/theiere_rooibos.png");
+}
+.bg-infusions {
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../images/selection/theiere_infusion.png");
+}
 /* FOOTER */
 footer {
   background-image: url("../images/illustrations/Footer.png");
