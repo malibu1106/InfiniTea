@@ -2,24 +2,25 @@
       <div class="flexf">
         <section id="flogo">
           <div class="fbutton">
-            <img src="./images/ally.png" alt="alliance"/>
-            <a href="https://worldofwarcraft.blizzard.com/fr-fr/" target="_blank" rel="noopener noreferrer"><img src="./images/battlenet.png" alt="battle net" /></a>
-            <img src="./images/horde.png" alt="horde" />
-          </div>
-        </section>
+          <a href="#" target="_blank" rel="noopener noreferrer"><img src="./images/ally.png" alt="Instagram"/></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><img src="./images/battlenet.png" alt="X" /></a>
+            <a href="#" target="_blank" rel="noopener noreferrer"><img src="./images/horde.png" alt="Facebook" /></a>
+           </div>
+           <p>Projet réalisé par <a href="https://github.com/malibu1106" target="_blank" rel="noopener noreferrer">Roberto</a> & <a href="https://github.com/mathildejrdn" target="_blank" rel="noopener noreferrer">Mathilde</a></p>
+          
+          </section>
         <section id="ftxt">
           <div class="flinks">
           
-                <a href="#">Prendre rendez-vous en agence</a><br />
+                <a href="#">Contact</a><br />
                 <a href="#">Mentions légales</a><br />
-                <a href="#">S'abonner à notre newsletter</a><br />
+                <a href="#">Politique de cookies</a><br />
          
         </div>
         
         </section>
         <section id="flogo">
-          <h4>Infinitea</h4>       
-          <p>Projet réalisé par <a href="https://github.com/malibu1106" target="_blank" rel="noopener noreferrer">Roberto</a> & <a href="https://github.com/mathildejrdn" target="_blank" rel="noopener noreferrer">Mathilde</a></p>
+      <h3><img src="./images/logos/Logo blanc.png" alt="logo"/>Infinitea</h3>       
         </section>
       </div>
     </footer>

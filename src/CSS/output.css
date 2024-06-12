@@ -28,6 +28,7 @@ body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   background-attachment: fixed;
+  font-family: "helveticaregular";
 }
 
 /*
@@ -1003,7 +1004,6 @@ video {
 
 :root {
   --Ftitle: "gregoniaregular";
-  --Ftxt: "helveticaregular";
   --Fbold: "helveticabold";
   --Funder: "proxima_nova_extra_condeBlkIt";
   --txtcolor1: #ededed;
@@ -1110,7 +1110,8 @@ header h3 {
 }
 
 .glowing {
-  background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  background: 50% 100% / 50% 50% no-repeat
+    radial-gradient(ellipse at bottom, #fff, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -1198,18 +1199,28 @@ article {
 /* FOOTER */
 
 footer {
-  background-image: url(../images/illustrations/Footer);
+  background-image: url("../images/illustrations/Footer.png");
+  background-size: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
   padding: 5px;
   background-position: bottom;
   margin-top: 20px;
   background-attachment: fixed;
+  color: var(--txtcolor1);
+}
+
+footer h3 {
+  color: var(--txtcolor1);
 }
 
 #flogo img {
-  width: 3.125em;
-  height: 3.125;
+  width: 70px;
+  height: 70px;
+  float: left;
 }
 
 .flexf {
@@ -1230,44 +1241,11 @@ footer {
 
 #ftxt a {
   text-decoration: none;
-  color: var(--quote);
+  color: var(--txtcolor1);
 }
 
 #ftxt a:hover {
   text-decoration: underline;
-}
-
-input,
-label {
-  width: calc(100% - 45px);
-  border: 2px solid var(--accentColor);
-  height: 42px;
-  border-radius: 5px 0 0 5px;
-  outline: none;
-  color: var(--accentColor);
-  box-sizing: border-box;
-}
-
-input:focus {
-  color: var(--txtColor);
-  font-family: var(--font2);
-}
-
-.emailButton {
-  width: 45px;
-  height: 42px;
-  background: var(--accentColor);
-  text-align: center;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  cursor: pointer;
-  font-size: var(--size3);
-  border: none;
-}
-
-.input-container {
-  display: flex;
-  align-items: center;
 }
 
 .flinks {
