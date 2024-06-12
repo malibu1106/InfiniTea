@@ -43,3 +43,27 @@ function displayEditImageElements() {
     document.querySelectorAll('.edit_image').forEach(el => el.style.display = displayStyle);
 }
 
+
+/* SLIDER HIGHLIGHTS */
+let highlightsProducts = document.querySelectorAll('.highlights_products');
+let index = 0;
+highlightsProducts[index].classList.add("show");
+let leftButton = document.getElementById('slide_left');
+let rightButton = document.getElementById('slide_right');
+if (leftButton) { leftButton.addEventListener("click", prevProduct) }
+if (rightButton) { rightButton.addEventListener("click", nextProduct) }
+
+
+function nextProduct() {
+    highlightsProducts[index].classList.remove("show");
+    index++;
+    if (index === highlightsProducts.length) { index = 0; }
+    highlightsProducts[index].classList.add("show");
+}
+
+function prevProduct() {
+    highlightsProducts[index].classList.remove("show");
+    index--;
+    if (index < 0) { index = 2; }
+    highlightsProducts[index].classList.add("show");
+}
