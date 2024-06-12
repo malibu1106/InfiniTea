@@ -212,6 +212,10 @@ article {
 }
 
 /* MAIN */
+#main {
+  scroll-margin-top: 40px;
+  /* TEMP*/
+}
 
 /* HIGHLIGHTS */
 .highlights {
@@ -219,34 +223,19 @@ article {
   overflow-x: hidden;
   position: relative;
   height: 100vh;
-  background: red;
 }
 
-#slide_left,
-#slide_right {
+#left_arrow,
+#right_arrow {
   position: absolute;
   top: 50%;
   font-size: 55px;
+  z-index: 50;
+  cursor: pointer;
 }
 
-#slide_right {
+#right_arrow {
   right: 0;
-}
-
-.highlights_products {
-  height: 100vh;
-  position: absolute;
-  width: 90vw;
-  left: 100%;
-  right: 0;
-  margin: auto;
-  transition: left 1s;
-  top: 0;
-}
-
-.show {
-  left: 0;
-  transition: left 1s;
 }
 
 .highlights_products img {
@@ -254,7 +243,10 @@ article {
   width: 90vw;
   left: 0;
   right: 0;
+  top: 0;
   margin: auto;
+  position: absolute;
+  z-index: 20;
 }
 
 .highlights_details {
@@ -262,10 +254,12 @@ article {
   height: 20vh;
   left: 0;
   right: 0;
+  top: 80vh;
+  position: absolute;
   margin: auto;
-  background: green;
   text-align: center;
 }
+
 /*SELECTION*/
 
 .bg-noir {
@@ -275,6 +269,7 @@ article {
   background-repeat: no-repeat;
   background-image: url("../images/selection/theiere_noir.png");
 }
+
 .bg-blanc {
   width: 150px;
   height: 150px;
@@ -282,6 +277,7 @@ article {
   background-repeat: no-repeat;
   background-image: url("../images/selection/theiere_blanc.png");
 }
+
 .bg-vert {
   width: 150px;
   height: 150px;
@@ -289,6 +285,7 @@ article {
   background-repeat: no-repeat;
   background-image: url("../images/selection/theiere_vert.png");
 }
+
 .bg-oolong {
   width: 150px;
   height: 150px;
@@ -296,6 +293,7 @@ article {
   background-repeat: no-repeat;
   background-image: url("../images/selection/theiere_oolong.png");
 }
+
 .bg-rooibos {
   width: 150px;
   height: 150px;
@@ -303,6 +301,7 @@ article {
   background-repeat: no-repeat;
   background-image: url("../images/selection/theiere_rooibos.png");
 }
+
 .bg-infusions {
   width: 150px;
   height: 150px;
@@ -310,6 +309,17 @@ article {
   background-repeat: no-repeat;
   background-image: url("../images/selection/theiere_infusion.png");
 }
+
+.opacityUp {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.opacityDown {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
 /* FOOTER */
 footer {
   background-image: url("../images/illustrations/Footer.png");
@@ -384,6 +394,16 @@ footer h3 {
   flex-direction: row;
   justify-content: center;
   gap: 10px;
+}
+
+/* BACK OFFICE*/
+
+.miniatures_back {
+  height: 80px;
+}
+
+.deleteConfirmationButton {
+  display: none;
 }
 
 /*MEDIAQUERIES*/

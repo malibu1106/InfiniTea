@@ -14,10 +14,15 @@ function openMenu() {
     }
 }
 
+function refreshWindowWidth() {
+    windowWidth = window.innerWidth;
+}
+
+setInterval(refreshWindowWidth, 100);
 /* Ecoute du click sur la page pour fermer le menu si l'utilisateur clique en dehors */
 let menuHeight = 150; //TEMP
 document.addEventListener('click', function (event) {
-    if (event.clientY > menuHeight) { // SI L'UTILISATEUR CLIQUE A UNE HAUTEUR SUPERIEURE A CELLE DU BURGER
+    if (event.clientY > menuHeight && windowWidth <= 768) { // SI L'UTILISATEUR CLIQUE A UNE HAUTEUR SUPERIEURE A CELLE DU BURGER
         closeMenu();
     }
 });
@@ -43,27 +48,58 @@ function displayEditImageElements() {
     document.querySelectorAll('.edit_image').forEach(el => el.style.display = displayStyle);
 }
 
+/*BACK OFFICE DELETE CONFIRMATION*/
+// Sélectionner tous les boutons de suppression
+let deleteButtons = document.querySelectorAll('.deleteButton');
+
+// Sélectionner tous les boutons de confirmation de suppression
+let deleteConfirmationButtons = document.querySelectorAll('.deleteConfirmationButton');
+
+if (deleteButtons) {
+    // Parcourir tous les boutons de suppression
+    deleteButtons.forEach((deleteButton, index) => {
+        // Ajouter un écouteur d'événement pour le clic sur chaque bouton de suppression
+        deleteButton.addEventListener('click', () => {
+            // Masquer le bouton de confirmation de suppression correspondant
+            if (deleteConfirmationButtons[index]) {
+                deleteButtons[index].style.display = 'none';
+                deleteConfirmationButtons[index].style.display = 'inline';
+            }
+        });
+    });
+}
 
 /* SLIDER HIGHLIGHTS */
 let highlightsProducts = document.querySelectorAll('.highlights_products');
+let nextArrow = document.getElementById('right_arrow');
+if (nextArrow) { nextArrow.addEventListener('click', nextProduct) }
+let prevArrow = document.getElementById('left_arrow');
+if (prevArrow) { prevArrow.addEventListener('click', prevProduct) }
+
+if (highlightsProducts) {
+    highlightsProducts.forEach((product, index) => {
+        if (index !== 0) {
+            product.classList.add("opacityDown");
+        }
+    });
+}
 let index = 0;
-highlightsProducts[index].classList.add("show");
-let leftButton = document.getElementById('slide_left');
-let rightButton = document.getElementById('slide_right');
-if (leftButton) { leftButton.addEventListener("click", prevProduct) }
-if (rightButton) { rightButton.addEventListener("click", nextProduct) }
-
-
 function nextProduct() {
-    highlightsProducts[index].classList.remove("show");
+    highlightsProducts[index].classList.remove("opacityUp");
+    highlightsProducts[index].classList.add("opacityDown");
     index++;
     if (index === highlightsProducts.length) { index = 0; }
-    highlightsProducts[index].classList.add("show");
+    highlightsProducts[index].classList.remove("opacityDown");
+    highlightsProducts[index].classList.add("opacityUp");
 }
 
 function prevProduct() {
-    highlightsProducts[index].classList.remove("show");
-    index--;
-    if (index < 0) { index = 2; }
-    highlightsProducts[index].classList.add("show");
+    highlightsProducts[index].classList.remove("opacityUp");
+    highlightsProducts[index].classList.add("opacityDown");
+    if (index === 0) { index = highlightsProducts.length - 1; }
+    else { index--; }
+
+    highlightsProducts[index].classList.remove("opacityDown");
+    highlightsProducts[index].classList.add("opacityUp");
 }
+
