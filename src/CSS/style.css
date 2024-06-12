@@ -131,7 +131,8 @@ header h3 {
 }
 
 .glowing {
-  background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  background: 50% 100% / 50% 50% no-repeat
+    radial-gradient(ellipse at bottom, #fff, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -236,8 +237,6 @@ article {
 #right_arrow {
   right: 0;
 }
-
-
 
 .highlights_products img {
   height: 80vh;

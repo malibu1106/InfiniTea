@@ -15,5 +15,5 @@ require_once("elements/open_bdd.php");
 
 
 //FERMETURE DE LA CONNEXION
-require_once("elements/close_bdd.php");        
+// require_once("elements/close_bdd.php");        
     ?>

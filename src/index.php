@@ -97,6 +97,35 @@
 
 <?php
         
+        include 'products/thé_noir.php';
+        ?>
+
+<?php
+        
+        include 'products/the_blanc.php';
+        ?>
+
+<?php
+        
+        include 'products/thé_vert.php';
+        ?>
+
+<?php
+        
+        include 'products/thé_oolong.php';
+        ?>
+
+<?php
+        
+        include 'products/thé_rooibos.php';
+        ?>
+
+<?php
+        
+        include 'products/thé_infusions.php';
+        ?>
+<?php
+        
         include 'elements/newsletter.php';
         ?>
 
