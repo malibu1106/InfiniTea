@@ -16,16 +16,18 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
 //FERMETURE DE LA CONNEXION A DECOMMENTER APRES LES TESTS P-E
 //require_once("elements/close_bdd.php");
 
-// SI DES PRODUITS SONT HIGHLIGHT
-if($highlights){
-    echo "Affichage des highlights";
-    // foreach ($highlights as $highlight){
-    //     echo '<pre>';
-    //     print_r($highlight);
-    //     echo '</pre>';
-    // }
-}
-else{
-    echo "Aucun produit highlight";
-}
+// SI DES PRODUITS SONT HIGHLIGHT?>
+<section class="highlights">
+    <div id="slide_left"><</div>
+    <div id="slide_right">></div>
+    <?php foreach($highlights as $highlight){
+    echo '<div class="highlights_products">';
+    echo '<img src="../images/produits/blanc.png">';
+    echo '<div class="highlights_details">';
+    echo $highlight['name'];
+    echo '</div>';
+    echo '</div>';}
 ?>
+</section>
+
+

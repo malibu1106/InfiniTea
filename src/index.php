@@ -61,6 +61,9 @@
     elseif(isset($_GET['page']) && $_GET['page'] === "logout" ){
         include 'pages/logout.php';
     }
+    elseif(isset($_SESSION['admin']) && ($_SESSION['admin'] === "full") && isset($_GET['page']) && $_GET['page'] === "user_control" ){
+        include 'pages/user_control.php'; 
+    }
     elseif(!empty($_SESSION['admin'])){
         if($_SESSION['admin'] === "self"){
             include 'pages/back_office.php';
@@ -71,6 +74,7 @@
             include 'pages/accueil.php';
         }
     }
+    
     else{
         include 'pages/accueil.php';
     }
