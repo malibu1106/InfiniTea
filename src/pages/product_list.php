@@ -1,6 +1,11 @@
 <?php
+$userid = $_SESSION['user_id'];
 require_once ('elements/open_bdd.php');
-$sql = "SELECT id, name, category FROM products";
+if($_SESSION['admin'] === "self"){
+    $sql = "SELECT id, name, category FROM products WHERE added_by = $userid";}
+else{
+    $sql = "SELECT id, name, category FROM products";  
+}
 // PREPARATION DE LA REQUETE
 $query = $db->prepare($sql);
 //EXECUTION DE LA REQUETE + STOCK DES DONNEES DANS LA VARIABLE

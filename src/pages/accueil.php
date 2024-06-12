@@ -15,7 +15,7 @@ require_once("elements/open_bdd.php");
         ?>
         <center>
             ACCUEIL ICI<br>
-            <a href="index.php?page=product_list#liste_produit">Back - Liste des produits</a>
+            
             
 
 
