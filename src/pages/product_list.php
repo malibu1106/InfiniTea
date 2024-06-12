@@ -16,6 +16,9 @@ require_once ('elements/close_bdd.php');
                     Produit
                 </th>
                 <th scope="col" class="px-2 py-3">
+                    Miniature
+                </th>
+                <th scope="col" class="px-2 py-3">
                     Catégorie
                 </th>
                 <th scope="col" class="px-2 py-3">
