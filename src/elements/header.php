@@ -13,5 +13,8 @@ echo '</div></article>';
 
 echo '</header>';
 }
+else{
+  echo '<div style="margin-top:40px"></div>';
+}
 
 ?>

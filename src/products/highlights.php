@@ -18,8 +18,8 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
 
 // SI DES PRODUITS SONT HIGHLIGHT?>
 <section class="highlights">
-    <div id="slide_left"><</div>
-    <div id="slide_right">></div>
+    <div id="left_arrow"><</div>
+    <div id="right_arrow">></div>
     <?php foreach($highlights as $highlight){
     echo '<div class="highlights_products">';
     echo '<img src="../images/produits/blanc.png">';
