@@ -9,7 +9,7 @@ $query = $db->prepare($sql);
 $query->execute();
 $coffrets = $query->fetchAll(PDO::FETCH_ASSOC);
 
-// THE NOIR
+// COFFRETS
 if($coffrets){
     echo "Affichage coffrets";
     foreach ($coffrets as $coffret){

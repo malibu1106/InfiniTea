@@ -13,13 +13,13 @@ $infusions = $query->fetchAll(PDO::FETCH_ASSOC);
 if($infusions){
     echo "Affichage infusions";
     foreach ($infusions as $infusion){
-        echo '<pre>';
-        print_r($infusion);
-        echo '</pre>';
+        // echo '<pre>';
+        // print_r($infusion);
+        // echo '</pre>';
     }
 }
 else{
-    echo "Aucune infusion";
+    // echo "Aucune infusion";
 }
 ?>
 

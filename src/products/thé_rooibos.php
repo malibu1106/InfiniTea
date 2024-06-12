@@ -11,15 +11,15 @@ $thes_rooibos = $query->fetchAll(PDO::FETCH_ASSOC);
 
 // THE NOIR
 if($thes_rooibos){
-    echo "Affichage thé rooibos";
+    // echo "Affichage thé rooibos";
     foreach ($thes_rooibos as $the_rooibos){
-        echo '<pre>';
-        print_r($the_rooibos);
-        echo '</pre>';
+        // echo '<pre>';
+        // print_r($the_rooibos);
+        // echo '</pre>';
     }
 }
 else{
-    echo "Aucun thé rooibos";
+    // echo "Aucun thé rooibos";
 }
 ?>
 

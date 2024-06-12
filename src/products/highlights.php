@@ -22,12 +22,16 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
     <div id="right_arrow">></div>
     <?php foreach($highlights as $highlight){
     echo '<div class="highlights_products">';
-    echo '<img src="../images/produits/blanc.png">';
+    echo '<img src="' . $highlight['image_filename'] . '">';
     echo '<div class="highlights_details">';
     echo $highlight['name'];
     echo '</div>';
     echo '</div>';}
 ?>
 </section>
+
+<section class="highlights_desktop">
+    HIGHLIGHTS EN DESKTOP
+    </section>
 
 

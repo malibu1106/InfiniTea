@@ -71,6 +71,7 @@ if (deleteButtons) {
 
 /* SLIDER HIGHLIGHTS */
 let highlightsProducts = document.querySelectorAll('.highlights_products');
+let autoProductInterval;
 let nextArrow = document.getElementById('right_arrow');
 if (nextArrow) { nextArrow.addEventListener('click', nextProduct) }
 let prevArrow = document.getElementById('left_arrow');
@@ -91,6 +92,8 @@ function nextProduct() {
     if (index === highlightsProducts.length) { index = 0; }
     highlightsProducts[index].classList.remove("opacityDown");
     highlightsProducts[index].classList.add("opacityUp");
+    clearInterval(autoProductInterval);
+    autoProductInterval = setInterval(nextProduct, 2000);
 }
 
 function prevProduct() {
@@ -101,5 +104,13 @@ function prevProduct() {
 
     highlightsProducts[index].classList.remove("opacityDown");
     highlightsProducts[index].classList.add("opacityUp");
+    clearInterval(autoProductInterval);
+    autoProductInterval = setInterval(nextProduct, 2000);
 }
-
+/*AUTO SLIDE*/
+function autoNextProduct() {
+    autoProductInterval = setInterval(nextProduct, 2000);
+}
+if (highlightsProducts) {
+    autoNextProduct();
+}

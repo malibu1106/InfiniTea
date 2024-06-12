@@ -13,13 +13,13 @@ $thes_oolong = $query->fetchAll(PDO::FETCH_ASSOC);
 if($thes_oolong){
     echo "Affichage thé oolong";
     foreach ($thes_oolong as $the_oolong){
-        echo '<pre>';
-        print_r($the_oolong);
-        echo '</pre>';
+        // echo '<pre>';
+        // print_r($the_oolong);
+        // echo '</pre>';
     }
 }
 else{
-    echo "Aucun thé oolong";
+    // echo "Aucun thé oolong";
 }
 ?>
 

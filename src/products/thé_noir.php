@@ -11,15 +11,15 @@ $thes_noir = $query->fetchAll(PDO::FETCH_ASSOC);
 
 // THE NOIR
 if($thes_noir){
-    echo "Affichage thé noir";
+    // echo "Affichage thé noir";
  foreach ($thes_noir as $the_noir){
-     echo '<pre>';
+    //  echo '<pre>';
     //     print_r($the_noir);
-        echo '</pre>';
+        // echo '</pre>';
      }
 }
 else{
-    echo "Aucun thé noir";
+    // echo "Aucun thé noir";
 }
 ?>
 

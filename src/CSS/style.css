@@ -131,8 +131,7 @@ header h3 {
 }
 
 .glowing {
-  background: 50% 100% / 50% 50% no-repeat
-    radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -218,17 +217,21 @@ article {
 }
 
 /* HIGHLIGHTS */
+.highlights_desktop {
+  display: none;
+}
+
 .highlights {
   width: 100%;
   overflow-x: hidden;
   position: relative;
-  height: 100vh;
+  height: 60vh;
 }
 
 #left_arrow,
 #right_arrow {
   position: absolute;
-  top: 50%;
+  top: 30%;
   font-size: 55px;
   z-index: 50;
   cursor: pointer;
@@ -239,8 +242,7 @@ article {
 }
 
 .highlights_products img {
-  height: 80vh;
-  width: 90vw;
+  object-fit: cover;
   left: 0;
   right: 0;
   top: 0;
@@ -251,10 +253,10 @@ article {
 
 .highlights_details {
   width: 90vw;
-  height: 20vh;
+  height: 15vh;
   left: 0;
   right: 0;
-  top: 80vh;
+  top: 45vh;
   position: absolute;
   margin: auto;
   text-align: center;
@@ -409,6 +411,8 @@ footer h3 {
 /*MEDIAQUERIES*/
 /* AU DESSUS DE 768*/
 @media only screen and (min-width: 768px) {
+
+  /*BURGER*/
   #burgerButton {
     display: none;
   }
@@ -423,5 +427,14 @@ footer h3 {
 
   #burger li {
     width: unset;
+  }
+
+  /*HIGHLIGHT*/
+  .highlights {
+    display: none;
+  }
+
+  .highlights_desktop {
+    display: block;
   }
 }
