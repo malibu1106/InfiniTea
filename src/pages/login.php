@@ -33,6 +33,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['email']) && !empty($_
             $_SESSION["first_name"] = $user['first_name']; 
             $_SESSION["last_name"] = $user['last_name']; 
             $_SESSION["admin"] = $user['rights']; // STOCK rights DANS $_SESSION ( UTILISE PAR LA SUITE POUR SOIT AFFICHER LE BACK OFFICE, SOIT LE SITE NORMAL)
+            $_SESSION["message"] = "<div id='alert_message'>Connexion réussie !</div>";
             header('Location: ../index.php');} // REDIRECTION, CHECK URL PLUS TARD
 
     // SI LE MOT DE PASSE EST INCORRECT

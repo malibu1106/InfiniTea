@@ -17,6 +17,7 @@ if(isset($_SESSION['admin']) && ($_SESSION['admin'] === "full")){
     // EXECUTION + CLOSE BDD
     $query->execute();
         require_once("../elements/close_bdd.php");
+        $_SESSION['message'] = "<div id='alert_message'>Droits de l'utilisateur édités</div>";
         header('Location: ../index.php?page=user_control');
 }
 else
