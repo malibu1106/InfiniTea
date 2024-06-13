@@ -459,4 +459,9 @@ footer h3 {
   .highlights_desktop {
     display: block;
   }
+
+  /*SELECTIONS*/
+  .fleche_remonter {
+    display: none;
+  }
 }
