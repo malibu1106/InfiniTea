@@ -372,7 +372,29 @@ article {
   height: 50vh;
   background-position: center;
   image-rendering: high-quality;
-  /* background-attachment: fixed; */
+  transition: transform 1s ease, background-size 3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.coffret:hover {
+  background-size: 120%;
+  transform: scale(1);
+}
+
+.coffret article {
+  position: relative;
+  z-index: 1;
+}
+
+.coffret::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
 }
 
 .coffret h2 {
