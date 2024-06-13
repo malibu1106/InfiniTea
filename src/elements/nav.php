@@ -9,7 +9,7 @@
             echo '<a href="../index.php?page=connexion#main"><li>Connexion</li></a>';
         }?>
         
-        <a href="../index.php#produits#main"><li>Nos Produits</li></a>
+        <a href="../index.php#main"><li>Nos Produits</li></a>
         <a href="../index.php?page=contact#main"><li>Contact</li></a>
         <?php
          if(!empty($_SESSION['admin'])){

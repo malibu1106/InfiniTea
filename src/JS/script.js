@@ -134,12 +134,12 @@ if (categoriesButtons) {
             document.querySelectorAll('.categoryDiv').forEach(div => {
                 div.style.display = 'none';
             });
-            // Afficher la div correspondante
+            // Afficher la div correspondante et faire défiler vers elle
             if (targetDiv) {
                 targetDiv.style.display = 'block';
+                targetDiv.scrollIntoView({ behavior: 'smooth' });
             }
         });
     });
 }
-
 

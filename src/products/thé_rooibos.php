@@ -49,4 +49,6 @@ else{
     <img src="../images/feuilles/feuilles_rooibos.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">
     <p class="h-7 text-center mb-4">Notes de baies de goji et de citronelle</p>
   </div>
-</div></div>
+</div>
+<?php include 'elements/fleche_remonter.html'?>
+</div>
