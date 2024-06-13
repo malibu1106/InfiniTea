@@ -360,6 +360,15 @@ article {
   margin-top: 10%;
 }
 
+.coffret article {
+  width: 50%;
+  margin: auto;
+  height: 80%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
 /* FOOTER */
 footer {
   background-image: url("../images/illustrations/Footer.png");
