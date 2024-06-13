@@ -1,5 +1,6 @@
-BACK OFFICE FULL<br>
-<a href="index.php?page=user_control">Contrôle des utilisateurs</a><br>
-<a href="index.php?page=add_product">Ajouter un produit</a><br>
-<a href="index.php?page=product_list">Gérer les produits</a><br>
+
+<a href="index.php?page=add_product"><li>Ajouter un produit</li></a>
+<a href="index.php?page=product_list"><li>Gérer les produits</li></a>
+<a href="index.php?page=user_control"><li>Contrôle des utilisateurs</li></a>
+
 

@@ -11,5 +11,16 @@
         
         <a href="../index.php#produits#main"><li>Nos Produits</li></a>
         <a href="../index.php?page=contact#main"><li>Contact</li></a>
+        <?php
+         if(!empty($_SESSION['admin'])){
+            if($_SESSION['admin'] === "self"){
+                include 'pages/back_office.php';
+                
+            }
+            elseif($_SESSION['admin'] === "full"){
+                include 'pages/back_office_full.php';
+                
+            }
+        }?>
     </ul>
 </nav>

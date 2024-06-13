@@ -93,7 +93,7 @@ function nextProduct() {
     highlightsProducts[index].classList.remove("opacityDown");
     highlightsProducts[index].classList.add("opacityUp");
     clearInterval(autoProductInterval);
-    autoProductInterval = setInterval(nextProduct, 2000);
+    autoProductInterval = setInterval(nextProduct, 3000);
 }
 
 function prevProduct() {
@@ -105,11 +105,11 @@ function prevProduct() {
     highlightsProducts[index].classList.remove("opacityDown");
     highlightsProducts[index].classList.add("opacityUp");
     clearInterval(autoProductInterval);
-    autoProductInterval = setInterval(nextProduct, 2000);
+    autoProductInterval = setInterval(nextProduct, 3000);
 }
 /*AUTO SLIDE*/
 function autoNextProduct() {
-    autoProductInterval = setInterval(nextProduct, 2000);
+    autoProductInterval = setInterval(nextProduct, 3000);
 }
 if (highlightsProducts) {
     autoNextProduct();

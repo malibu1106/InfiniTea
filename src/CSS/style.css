@@ -213,6 +213,7 @@ article {
 /* MAIN */
 #main {
   scroll-margin-top: 40px;
+  margin-top: 70px;
   /* TEMP*/
 }
 
@@ -225,7 +226,7 @@ article {
   width: 100%;
   overflow-x: hidden;
   position: relative;
-  height: 60vh;
+  height: 500px;
 }
 
 #left_arrow,
@@ -242,7 +243,7 @@ article {
 }
 
 .highlights_products img {
-  object-fit: cover;
+  height: 400px;
   left: 0;
   right: 0;
   top: 0;
@@ -253,13 +254,23 @@ article {
 
 .highlights_details {
   width: 90vw;
-  height: 15vh;
   left: 0;
   right: 0;
-  top: 45vh;
+  top: 400px;
   position: absolute;
   margin: auto;
+  height: 100px;
   text-align: center;
+}
+
+.opacityUp {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.opacityDown {
+  opacity: 0;
+  transition: opacity 1s;
 }
 
 /*SELECTION*/
@@ -312,15 +323,15 @@ article {
   background-image: url("../images/selection/theiere_infusion.png");
 }
 
-.opacityUp {
-  opacity: 1;
-  transition: opacity 1s;
+#noir2,
+#infusions2,
+#blanc2,
+#vert2,
+#oolong2,
+#rooibos2 {
+  display: none;
 }
 
-.opacityDown {
-  opacity: 0;
-  transition: opacity 1s;
-}
 
 /* FOOTER */
 footer {
@@ -399,6 +410,7 @@ footer h3 {
 }
 
 /* BACK OFFICE*/
+
 
 .miniatures_back {
   height: 80px;

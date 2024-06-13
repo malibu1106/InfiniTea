@@ -25,31 +25,16 @@
     <div id="main">
     <?php
     if(isset($_GET['page']) && ($_GET['page'] === "edit_product") && !empty($_SESSION['admin'])){
-        if($_SESSION['admin'] === "self"){
-            include 'pages/back_office.php';
-        }
-        elseif($_SESSION['admin'] === "full"){
-            include 'pages/back_office_full.php';
-        }
+
         include 'pages/edit_product.php';
     }
     elseif(isset($_GET['page']) && ($_GET['page'] === "add_product") && !empty($_SESSION['admin'])){
-        if($_SESSION['admin'] === "self"){
-            include 'pages/back_office.php';
-        }
-        elseif($_SESSION['admin'] === "full"){
-            include 'pages/back_office_full.php';
-        }
+
         include 'pages/add_product.php';
     }
 
     elseif(isset($_GET['page']) && ($_GET['page'] === "product_list") && !empty($_SESSION['admin'])){
-        if($_SESSION['admin'] === "self"){
-            include 'pages/back_office.php';
-        }
-        elseif($_SESSION['admin'] === "full"){
-            include 'pages/back_office_full.php';
-        }
+
         include 'pages/product_list.php';
     }
     elseif(isset($_GET['page']) && $_GET['page'] === "connexion" ){
@@ -62,19 +47,9 @@
         include 'pages/logout.php';
     }
     elseif(isset($_SESSION['admin']) && ($_SESSION['admin'] === "full") && isset($_GET['page']) && $_GET['page'] === "user_control" ){
-        include 'pages/back_office_full.php';
         include 'pages/user_control.php'; 
     }
-    elseif(!empty($_SESSION['admin'])){
-        if($_SESSION['admin'] === "self"){
-            include 'pages/back_office.php';
-            // include 'pages/accueil.php';
-        }
-        elseif($_SESSION['admin'] === "full"){
-            include 'pages/back_office_full.php';
-            include 'pages/accueil.php';
-        }
-    }
+
     
     else{
         include 'pages/accueil.php';
@@ -90,44 +65,7 @@
 
 </div>
 
-<?php
-        
-        include 'elements/selection.php';
-        ?>
 
-<?php
-        
-        include 'products/thé_noir.php';
-        ?>
-
-<?php
-        
-        include 'products/the_blanc.php';
-        ?>
-
-<?php
-        
-        include 'products/thé_vert.php';
-        ?>
-
-<?php
-        
-        include 'products/thé_oolong.php';
-        ?>
-
-<?php
-        
-        include 'products/thé_rooibos.php';
-        ?>
-
-<?php
-        
-        include 'products/thé_infusions.php';
-        ?>
-<?php
-        
-        include 'elements/newsletter.php';
-        ?>
 
 
 
