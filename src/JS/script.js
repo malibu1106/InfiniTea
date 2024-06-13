@@ -111,7 +111,7 @@ function prevProduct() {
 function autoNextProduct() {
     autoProductInterval = setInterval(nextProduct, 3000);
 }
-if (highlightsProducts) {
+if (highlightsProducts.length > 0) {
     autoNextProduct();
 }
 
@@ -137,9 +137,45 @@ if (categoriesButtons) {
             // Afficher la div correspondante et faire défiler vers elle
             if (targetDiv) {
                 targetDiv.style.display = 'block';
-                targetDiv.scrollIntoView({ behavior: 'smooth' });
+                if (windowWidth <= 768) {
+                    targetDiv.scrollIntoView({ behavior: 'smooth' });
+                }
             }
         });
     });
 }
 
+
+/* SIGNUP CHECKS */
+let form = document.getElementById('signupForm');
+let requiredFieldsInForm = form.querySelectorAll('[required]');
+let submitButton = document.getElementById('signupButton');
+submitButton.style.visibility = "hidden";
+
+
+// Ajoute un écouteur d'événement "keyup" à chaque champ requis
+requiredFieldsInForm.forEach((field) => {
+    field.addEventListener("keyup", checkFields);
+});
+
+function checkFields() {
+    let notValid = 0; // Réinitialise la variable notValid pour chaque vérification
+
+    // Vérifie la longueur de la valeur de chaque champ requis
+    for (let i = 0; i < requiredFieldsInForm.length; i++) {
+        if (requiredFieldsInForm[i].value.length < 2) {
+            notValid++;
+        }
+    }
+
+    if (document.getElementById('password').value !== document.getElementById('passwordRetyped').value) {
+        notValid++;
+    }
+
+    // Affiche ou masque le bouton de soumission en fonction de la validité des champs
+    if (notValid === 0) {
+        submitButton.style.visibility = "visible";
+    } else {
+        submitButton.style.visibility = "hidden";
+    }
+}
