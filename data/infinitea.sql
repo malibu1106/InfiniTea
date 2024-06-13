@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : jeu. 13 juin 2024 à 06:47
+-- Généré le : jeu. 13 juin 2024 à 13:32
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -56,6 +56,7 @@ CREATE TABLE `products` (
   `id` int NOT NULL,
   `name` varchar(255) NOT NULL,
   `category` varchar(255) NOT NULL,
+  `description_courte` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `composition` varchar(255) NOT NULL,
   `price_before_reduction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
@@ -72,10 +73,13 @@ CREATE TABLE `products` (
 -- Déchargement des données de la table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `category`, `description`, `composition`, `price_before_reduction`, `price`, `weight`, `image_filename`, `temperature`, `temps`, `added_by`, `highlight`) VALUES
-(2, 'Test changement nom', 'thé blanc', 'gre', 'gre', 'gre', 'gre', 'gre', '../images/produits/infusions.png', 'gre', 'gre', 5, 0),
-(3, 'Thé n°2', 'thé blanc', 'gre', 'gre', 'gre', 'gre', 'gre', '../images/produits/noir.png', 'gre', 'gre', 6, 1),
-(4, 'Thé n°3', 'thé blanc', 'the blanc test edit', 'the blanc test compo', '73€', '65€', '320g', '../images/produits/vert.png', '90°', '3m', 6, 1);
+INSERT INTO `products` (`id`, `name`, `category`, `description_courte`, `description`, `composition`, `price_before_reduction`, `price`, `weight`, `image_filename`, `temperature`, `temps`, `added_by`, `highlight`) VALUES
+(2, 'Éclipse', 'thé noir', 'Notes de cacao et de vanille', '', '+ tard', '+ tard', '+ tard', '255g', '../images/produits/infusions.png', '90°', '2m', 5, 0),
+(3, 'Voie Lactée', 'thé blanc', 'Touches de noix de coco et d\'amande', '+tard', '+tard', '+tard', '+tard', '+tard', '../images/produits/noir.png', '+tard', '+tard', 6, 1),
+(4, 'Thé n°3', 'thé vert', '', 'the blanc test edit', 'the blanc test compo', '73€', '65€', '320g', '../images/produits/vert.png', '90°', '3m', 6, 1),
+(5, 'Éclipse', 'thé oolong', 'Notes de cacao et de vanille', '', '+ tard', '+ tard', '+ tard', '255g', '../images/produits/infusions.png', '90°', '2m', 5, 0),
+(6, 'Voie Lactée', 'thé rooibos', 'Touches de noix de coco et d\'amande', '+tard', '+tard', '+tard', '+tard', '+tard', '../images/produits/noir.png', '+tard', '+tard', 6, 1),
+(7, 'Thé n°3', 'infusions', '', 'the blanc test edit', 'the blanc test compo', '73€', '65€', '320g', '../images/produits/vert.png', '90°', '3m', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -101,8 +105,10 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `date_of_birth`, `date_of_registration`, `email`, `password`, `rights`) VALUES
 (4, 'super', 'user', '', NULL, NULL, 'superuser@infinitea.com', '$2y$10$k2QgjJHq5lkBc74k8esgUuprTQVz11F9vwIWmqqcCytc0Gi09zQ96', 'full'),
-(5, 'Mathilde', 'Jourden', '', NULL, NULL, 'mathilde@infinitea.com', '$2y$10$ft6XjbvMZfi2c2LDbzOPD.Lgqs7stmm5j.u5LqWYFPriQYk3OFIq2', 'full'),
-(6, 'Roberto', 'De Sousa', '', NULL, NULL, 'roberto@infinitea.com', '$2y$10$riE4fdj3x0RNji6WfvLTNe/dD3/QF9OllkGCACcdjHbdtmMeTYsyu', 'full');
+(5, 'Mathilde', 'Jourden', '', NULL, NULL, 'mathilde@infinitea.com', '$2y$10$ft6XjbvMZfi2c2LDbzOPD.Lgqs7stmm5j.u5LqWYFPriQYk3OFIq2', 'self'),
+(6, 'Roberto', 'De Sousa', '', NULL, NULL, 'roberto@infinitea.com', '$2y$10$riE4fdj3x0RNji6WfvLTNe/dD3/QF9OllkGCACcdjHbdtmMeTYsyu', 'self'),
+(9, 'jean', 'jeanaa', '', '1987-12-06', '2024-06-13', 'jean@jean.com', '$2y$10$9ir/aRNsZN1TBU05RXEJyeML5tVM/3xdpfjSzr98RQ07ZjYRaDHFu', 'self'),
+(10, 'azz', 'azz', '', '2024-06-13', '2024-06-13', 'fezfezfez@lo.mo', '$2y$10$Q6b7/JV76cHmtlmRow4coOtFQL6I.llaX96JNPk.K/I7/uIYNraFK', NULL);
 
 --
 -- Index pour les tables déchargées
@@ -140,13 +146,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

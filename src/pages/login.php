@@ -39,17 +39,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['email']) && !empty($_
     // SI LE MOT DE PASSE EST INCORRECT
         else {
             $_SESSION["message"] = "<div id='alert_message'>Mot de passe incorrect !</div>";
-            header('Location: ../index.php?page=login');} // REDIRECTION, CHECK URL PLUS TARD
+            header('Location: ../index.php?page=connexion#main');} // REDIRECTION, CHECK URL PLUS TARD
     }
     // USER EST VIDE > AUCUN COMPTE AVEC CETTE ADRESSE EMAIL
     else {
         $_SESSION["message"] = "<div id='alert_message'>Adresse email inconnue !</div>";
-        header('Location: ../index.php?page=login');} // REDIRECTION, CHECK URL PLUS TARD
+        header('Location: ../index.php?page=connexion#main');} // REDIRECTION, CHECK URL PLUS TARD
 
 }
 // SI METHOD != POST OU UN CHAMP EST VIDE
 else{
     $_SESSION["message"] = "<div id='alert_message'>Erreur de traitement !</div>";
-    header('Location: ../index.php?page=login'); // REDIRECTION, CHECK URL PLUS TARD
+    header('Location: ../index.php?page=connexion#main'); // REDIRECTION, CHECK URL PLUS TARD
 }
 ?>

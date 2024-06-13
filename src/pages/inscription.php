@@ -41,3 +41,5 @@
 
  <button id="signupButton" type="submit" class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-purple-900 dark:hover:bg-pink-500 my-2">Inscription</button>
 </form>
+
+<script type="text/javascript" src="JS/signup.js" defer></script>
