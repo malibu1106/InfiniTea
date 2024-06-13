@@ -68,10 +68,11 @@ html {
 /****************/
 /* POLICES */
 h1 {
-  color: var(--txtcolor2);
+  color: var(--txtcolor1);
   font-family: var(--Ftitle);
   font-size: var(--fsize1);
   text-align: center;
+  margin-top: 20%;
 }
 
 h2 {
@@ -128,9 +129,6 @@ nav {
 }
 
 /* HEADER */
-header h1 {
-  color: var(--txtcolor1);
-}
 
 header h3 {
   color: var(--txtcolor1);
@@ -157,7 +155,8 @@ header h3 {
 }
 
 .glowing {
-  background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  background: 50% 100% / 50% 50% no-repeat
+    radial-gradient(ellipse at bottom, #fff, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -233,7 +232,10 @@ header {
 
 article {
   width: 100%;
-  margin: auto;
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
 }
 
 /* MAIN */
@@ -364,6 +366,21 @@ article {
   margin: auto;
 }
 
+/*COFFRETS*/
+.coffret {
+  background-image: url("../images/illustrations/Coffrets.png");
+  background-size: cover;
+  height: 50vh;
+  background-position: center;
+  image-rendering: high-quality;
+  /* background-attachment: fixed; */
+}
+
+.coffret h2 {
+  font-family: var(--Ftitle);
+  text-transform: none;
+  margin-top: 10%;
+}
 
 /* FOOTER */
 footer {
@@ -443,7 +460,6 @@ footer h3 {
 
 /* BACK OFFICE*/
 
-
 .miniatures_back {
   height: 80px;
 }
@@ -455,7 +471,6 @@ footer h3 {
 /*MEDIAQUERIES*/
 /* AU DESSUS DE 768*/
 @media only screen and (min-width: 768px) {
-
   /*BURGER*/
   #burgerButton {
     display: none;

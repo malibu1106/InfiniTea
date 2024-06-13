@@ -5,9 +5,9 @@ require_once("elements/open_bdd.php");
 
         include 'products/highlights.php';
 
+        include 'pages/coffret.php';
         
         include 'elements/selection.php';
-
         
         include 'products/thé_noir.php';
 
