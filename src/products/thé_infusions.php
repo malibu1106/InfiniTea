@@ -9,46 +9,17 @@ $query = $db->prepare($sql);
 $query->execute();
 $infusions = $query->fetchAll(PDO::FETCH_ASSOC);
 
-// THE NOIR
-if($infusions){
-    echo "Affichage infusions";
-    foreach ($infusions as $infusion){
-        // echo '<pre>';
-        // print_r($infusion);
-        // echo '</pre>';
-    }
-}
-else{
-    // echo "Aucune infusion";
-}
 ?>
 
 <div id="infusions2" class="categoryDiv"><div class="flex flex-wrap gap-8 justify-center items-center">
-<div class="w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
-      <h3>Encelade</h3>
-      <img src="../images/feuilles/feuilles_infusions.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">
-      <p class="h-7 text-center mb-4">Notes de camomille et de menthe</p>
-  </div>
-  <div class="w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
-  <h3>Ganymède</h3>
-  <img src="../images/feuilles/feuilles_infusions.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">
-  <p class="h-7 text-center mb-4">Touches de sauge et de romarin</p>
-  </div>
-  <div class="w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
-    <h3>Dione</h3>
-    <img src="../images/feuilles/feuilles_infusions.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">
-    <p class="h-7 text-center mb-4">Arômes d'échinacée et de réglisse</p>
-  </div>
-  <div class="w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
-    <h3>Mercure</h3>
-    <img src="../images/feuilles/feuilles_infusions.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">
-    <p class="h-7 text-center mb-4">Touches de menthe et de fenouil</p>
-  </div>
-  <div class="w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
-    <h3>Sedna</h3>
-    <img src="../images/feuilles/feuilles_infusions.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">
-    <p class="h-7 text-center mb-4">Notes de mélisse et d'orties</p>
-  </div>
+<?php
+    foreach ($infusions as $infusion){
+      echo '<div class="w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">';
+      echo '<h3>'.$infusion['name'].'</h3>';
+      echo '<img src="../images/feuilles/feuilles_infusions.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">';
+      echo '<p class="h-7 text-center mb-4">'.$infusion['description_courte'].'</p>';
+      echo '</div>';
+    }?>
 </div>
 <?php include 'elements/fleche_remonter.html'?>
 </div>
