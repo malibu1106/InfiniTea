@@ -27,7 +27,9 @@ echo '<option value="' . $categorie['name'] . '" required>' . $categorie['name']
 ?>
     
   </select>
- 
+  <label for="description_courte" class="block mb-2 text-sm font-medium text-gray-900 ">Description sur l'index</label>
+  <input type="text" id="description_courte" name="description_courte" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300  " placeholder="Leave a comment..."></textarea>
+
   <label for="description" class="block mb-2 text-sm font-medium text-gray-900 ">Description</label>
   <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300  " placeholder="Leave a comment..."></textarea>
 
