@@ -37,7 +37,6 @@ html {
 
 /* DEBUG */
 
-
 #debug {
   width: 400px;
   height: 200px;
@@ -60,7 +59,7 @@ html {
   --fsize2: 6.25em;
   --fsize3: 3.5em;
   --fsize4: 1em;
-  --accentcolor1: green;
+  --accentcolor1: #93455f;
 }
 
 /* FIRST MOBILE */
@@ -114,7 +113,7 @@ nav {
   list-style-type: none;
   display: none;
   flex-direction: column;
-  background: rgba(0, 0, 0, 0.8);
+  background: var(--accentcolor1);
   margin: 0;
   padding: 0;
   /*TEMP POUR TEST JS*/
