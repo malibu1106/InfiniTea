@@ -23,7 +23,7 @@ else{
 }
 ?>
 
-<div id="infusions2"><div class="flex flex-wrap gap-8 justify-center items-center">
+<div id="infusions2" class="categoryDiv"><div class="flex flex-wrap gap-8 justify-center items-center">
 <div class="w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
       <h3>Encelade</h3>
       <img src="../images/feuilles/feuilles_infusions.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">

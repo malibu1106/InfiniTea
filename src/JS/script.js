@@ -114,3 +114,32 @@ function autoNextProduct() {
 if (highlightsProducts) {
     autoNextProduct();
 }
+
+/* DISPLAY CATEGORIES */
+let categoriesButtons = document.querySelectorAll('.categoryButton');
+if (categoriesButtons) {
+    // Parcourir tous les boutons
+    categoriesButtons.forEach((categoriesButton, index) => {
+        // Ajouter un écouteur d'événement pour le clic sur chaque bouton
+        categoriesButton.addEventListener('click', () => {
+            console.log('click');
+
+            // Récupérer l'ID du bouton cliqué
+            let buttonId = categoriesButton.id;
+            // Construire l'ID de la div correspondante
+            let divId = buttonId + '2';
+            // Sélectionner la div correspondante
+            let targetDiv = document.getElementById(divId);
+            // Masquer toutes les divs de catégories
+            document.querySelectorAll('.categoryDiv').forEach(div => {
+                div.style.display = 'none';
+            });
+            // Afficher la div correspondante
+            if (targetDiv) {
+                targetDiv.style.display = 'block';
+            }
+        });
+    });
+}
+
+
