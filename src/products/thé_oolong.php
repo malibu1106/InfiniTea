@@ -24,27 +24,27 @@ else{
 ?>
 
 <div id="oolong2"><div class="flex flex-wrap gap-8 justify-center items-center">
-<div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
+<div class="w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
     <h3>Neptune</h3>
     <img src="../images/feuilles/feuilles_oolong.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">
     <p class="h-7 text-center mb-4">Notes de jasmin et d'orchidée</p>
   </div>
-  <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
+  <div class="w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
     <h3>Pandore</h3>
     <img src="../images/feuilles/feuilles_oolong.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2"> 
     <p class="h-7 text-center mb-4">Touches de noisette et de caramel</p>
   </div>
-  <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
+  <div class="w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
     <h3>Proxima centuri</h3>
     <img src="../images/feuilles/feuilles_oolong.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">
     <p class="h-7 text-center mb-4">Arômes de pêche et d'abricot</p>
   </div>
-  <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">       
+  <div class="w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">    
     <h3>Eris</h3>
     <img src="../images/feuilles/feuilles_oolong.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">
     <p class="h-7 text-center mb-4">Touches de poire et de fleur d'oranger</p>
   </div>
-  <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
+  <div class="w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">
     <h3>Cérès</h3>
     <img src="../images/feuilles/feuilles_oolong.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">
     <p class="h-7 text-center mb-4">Notes de citronelle et de gingembre</p>
