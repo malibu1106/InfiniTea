@@ -5,7 +5,7 @@ $_SESSION['user_id'] = 1; // TEMPORAIRE PAR LA SUITE ON AURA DEJA DECLARÉ CETTE
 
 //ON VERIFIE POST + QUE LES CHAMPS NE SONT PAS VIDES ET ON RECUPERE LES VALEURS DU FORMULAIRE
 if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
-&& !empty($_POST['category']) && !empty($_POST['description'])
+&& !empty($_POST['category']) && !empty($_POST['description']) && !empty($_POST['description_courte'])
 && !empty($_POST['composition']) && !empty($_POST['price'])
 && !empty($_POST['weight']) && !empty($_FILES['image_filename'])
 ){
@@ -13,6 +13,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
     $name = strip_tags($_POST['name']);
     $category = strip_tags($_POST['category']);
     $description = strip_tags($_POST['description']);
+    $description_courte = strip_tags($_POST['description_courte']);
     $composition = strip_tags($_POST['composition']);
     $price = strip_tags($_POST['price']);
     $weight = strip_tags($_POST['weight']);
@@ -60,14 +61,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
      require_once("../elements/open_bdd.php");
 
      // REQUETE
-     $sql = "INSERT INTO products (name, category, description, composition, weight, image_filename, price, price_before_reduction, temperature, temps, highlight, added_by)
-    VALUES (:name, :category, :description, :composition, :weight, :image_filename, :price, :price_before_reduction, :temperature, :temps, :highlight, :added_by)";
+     $sql = "INSERT INTO products (name, category, description, description_courte, composition, weight, image_filename, price, price_before_reduction, temperature, temps, highlight, added_by)
+    VALUES (:name, :category, :description, :description_courte, :composition, :weight, :image_filename, :price, :price_before_reduction, :temperature, :temps, :highlight, :added_by)";
  
      // PREPARATION DE LA REQUETE
      $query = $db->prepare($sql);    
          $query->bindValue(':name', $name);
          $query->bindValue(':category', $category);
          $query->bindValue(':description', $description);
+         $query->bindValue(':description_courte', $description_courte);
          $query->bindValue(':composition', $composition);
          $query->bindValue(':price', $price);
          $query->bindValue(':weight', $weight);
