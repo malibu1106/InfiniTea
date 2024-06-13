@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php session_start(); 
+if (isset($_SESSION['message'])){
+    echo $_SESSION['message'];
+    $_SESSION['message'] ="<div id='alert_message'></div>";        
+}
+else{
+    $_SESSION['message'] ="<div id='alert_message'></div>";
+}?>
 <!DOCTYPE html>
 <html lang="fr">
 
