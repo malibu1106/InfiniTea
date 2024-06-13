@@ -7,6 +7,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* DEBUG */
 /* DEBUG */
 /* DEBUG */
@@ -91,7 +95,7 @@ nav {
   margin: 0;
   padding: 0;
   /*TEMP POUR TEST JS*/
-  height: 160px;
+  height: auto;
 }
 
 #burger li {
@@ -330,6 +334,12 @@ article {
 #oolong2,
 #rooibos2 {
   display: none;
+}
+
+.fleche_remonter {
+  display: block;
+  width: 48px;
+  margin: auto;
 }
 
 
