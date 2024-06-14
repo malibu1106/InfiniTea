@@ -52,7 +52,7 @@ echo '<option value="' . $categorie['name'] . '" required>' . $categorie['name']
       <label for="weight" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-pink-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Poids</label>
     </div>
 
-    <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image_filename">Ajoutez une image</label>
+    <label class="block mb-2 text-sm font-medium text-gray-900" for="image_filename">Ajoutez une image</label>
   <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50  aria-describedby="image_filename" name="image_filename" id="image_filename" type="file">
  
       <div class="grid md:grid-cols-2 md:gap-6">

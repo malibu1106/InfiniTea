@@ -6,7 +6,7 @@ if(isset($_SESSION['admin']) && ($_SESSION['admin'] === "full")){
     $id = strip_tags($_GET['id']);
 
     // REQUETE AVEC CE QU'IL NOUS FAUT A STOCKER EN $_SESSION SI BESOIN 
-    $sql = "DELETE FROM users WHERE id=:id";
+    $sql = "DELETE FROM categories WHERE id=:id";
 
     // PREPARATION DE LA REQUETE
     $query = $db->prepare($sql);    
@@ -15,8 +15,9 @@ if(isset($_SESSION['admin']) && ($_SESSION['admin'] === "full")){
     // EXECUTION + CLOSE BDD
     $query->execute();
         require_once("../elements/close_bdd.php");
-        $_SESSION["message"] = "<div id='alert_message'>Utilisateur supprimé !</div>";
-        header('Location: ../index.php?page=user_control');
+        $_SESSION["message"] = "<div id='alert_message'>Catégorie supprimée !</div>";
+        header('Location: ../index.php?page=categories_control');
+
 }
 else
 header('Location: ../index.php');

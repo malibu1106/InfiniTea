@@ -1,7 +1,6 @@
 <?php
 // ON DEMARRE DIRECTEMENT UNE SESSION POUR GERER LES MESSAGES A AFFICHER EN CAS DE PROBLEME
 session_start();
-$_SESSION['user_id'] = 1; // TEMPORAIRE PAR LA SUITE ON AURA DEJA DECLARÉ CETTE VARIABLE DES QU'UN UTILISATEUR SERA CONNECTÉ
 
 //ON VERIFIE POST + QUE LES CHAMPS NE SONT PAS VIDES ET ON RECUPERE LES VALEURS DU FORMULAIRE
 if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
@@ -85,13 +84,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
 
      $_SESSION["message"] = "<div id='alert_message'>Produit ajouté !</div>";
     require_once("../elements/close_bdd.php");
-    // header('Location: ../index.php?page=back_office');
+    header('Location: ../index.php?page=product_list#main');
     }
 
 
 else{
     $_SESSION["message"] = "<div id='alert_message'>Erreur de traitement !</div>";
-    // header('Location: ../index.php?page=back_office'); // REDIRECTION, CHECK URL PLUS TARD
+    header('Location: ../index.php?page=control_panel');
 }
 
 

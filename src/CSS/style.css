@@ -23,6 +23,7 @@ html {
   top: 40px;
   animation: message 4s forwards;
   z-index: 500;
+  pointer-events: none;
 }
 
 @keyframes message {
@@ -43,7 +44,7 @@ html {
   position: absolute;
   background: red;
   right: 0;
-  top: 0;
+  top: 50;
   z-index: 500;
   display: none;
 }
@@ -546,6 +547,24 @@ footer h3 {
 
 .deleteConfirmationButton {
   display: none;
+}
+
+ul.back_office_menu {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin: auto;
+}
+
+.back_office_menu li {
+  text-align: center;
+  font-size: 1.8em;
+}
+
+#liste_categories {
+  width: 500px;
+  margin: auto;
 }
 
 /*MEDIAQUERIES*/

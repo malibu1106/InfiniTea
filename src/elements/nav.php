@@ -15,14 +15,12 @@
         }
          if(!empty($_SESSION['admin'])){
             
-            echo '<a href="index.php?page=add_product#main"><li>Ajouter</li></a>';
-            echo '<a href="index.php?page=product_list#main"><li>Produits</li></a>';
-                if($_SESSION['admin'] === "full"){
-                    echo '<a href="index.php?page=user_control"><li>Utilisateurs</li></a>';
+
+                    echo '<a href="index.php?page=control_panel"><li>Gestion</li></a>';
                     
                 }
                 
-            }
+
             
         ?>
     </ul>

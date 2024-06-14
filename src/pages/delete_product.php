@@ -15,6 +15,7 @@ if(isset($_SESSION['admin'])){
     // EXECUTION + CLOSE BDD
     $query->execute();
         require_once("../elements/close_bdd.php");
+        $_SESSION["message"] = "<div id='alert_message'>Produit supprimé !</div>";
         header('Location: ../index.php?page=product_list');
 }
 else
