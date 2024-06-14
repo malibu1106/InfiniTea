@@ -503,6 +503,25 @@ footer h3 {
 /*MEDIAQUERIES*/
 /* AU DESSUS DE 768*/
 @media only screen and (min-width: 768px) {
+  /* VOYAGES */
+  .conteneur-voyages {
+    width: 95%;
+    max-width: 1200px;
+    padding: 50px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .type-voyage {
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  .prix-reservation-voyage {
+    right: 8%;
+  }
+
   /*BURGER*/
   #burgerButton {
     display: none;
@@ -534,3 +553,5 @@ footer h3 {
     display: none;
   }
 }
+
+/* Page de produit individuel*/
