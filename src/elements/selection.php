@@ -15,7 +15,7 @@
   </div>
   <div class="flex flex-col items-center categoryButton" id="oolong">
     <div class="bg-oolong bg-cover bg-center w-12 h-12 mb-2"></div>
-    <span>thé Oolong</span>
+    <span class="mb-2">thé Oolong</span>
   </div>
   <div class="flex flex-col items-center categoryButton" id="rooibos">
     <div class="bg-rooibos bg-cover bg-center w-12 h-12 mb-2"></div>

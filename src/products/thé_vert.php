@@ -14,7 +14,7 @@ $thes_vert = $query->fetchAll(PDO::FETCH_ASSOC);
 <div id="vert2" class="categoryDiv"><div class="flex flex-wrap gap-8 justify-center items-center">
 <?php
     foreach ($thes_vert as $the_vert){
-      echo '<div class="w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">';
+      echo '<div class="hiddenProduct w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">';
       echo '<h3>'.$the_vert['name'].'</h3>';
       echo '<img src="../images/feuilles/feuilles_vert.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">';
       echo '<p class="h-7 text-center mb-4">'.$the_vert['description_courte'].'</p>';

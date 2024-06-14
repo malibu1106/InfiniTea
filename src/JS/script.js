@@ -132,12 +132,21 @@ if (categoriesButtons) {
             let targetDiv = document.getElementById(divId);
             // Masquer toutes les divs de catégories
             document.querySelectorAll('.categoryDiv').forEach(div => {
+                div.querySelectorAll('.displayedProduct').forEach(product => {
+                    product.classList.remove('displayedProduct');
+                    product.classList.add('hiddenProduct'); // Réinitialiser l'état des produits
+                });
                 div.style.display = 'none';
             });
             // Afficher la div correspondante et faire défiler vers elle
             if (targetDiv) {
                 targetDiv.style.display = 'block';
-                if (windowWidth <= 768) {
+                // Utiliser un léger délai pour permettre au navigateur de reconnaître les changements
+                setTimeout(() => {
+                    displayProducts(targetDiv);
+                }, 50);
+
+                if (window.innerWidth <= 768) {
                     targetDiv.scrollIntoView({ behavior: 'smooth' });
                 }
             }
@@ -145,6 +154,24 @@ if (categoriesButtons) {
     });
 }
 
+/* DISPLAY PRODUCT */
 
-/* SIGNUP CHECKS */
+function displayProducts(targetDiv) {
+    console.log('display product');
+    let gap = 0.2;
+    let base = 0.2;
 
+    let productsToBeDisplayed = targetDiv.querySelectorAll('.hiddenProduct');
+    productsToBeDisplayed.forEach(product => {
+        let currentGap = gap; // Capture la valeur actuelle de gap
+
+        // Utiliser setTimeout pour permettre au navigateur de peindre la nouvelle position avant de déclencher la transition
+        setTimeout(() => {
+            product.style.transition = "transform " + (base + currentGap) + "s";
+            product.classList.remove('hiddenProduct');
+            product.classList.add('displayedProduct'); // Appliquer la transformation pour l'animation
+        }, 50); // Délai léger pour forcer le reflow
+
+        gap += 0.2;
+    });
+}
