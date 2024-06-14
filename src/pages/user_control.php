@@ -27,6 +27,9 @@ require_once ('elements/close_bdd.php');
                 <th scope="col" class="px-2 py-3">
                     Droits
                 </th>
+                <th scope="col" class="px-2 py-3">
+                    Actions
+                </th>
         
             </tr>
         </thead>

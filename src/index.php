@@ -39,6 +39,14 @@ else{
 
         include 'pages/add_product.php';
     }
+    elseif(isset($_GET['page']) && ($_GET['page'] === "categories_control") && !empty($_SESSION['admin'])){
+
+        include 'pages/categories_control.php';
+    }
+    elseif(isset($_GET['page']) && ($_GET['page'] === "control_panel") && !empty($_SESSION['admin'])){
+
+        include 'pages/control_panel.php';
+    }
 
     elseif(isset($_GET['page']) && ($_GET['page'] === "product_list") && !empty($_SESSION['admin'])){
 
