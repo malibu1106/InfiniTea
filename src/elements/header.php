@@ -8,13 +8,14 @@ echo '<header>';
     <a href="../index.php" class="text-8xl sm:text-8xl md:text-8xl lg:text-9xl xl:text-12xl">InfiniTea</a>
 </h1>
 </div>';
-echo '<div class="typewriter">';
+
 
  
-echo '<h3>';
- echo '<span>Votre</span><span> </span><span>thé,</span><span> </span><span>votre</span><span> </span><span>univers</span>';
-echo '</h3>';
-echo '</div></article>';
+echo '<div class="glowing"><h2>
+Votre thé, votre univers
+</h2>
+</div>';
+echo '</article>';
 
 echo '</header>';
 }
