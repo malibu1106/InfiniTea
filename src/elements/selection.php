@@ -1,6 +1,6 @@
 <h3>Nos thés et infusions</h3>
 <h4>Découvrez notre sélection</h4>
-<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 xl:grid-cols-6 gap-1 justify-center items-center my-5">
+<div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-6 gap-1 justify-center items-center my-5">
   <div class="flex flex-col items-center categoryButton" id="noir">
     <div class="bg-noir bg-cover bg-center w-12 h-12 mb-2"></div>
     <span class="mb-2">Thé noir</span>
