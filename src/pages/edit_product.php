@@ -1,6 +1,5 @@
 <h3>Editer un Produit</h3>
 <?php 
-$_SESSION['user_id'] = 2; // TEMP
 $id = $_GET['id'];
 require_once ('elements/open_bdd.php');
 $sql = "SELECT * FROM products WHERE id= :id";
