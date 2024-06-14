@@ -5,7 +5,7 @@ $id = $_SESSION['user_id'];
 
 // ON INITIALISE LES VARIABLES DES CHAMPS OPTIONNELS DU FORMULAIRE, ON LES PUSH DANS TOUS LES CAS DANS LA BDD POUR SIMPLIFIER LE TRAITEMENT
 $gender = "";
-$gender = "";
+$zipcode = "";
 $adresse = "";
 $ville = "";
 $date_of_birth = date('Y-m-d');
