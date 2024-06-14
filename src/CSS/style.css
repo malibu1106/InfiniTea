@@ -155,7 +155,8 @@ header h3 {
 }
 
 .glowing {
-  background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  background: 50% 100% / 50% 50% no-repeat
+    radial-gradient(ellipse at bottom, #fff, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -372,7 +373,6 @@ article {
   pointer-events: none;
   transition: transform 1s, opacity 1s, width 1s, height 1s;
   z-index: 100;
-
 }
 
 .categoryButton:hover::after {
@@ -380,7 +380,6 @@ article {
   width: 240px;
   height: 240px;
   transform: translate(-50%, -50%) rotate(0deg);
-
 }
 
 #noir2,
@@ -393,15 +392,12 @@ article {
   overflow-x: hidden;
 }
 
-
 .hiddenProduct {
   transform: translateX(5000px);
-
 }
 
 .displayedProduct {
   transform: translateX(0);
-
 }
 
 .fleche_remonter {
@@ -570,7 +566,6 @@ ul.back_office_menu {
 /*MEDIAQUERIES*/
 /* AU DESSUS DE 768*/
 @media only screen and (min-width: 768px) {
-
   /*BURGER*/
   #burgerButton {
     display: none;
