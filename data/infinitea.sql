@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : jeu. 13 juin 2024 à 13:32
+-- Généré le : ven. 14 juin 2024 à 13:50
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -91,6 +91,9 @@ CREATE TABLE `users` (
   `id` int NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
+  `adresse` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `zipcode` int DEFAULT NULL,
+  `ville` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `gender` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `date_of_birth` date DEFAULT NULL,
   `date_of_registration` date DEFAULT NULL,
@@ -103,12 +106,12 @@ CREATE TABLE `users` (
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `gender`, `date_of_birth`, `date_of_registration`, `email`, `password`, `rights`) VALUES
-(4, 'super', 'user', '', NULL, NULL, 'superuser@infinitea.com', '$2y$10$k2QgjJHq5lkBc74k8esgUuprTQVz11F9vwIWmqqcCytc0Gi09zQ96', 'full'),
-(5, 'Mathilde', 'Jourden', '', NULL, NULL, 'mathilde@infinitea.com', '$2y$10$ft6XjbvMZfi2c2LDbzOPD.Lgqs7stmm5j.u5LqWYFPriQYk3OFIq2', 'self'),
-(6, 'Roberto', 'De Sousa', '', NULL, NULL, 'roberto@infinitea.com', '$2y$10$riE4fdj3x0RNji6WfvLTNe/dD3/QF9OllkGCACcdjHbdtmMeTYsyu', 'self'),
-(9, 'jean', 'jeanaa', '', '1987-12-06', '2024-06-13', 'jean@jean.com', '$2y$10$9ir/aRNsZN1TBU05RXEJyeML5tVM/3xdpfjSzr98RQ07ZjYRaDHFu', 'self'),
-(10, 'azz', 'azz', '', '2024-06-13', '2024-06-13', 'fezfezfez@lo.mo', '$2y$10$Q6b7/JV76cHmtlmRow4coOtFQL6I.llaX96JNPk.K/I7/uIYNraFK', NULL);
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `adresse`, `zipcode`, `ville`, `gender`, `date_of_birth`, `date_of_registration`, `email`, `password`, `rights`) VALUES
+(4, 'super', 'user', '', 0, '', '', NULL, NULL, 'superuser@infinitea.com', '$2y$10$k2QgjJHq5lkBc74k8esgUuprTQVz11F9vwIWmqqcCytc0Gi09zQ96', 'full'),
+(5, 'Mathilde', 'Jourden', '', 0, '', '', NULL, NULL, 'mathilde@infinitea.com', '$2y$10$ft6XjbvMZfi2c2LDbzOPD.Lgqs7stmm5j.u5LqWYFPriQYk3OFIq2', 'self'),
+(6, 'Roberto', 'De Sousa', '', 0, '', '', NULL, NULL, 'roberto@infinitea.com', '$2y$10$riE4fdj3x0RNji6WfvLTNe/dD3/QF9OllkGCACcdjHbdtmMeTYsyu', 'self'),
+(9, 'jean', 'jeanaa', '10 rue des cacahuetes hehehe', 52145, 'Bite poil couille', 'Non Binaire', '1987-12-06', '2024-06-13', 'jean@jean.com', '$2y$10$9ir/aRNsZN1TBU05RXEJyeML5tVM/3xdpfjSzr98RQ07ZjYRaDHFu', 'self'),
+(10, 'azz', 'azz', '', 0, '', '', '2024-06-13', '2024-06-13', 'fezfezfez@lo.mo', '$2y$10$Q6b7/JV76cHmtlmRow4coOtFQL6I.llaX96JNPk.K/I7/uIYNraFK', NULL);
 
 --
 -- Index pour les tables déchargées
