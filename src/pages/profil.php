@@ -1,3 +1,20 @@
+<?php 
+require_once ('elements/open_bdd.php');
+$id = $_SESSION['user_id'];
+$sql = "SELECT * FROM users WHERE id= :id";
+// PREPARATION DE LA REQUETE
+$query = $db->prepare($sql);
+$query->bindValue(':id', $id);
+//EXECUTION DE LA REQUETE + STOCK DES DONNEES DANS LA VARIABLE
+$query->execute();
+$user = $query->fetch(PDO::FETCH_ASSOC);
+
+require_once ('elements/close_bdd.php');
+
+// echo '<pre>';
+// print_r($user);
+// echo '</pre>';
+?>
 <h3>Editez votre profil</h3>
 <h4>Les champs marqués d'une * sont obligatoires</h4>
 <form id="signupForm" method="POST" action="pages/signup.php" enctype="multipart/form-data"class="max-w-md mx-auto">
@@ -42,4 +59,3 @@
  <button id="signupButton" type="submit" class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-purple-900 dark:hover:bg-pink-500 my-2">Enregistrer</button>
 </form>
 
-<script type="text/javascript" src="JS/signup.js" defer></script>
