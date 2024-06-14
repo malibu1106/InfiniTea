@@ -31,7 +31,7 @@
 <option>Homme</option>
 <option>Femme</option>
 <option>Non Binaire</option>
-<option>Non renseigné</option>
+<option>Autre</option>
   </select>
     </div>
     <div class="relative z-0 w-full mb-5 group my-5">

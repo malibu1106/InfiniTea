@@ -58,7 +58,7 @@ html {
   --fsize1: 9.375em;
   --fsize2: 6.25em;
   --fsize3: 3.5em;
-  --fsize4: 1em;
+  --fsize4: 1.5em;
   --accentcolor1: #93455f;
 }
 
@@ -95,6 +95,11 @@ h4 {
   font-size: var(--fsize4);
   text-align: center;
   color: var(--accentcolor1);
+}
+
+span {
+  color: var(--accentcolor1);
+  font-family: var(--Fbold);
 }
 
 /* NAVBAR */
@@ -361,23 +366,21 @@ article {
 .categoryButton::after {
   content: "";
   opacity: 0;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  background-image: url("../images/selection/hover_theiere.png");
+  transform: translate(-50%, -50%) rotate(-20deg);
+  background-image: url("../images/feuilles/background.png");
   background-size: 100%;
   pointer-events: none;
   transition: transform 1s, opacity 1s, width 1s, height 1s;
-  z-index: 100;
+  z-index: -100;
 }
 
 .categoryButton:hover::after {
-  opacity: 1;
-  width: 240px;
-  height: 240px;
+  opacity: 0.4;
   transform: translate(-50%, -50%) rotate(0deg);
 }
 
