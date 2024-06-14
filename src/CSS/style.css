@@ -62,12 +62,11 @@ html {
 :root {
   --Ftitle: "gregoniaregular";
   --Fbold: "helveticabold";
-  --Funder: "proxima_nova_extra_condeBlkIt";
   --txtcolor1: #ededed;
   --txtcolor2: #383838;
   --fsize1: 9.375em;
-  --fsize2: 3.5em;
-  --fsize3: 2em;
+  --fsize2: 4.5em;
+  --fsize3: 4em;
   --fsize4: 1.5em;
   --accentcolor1: #93455f;
 }
@@ -160,7 +159,8 @@ nav {
 }
 
 .glowing {
-  background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  background: 50% 100% / 50% 50% no-repeat
+    radial-gradient(ellipse at bottom, #fff, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -433,9 +433,34 @@ article {
   flex-direction: column;
 }
 
+/* ACCESSOIRES*/
+.accessoires {
+  background-image: url("../images/illustrations/footer2.png");
+  background-size: cover;
+  height: 50vh;
+  max-width: 100%;
+  background-position: center;
+  image-rendering: high-quality;
+}
+
+.accessoires h2 {
+  font-family: var(--Ftitle);
+  text-transform: none;
+  margin-top: 10%;
+}
+
+.accessoires article {
+  width: 50%;
+  margin: auto;
+  height: 80%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
 /* FOOTER */
 footer {
-  background-image: url("../images/illustrations/Footer.png");
+  background-image: url("../images/illustrations/Header.png");
   background-size: cover;
   object-fit: cover;
   background-repeat: no-repeat;
@@ -540,7 +565,6 @@ ul.back_office_menu {
 /*MEDIAQUERIES*/
 /* AU DESSUS DE 768*/
 @media only screen and (min-width: 768px) {
-
   /*BURGER*/
   #burgerButton {
     display: none;

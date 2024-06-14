@@ -3,6 +3,8 @@
     // CONNEXION A LA BDD
 require_once("elements/open_bdd.php");
 
+
+
         include 'products/highlights.php';
 
         include 'pages/coffret.php';
@@ -26,6 +28,7 @@ require_once("elements/open_bdd.php");
         
         include 'products/thé_infusions.php';
 
+        include 'products/products_accessoires.php';
         
         include 'elements/newsletter.php';
 
