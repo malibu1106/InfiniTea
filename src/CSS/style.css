@@ -350,6 +350,37 @@ article {
   background-image: url("../images/selection/theiere_infusion.png");
 }
 
+.categoryButton {
+  position: relative;
+}
+
+.categoryButton:hover {
+  cursor: pointer;
+}
+
+.categoryButton::after {
+  content: "";
+  opacity: 0;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  background-image: url("../images/selection/hover_theiere.png");
+  background-size: 100%;
+  pointer-events: none;
+  transition: transform 1s, opacity 1s, width 1s, height 1s;
+  z-index: 100;
+}
+
+.categoryButton:hover::after {
+  opacity: 1;
+  width: 240px;
+  height: 240px;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
 #noir2,
 #infusions2,
 #blanc2,
@@ -357,6 +388,15 @@ article {
 #oolong2,
 #rooibos2 {
   display: none;
+  overflow-x: hidden;
+}
+
+.hiddenProduct {
+  transform: translateX(5000px);
+}
+
+.displayedProduct {
+  transform: translateX(0);
 }
 
 .fleche_remonter {
@@ -370,18 +410,22 @@ article {
   background-image: url("../images/illustrations/Coffrets.png");
   background-size: cover;
   height: 50vh;
-  width: 100%; /* Ensure the element maintains its width */
+  width: 100%;
+  /* Ensure the element maintains its width */
   background-position: center;
   image-rendering: high-quality;
   overflow: hidden;
   position: relative;
-  transition: background-size 3s ease, transform 1s ease; /* Ensure transition applies in the default state */
+  transition: background-size 3s ease, transform 1s ease;
+  /* Ensure transition applies in the default state */
 }
 
 .coffret:hover {
   background-size: 120%;
-  transform: scale(1.05); /* Slight scaling to enhance the hover effect */
-  transform-origin: center; /* Ensure the zoom effect originates from the center */
+  transform: scale(1.05);
+  /* Slight scaling to enhance the hover effect */
+  transform-origin: center;
+  /* Ensure the zoom effect originates from the center */
 }
 
 .coffret article {
@@ -503,25 +547,6 @@ footer h3 {
 /*MEDIAQUERIES*/
 /* AU DESSUS DE 768*/
 @media only screen and (min-width: 768px) {
-  /* VOYAGES */
-  .conteneur-voyages {
-    width: 95%;
-    max-width: 1200px;
-    padding: 50px;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .type-voyage {
-    align-items: flex-start;
-    margin-top: 20px;
-  }
-
-  .prix-reservation-voyage {
-    right: 8%;
-  }
-
   /*BURGER*/
   #burgerButton {
     display: none;
@@ -553,5 +578,3 @@ footer h3 {
     display: none;
   }
 }
-
-/* Page de produit individuel*/

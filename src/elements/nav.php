@@ -7,20 +7,23 @@
         }
         else{
             echo '<a href="../index.php?page=connexion#main"><li>Connexion</li></a>';
-        }?>
+        }
+        if(empty($_SESSION['admin'])){
+        echo '<a href="../index.php#main"><li>Nos Produits</li></a>';
+        echo '<a href="../index.php?page=contact#main"><li>Contact</li></a>';
         
-        <a href="../index.php#main"><li>Nos Produits</li></a>
-        <a href="../index.php?page=contact#main"><li>Contact</li></a>
-        <?php
+        }
          if(!empty($_SESSION['admin'])){
-            if($_SESSION['admin'] === "self"){
-                include 'pages/back_office.php';
+            
+            echo '<a href="index.php?page=add_product#main"><li>Ajouter</li></a>';
+            echo '<a href="index.php?page=product_list#main"><li>Produits</li></a>';
+                if($_SESSION['admin'] === "full"){
+                    echo '<a href="index.php?page=user_control"><li>Utilisateurs</li></a>';
+                    
+                }
                 
             }
-            elseif($_SESSION['admin'] === "full"){
-                include 'pages/back_office_full.php';
-                
-            }
-        }?>
+            
+        ?>
     </ul>
 </nav>
