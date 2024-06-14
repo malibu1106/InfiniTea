@@ -56,6 +56,8 @@
                     </button>
                 </div>
             </div>
+            <button type="submit" class="flex-none rounded-md bg-purple-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-700 mt-4">Ajouter au panier</button>
+
         </form>
     </div>
 </div>
