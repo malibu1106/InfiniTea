@@ -66,8 +66,8 @@ html {
   --txtcolor1: #ededed;
   --txtcolor2: #383838;
   --fsize1: 9.375em;
-  --fsize2: 6.25em;
-  --fsize3: 3.5em;
+  --fsize2: 3.5em;
+  --fsize3: 2em;
   --fsize4: 1.5em;
   --accentcolor1: #93455f;
 }
@@ -86,8 +86,7 @@ h1 {
 
 h2 {
   color: var(--txtcolor1);
-  font-family: var(--Fbold);
-  font-size: var(--fsize3);
+  font-size: var(--fsize2);
   text-align: center;
   text-transform: uppercase;
 }
@@ -143,14 +142,6 @@ nav {
 }
 
 /* HEADER */
-
-header h3 {
-  color: var(--txtcolor1);
-  font-family: var(--Funder);
-  font-size: var(--fsize3);
-  text-align: center;
-  letter-spacing: 2px;
-}
 
 @keyframes reveal {
   50% {
@@ -422,37 +413,9 @@ article {
   background-image: url("../images/illustrations/Coffrets.png");
   background-size: cover;
   height: 50vh;
-  width: 100%;
-  /* Ensure the element maintains its width */
+  max-width: 100%;
   background-position: center;
   image-rendering: high-quality;
-  overflow: hidden;
-  position: relative;
-  transition: background-size 3s ease, transform 1s ease;
-  /* Ensure transition applies in the default state */
-}
-
-.coffret:hover {
-  background-size: 120%;
-  transform: scale(1.05);
-  /* Slight scaling to enhance the hover effect */
-  transform-origin: center;
-  /* Ensure the zoom effect originates from the center */
-}
-
-.coffret article {
-  position: relative;
-  z-index: 1;
-}
-
-.coffret::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
 }
 
 .coffret h2 {
