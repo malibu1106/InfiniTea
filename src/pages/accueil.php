@@ -4,7 +4,7 @@
 require_once("elements/open_bdd.php");
 
 // include 'elements/produit_the.php';
-include 'pages/profil.php';
+
 
         include 'products/highlights.php';
 
