@@ -17,13 +17,13 @@ html {
   right: 0;
   left: 0;
   margin: auto;
-  height: 60px;
+  height: 50px;
   color: var(--txtcolor2);
   text-shadow: 0px 0px 5px rgba(255, 255, 255, 1);
   position: fixed;
   text-align: center;
-  font-size: 2em;
-  top: 40px;
+  font-size: 1.8em;
+  top: 60px;
   animation: message 4s forwards;
   z-index: 500;
   pointer-events: none;
@@ -48,7 +48,7 @@ html {
   display: flex;
   justify-content: space-evenly;
   right: 0;
-  top: 50px;
+  top: 70px;
   z-index: 500;
 }
 
@@ -80,7 +80,7 @@ h1 {
   font-family: var(--Ftitle);
   font-size: var(--fsize1);
   text-align: center;
-  margin-top: 20%;
+  margin-top: 30%;
 }
 
 h2 {
@@ -119,14 +119,15 @@ nav {
   top: 0;
   z-index: 1000;
   width: 100%;
-  height: 40px;
+  height: 80px;
 }
 
 #burger {
   list-style-type: none;
   display: none;
   flex-direction: column;
-  background: var(--accentcolor1);
+  background: rgba(147, 69, 95, 0.5);
+  backdrop-filter: blur(5px);
   margin: 0;
   padding: 0;
   /*TEMP POUR TEST JS*/
@@ -137,7 +138,8 @@ nav {
   width: 100%;
   text-align: center;
   /*TEMP POUR TEST JS*/
-  height: 40px;
+  height: 60px;
+  line-height: 60px;
 }
 
 /* HEADER */
@@ -159,8 +161,7 @@ nav {
 }
 
 .glowing {
-  background: 50% 100% / 50% 50% no-repeat
-    radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -565,6 +566,7 @@ ul.back_office_menu {
 /*MEDIAQUERIES*/
 /* AU DESSUS DE 768*/
 @media only screen and (min-width: 768px) {
+
   /*BURGER*/
   #burgerButton {
     display: none;

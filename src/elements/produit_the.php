@@ -1,28 +1,43 @@
+<?php 
+$id = $_GET['id'];
+require_once ('elements/open_bdd.php');
+$sql = "SELECT * FROM products WHERE id= :id";
+// PREPARATION DE LA REQUETE
+$query = $db->prepare($sql);
+$query->bindValue(':id', $id);
+//EXECUTION DE LA REQUETE + STOCK DES DONNEES DANS LA VARIABLE
+$query->execute();
+$product = $query->fetch(PDO::FETCH_ASSOC);
+require_once ('elements/close_bdd.php');
+?>
+<!-- <pre>
+    <?php print_r($product);?>
+</pre> -->
 <div class="md:flex items-start justify-center py-12 2xl:px-20 md:px-6 px-4">
     <div class="xl:w-2/6 lg:w-2/5 w-80 md:block hidden">
-        <img class="w-half" alt="image de la boite de thé" src="./images/produits/vert.png" />
+        <img class="w-half" alt="image de la boite de thé" src="<?= $product['image_filename']?>" />
     </div> 
     <div class="md:hidden">
-        <img class="w-half m-auto" alt="image de la boite de thé" src="./images/produits/vert.png"/>
+        <img class="w-half m-auto" alt="image de la boite de thé" src="<?= $product['image_filename']?>"/>
     </div>
     <div class="xl:w-2/5 md:w-1/2 lg:ml-8 md:ml-6 md:mt-0 mt-6 text-center"> <!-- Ajout de 'text-center' pour centrer le contenu -->
-        <h3 class="mt-2">Aurora Boréalis</h3> 
-        <h4 class="py-2 border-b border-gray-200">Composition juste ici avec tous les ingrédients</h4>
+        <h3 class="mt-2"><?= $product['name']?></h3> 
+        <h4 class="py-2 border-b border-gray-200"><?= $product['composition']?></h4>
        
         <div class="py-2 border-b border-gray-200 flex flex-col items-center">
             <p class="xl:pr-48 text-base lg:leading-tight leading-normal text-gray-600 mt-7 text-left"> <!-- Ajout de 'text-left' pour aligner le texte à gauche -->
-                Ici une description jolie du thé pour vendre le produit Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, saepe repudiandae. Quae nam ipsa nihil quibusdam, nemo, ipsam odit officiis expedita vero numquam, reiciendis aspernatur laborum repellat necessitatibus aliquid dolore?
+            <?= $product['description']?>
             </p>
             
             <div class="flex justify-center w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 mb-4 bg-stone-100 p-4 rounded-lg shadow-md mt-4">
                 <div class="w-1/4 h-1/4 flex items-center justify-center">
                     <img src="./images/icones/temperature.png" alt="autre icône">
                 </div>
-                <span class="text-center my-4">95°C</span>
+                <span class="text-center my-4"><?= $product['temperature']?></span>
                 <div class="w-1/4 h-1/4 flex items-center justify-center ml-4">
                     <img src="./images/icones/infusion.png" alt="sachet de thé">
                 </div>
-                <span class="text-center my-4 ml-0">3-4 minutes</span>
+                <span class="text-center my-4 ml-0"><?= $product['temps']?></span>
             </div>
             
         </div>
@@ -30,12 +45,12 @@
             <label for="grammes" class="block mb-2 text-sm "><span>Sélectionnez un grammage :</span></label>
             <select id="grammes" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                 <option selected disabled hidden>Sélectionnez un grammage</option>
-                <option value="100">100 g</option>
-                <option value="200">200 g</option>
-                <option value="300">300 g</option>
+                <option value="100">100 g need-bdd-update</option>
+                <option value="200">200 g need-bdd-update</option>
+                <option value="300">300 g need-bdd-update</option>
             </select>
             <div class="flex items-center justify-center mt-2">
-                <i class="text-gray-600">95€/kg</i>
+                <i class="text-gray-600">95€/kg need-bdd-update</i>
             </div>
             <div class="flex items-center mt-8 text-sm  text-gray-900">
                 <svg class="w-6 h-6 mr-2 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -61,6 +76,8 @@
         </form>
     </div>
 </div>
+
+<script type="text/javascript" src="JS/product.js" defer></script>
 
 
 

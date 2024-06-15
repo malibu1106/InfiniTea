@@ -2,7 +2,7 @@
   <div class="sm:flex shadow-md my-10">
     <div class="w-full sm:w-3/4 bg-white px-10 py-10">
       <div class="flex justify-between border-b pb-8">
-        <h3>Votre pannier</h3>
+        <h3>Votre panier</h3>
         <span>1 article</span>
       </div>
       <div class="md:flex items-stretch py-8 md:py-10 lg:py-8 border-t border-gray-50">
@@ -51,7 +51,7 @@
       </a>
     </div>
     <div id="summary" class="w-full sm:w-1/4 md:w-1/2 px-8 py-10 bg-white">
-      <h3>Résummé de votre commande</h3>
+      <h3>Résumé de votre commande</h3>
       <div>
         <label class="font-medium inline-block mb-3 text-sm">
           <span>Livraison</span>

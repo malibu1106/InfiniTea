@@ -72,7 +72,9 @@ echo '<a href="index.php?page=cart#main"><svg class="w-[40px] h-[40px] text-gray
         include 'pages/cart.php';
     }
     elseif(isset($_GET['page']) && $_GET['page'] === "product" ){
-        include 'pages/product.php';
+        if($_GET['cat'] === "the"){
+            include 'elements/produit_the.php';
+        }
     }
     elseif(isset($_GET['page']) && $_GET['page'] === "inscription" ){
         include 'pages/inscription.php';
