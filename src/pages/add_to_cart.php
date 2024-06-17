@@ -35,7 +35,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['product_ID'])
 
      $_SESSION["message"] = "<div id='alert_message'>Produit ajouté au panier!</div>";
     require_once("../elements/close_bdd.php");
-    header('Location: ../index.php?page=cart');
+    header('Location: ../index.php?page=cart#main');
 }
 else{
     $_SESSION["message"] = "<div id='alert_message'>Erreur durant l'ajout au panier!</div>";
