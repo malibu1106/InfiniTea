@@ -2,7 +2,7 @@
 <?php
     // CONNEXION A LA BDD
 require_once("elements/open_bdd.php");
-include 'pages/paiement.php';
+
 
         include 'products/highlights.php';
 

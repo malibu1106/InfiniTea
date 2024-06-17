@@ -17,7 +17,8 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
 //require_once("elements/close_bdd.php");
 
 // SI DES PRODUITS SONT HIGHLIGHT?>
-<section class="highlights"><h3>Nos produits à la une</h3>
+<h3>Nos produits à la une</h3>
+<section class="highlights">
     <div id="left_arrow"><</div>
     <div id="right_arrow">></div>
     <?php foreach($highlights as $highlight){
@@ -32,7 +33,7 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 </section>
 
-<section class="highlights_desktop"><h3>Nos produits à la une</h3>
+<section class="highlights_desktop">
     <div class="p-1 flex flex-wrap items-center justify-center">
 
 

@@ -62,6 +62,7 @@ html {
 :root {
   --Ftitle: "gregoniaregular";
   --Fbold: "helveticabold";
+  --Font2: 'arsenalregular';
   --txtcolor1: #ededed;
   --txtcolor2: #383838;
   --fsize1: 9.375em;
@@ -86,8 +87,8 @@ h1 {
 h2 {
   color: var(--txtcolor1);
   font-size: var(--fsize2);
+  font-family: var(--Font2);
   text-align: center;
-  text-transform: uppercase;
 }
 
 h3 {
@@ -98,7 +99,7 @@ h3 {
 }
 
 h4 {
-  font-family: var(--Fbold);
+  font-family: var(--Font2);
   color: var(--txtcolor2);
   font-size: var(--fsize4);
   text-align: center;
@@ -142,6 +143,8 @@ nav {
   line-height: 60px;
 }
 
+
+
 /* HEADER */
 
 @keyframes reveal {
@@ -178,53 +181,6 @@ nav {
   }
 }
 
-.typewriter {
-  text-align: center;
-  box-sizing: border-box;
-}
-
-.typewriter h3 {
-  display: inline-block;
-  overflow: hidden;
-  word-break: break-word;
-}
-
-.typewriter h3 span {
-  opacity: 0;
-  animation: fadeIn 5s forwards;
-}
-
-.typewriter h3 span:nth-child(1) {
-  animation-delay: 0.5s;
-}
-
-.typewriter h3 span:nth-child(2) {
-  animation-delay: 1s;
-}
-
-.typewriter h3 span:nth-child(3) {
-  animation-delay: 1.5s;
-}
-
-.typewriter h3 span:nth-child(4) {
-  animation-delay: 2s;
-}
-
-.typewriter h3 span:nth-child(5) {
-  animation-delay: 2.5s;
-}
-
-.typewriter h3 span:nth-child(6) {
-  animation-delay: 3s;
-}
-
-.typewriter h3 span:nth-child(7) {
-  animation-delay: 3.5s;
-}
-
-.typewriter h3 span:nth-child(8) {
-  animation-delay: 3.5s;
-}
 
 header {
   background-image: url("../images/illustrations/Header.png");
@@ -265,7 +221,7 @@ article {
 #left_arrow,
 #right_arrow {
   position: absolute;
-  top: 30%;
+  margin-top: 20%;
   font-size: 55px;
   z-index: 50;
   cursor: pointer;
@@ -283,7 +239,7 @@ article {
   margin: auto;
   position: absolute;
   z-index: 20;
-  margin-top: 100px;
+  margin-top: 10px;
 }
 
 .highlights_details {
@@ -588,7 +544,7 @@ ul.back_office_menu {
   /* CART / PROFILE BUTTONS */
 
   #profilAndCart {
-    top: 70px;
+    margin-top: 50px;
   }
 
   /*HIGHLIGHT*/
