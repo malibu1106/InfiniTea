@@ -25,9 +25,6 @@ else{
     header('Location: ../index.php?page=connexion#main');
 }
 ?>
-
-<?php foreach($cart as $cart_line){
-  echo '
 <div class="container mx-auto mt-10">
   <div class="sm:flex shadow-md my-10">
     <div class="w-full sm:w-3/4 bg-white px-10 py-10">
@@ -35,7 +32,7 @@ else{
         <h3>Votre panier</h3>
         <span>1 article</span>
       </div>
-      <div class="md:flex items-stretch py-8 md:py-10 lg:py-8 border-t border-gray-50">
+ <div class="md:flex items-stretch py-8 md:py-10 lg:py-8 border-t border-gray-50">
         <div class="md:w-1/4 2xl:w-1/4 w-full">
           <img src="./images/produits/blanc.png" alt="Thé" class="h-full object-center object-cover md:block hidden" />
         </div>
@@ -72,7 +69,7 @@ else{
             <p class="text-base font-black leading-none text-gray-800">12€</p>
           </div>
         </div>
-      </div>';}?>
+      </div>
 
 
 

@@ -56,7 +56,8 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
     </div>
-    </a>';
+    </a>
+    </div>';
 
 }?>  
     </section>
