@@ -48,7 +48,7 @@ html {
   display: flex;
   justify-content: space-evenly;
   right: 0;
-  top: 70px;
+  top: 20px;
   z-index: 500;
 }
 
@@ -161,8 +161,7 @@ nav {
 }
 
 .glowing {
-  background: 50% 100% / 50% 50% no-repeat
-    radial-gradient(ellipse at bottom, #fff, transparent, transparent);
+  background: 50% 100% / 50% 50% no-repeat radial-gradient(ellipse at bottom, #fff, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -568,6 +567,7 @@ ul.back_office_menu {
 /*MEDIAQUERIES*/
 /* AU DESSUS DE 768*/
 @media only screen and (min-width: 768px) {
+
   /*BURGER*/
   #burgerButton {
     display: none;
@@ -583,6 +583,12 @@ ul.back_office_menu {
 
   #burger li {
     width: unset;
+  }
+
+  /* CART / PROFILE BUTTONS */
+
+  #profilAndCart {
+    top: 70px;
   }
 
   /*HIGHLIGHT*/

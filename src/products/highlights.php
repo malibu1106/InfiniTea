@@ -35,6 +35,10 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
 <section class="highlights_desktop"><h3>Nos produits à la une</h3>
 <div class="p-1 flex flex-wrap items-center justify-center">
 
+
+<?php foreach($highlights as $highlight){
+    echo'
+    <a href="../index.php?page=product&cat=the&id=' . $highlight['id'] . '#main">;
     <div class="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg">
         <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
             style="transform: scale(1.5); opacity: 0.1;">
@@ -43,49 +47,18 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
         </svg>
         <div class="relative pt-10 px-10 flex items-center justify-center">
             
-            <img class="relative w-40" src="./images/produits/vert.png" alt="">
+            <img class="relative w-40" src="' . $highlight['image_filename'] . '" alt="">
         </div>
         <div class="relative text-white px-6 pb-6 mt-6">
             <div class="flex justify-between">
-                <span class="block font-semibold text-xl">Nom produit</span>
-                <span class="block rounded-full text-purple-500 text-xs font-bold px-3 py-2 leading-none flex items-center">X €</span>
+                <span class="block font-semibold text-xl">' . $highlight['name'] . '</span>
+                <span class="block rounded-full text-purple-500 text-xs font-bold px-3 py-2 leading-none flex items-center">' . $highlight['price'] . ' €</span>
             </div>
         </div>
     </div>
-    <div class="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg">
-        <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
-            style="transform: scale(1.5); opacity: 0.1;">
-            <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white" />
-            <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
-        </svg>
-        <div class="relative pt-10 px-10 flex items-center justify-center">
-            
-            <img class="relative w-40" src="./images/produits/noir.png" alt="">
-        </div>
-        <div class="relative text-white px-6 pb-6 mt-6">
-            <div class="flex justify-between">
-                <span class="block font-semibold text-xl">Nom produit</span>
-                <span class="block rounded-full text-purple-500 text-xs font-bold px-3 py-2 leading-none flex items-center">X €</span>
-            </div>
-        </div>
-    </div>     <div class="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg">
-        <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
-            style="transform: scale(1.5); opacity: 0.1;">
-            <rect x="159.52" y="175" width="152" height="152" rx="8" transform="rotate(-45 159.52 175)" fill="white" />
-            <rect y="107.48" width="152" height="152" rx="8" transform="rotate(-45 0 107.48)" fill="white" />
-        </svg>
-        <div class="relative pt-10 px-10 flex items-center justify-center">
-            
-            <img class="relative w-40" src="./images/produits/blanc.png" alt="">
-        </div>
-        <div class="relative text-white px-6 pb-6 mt-6">
-            <div class="flex justify-between">
-                <span class="block font-semibold text-xl">Nom produit</span>
-                <span class="block rounded-full text-purple-500 text-xs font-bold px-3 py-2 leading-none flex items-center">X €</span>
-            </div>
-        </div>
-    </div> 
+    </a>';
 
+}?>  
     </section>
 
 
