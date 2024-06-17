@@ -16,6 +16,7 @@ else{
     <script type="text/javascript" src="JS/script.js" defer></script>
     <!-- <link rel="stylesheet" href="CSS/style.css"> COMMENTÉ PARCE QUE TAILWIND LE RECUPERE AUTOMATIQUEMENT-->
     <link rel="stylesheet" href="CSS/output.css">
+    <link rel="preload" href="Arsenal-Regular.woff2" as="font" type="font/woff2" crossorigin>
 
     <title>InfiniTea</title>
 </head>
