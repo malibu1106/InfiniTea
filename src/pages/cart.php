@@ -1,3 +1,33 @@
+<?php 
+
+if (isset($_SESSION['user_id'])){
+  $user_id = $_SESSION['user_id'];
+
+require_once ('elements/open_bdd.php');
+$sql = "SELECT * FROM carts WHERE user_id= :user_id";
+// PREPARATION DE LA REQUETE
+$query = $db->prepare($sql);
+$query->bindValue(':user_id', $user_id);
+//EXECUTION DE LA REQUETE + STOCK DES DONNEES DANS LA VARIABLE
+$query->execute();
+$cart = $query->fetchAll(PDO::FETCH_ASSOC);
+require_once ('elements/close_bdd.php');
+echo '<pre>';
+print_r($cart);
+echo '</pre>';
+
+
+
+
+}
+else{
+    $_SESSION["message"] = "<div id='alert_message'>Connectez-vous pour accéder au panier!</div>";
+    header('Location: ../index.php?page=connexion#main');
+}
+?>
+
+<?php foreach($cart as $cart_line){
+  echo '
 <div class="container mx-auto mt-10">
   <div class="sm:flex shadow-md my-10">
     <div class="w-full sm:w-3/4 bg-white px-10 py-10">
@@ -19,7 +49,7 @@
               <option value="300">300 g</option>
             </select>
             <div class="flex flex-col items-start w-full">
-              <label for="counter-input" class="flex-shrink-0 mb-2"><span>Choisissez la quanti'thé :</span></label>
+              <label for="counter-input" class="flex-shrink-0 mb-2"><span>Choisissez la quanti\'thé :</span></label>
               <div class="relative flex items-center">
                 <button type="button" id="decrement-button" data-input-counter-decrement="counter-input" class="flex-shrink-0 bg-gray-100 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 focus:ring-2 focus:outline-none">
                   <svg class="w-2.5 h-2.5 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 2">
@@ -42,7 +72,15 @@
             <p class="text-base font-black leading-none text-gray-800">12€</p>
           </div>
         </div>
-      </div>
+      </div>';}?>
+
+
+
+
+
+
+
+
       <a href="../index.php#main" class="flex font-semibold text-pink-600 text-sm mt-10">
         <svg class="fill-current mr-2 text-pink-600 w-4" viewBox="0 0 448 512">
           <path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/>

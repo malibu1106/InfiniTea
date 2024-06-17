@@ -9,6 +9,8 @@ $query->bindValue(':id', $id);
 $query->execute();
 $product = $query->fetch(PDO::FETCH_ASSOC);
 require_once ('elements/close_bdd.php');
+$product_ID = $product['id'];
+$_product_name =$product['name'];
 ?>
 <!-- <pre>
     <?php print_r($product);?>
@@ -41,13 +43,15 @@ require_once ('elements/close_bdd.php');
             </div>
             
         </div>
-        <form class="max-w-xs mx-auto mt-4">
+        <form action="pages/add_to_cart.php" method="POST" class="max-w-xs mx-auto mt-4">
+            <input type="hidden" name="product_ID" value="<?= $product_ID;?>">
+            <input type="hidden" name="product_name" value="<?= $_product_name;?>">
+            <input type="hidden" name="product_image" value="<?= $product['image_filename']?>">
             <label for="grammes" class="block mb-2 text-sm "><span>Sélectionnez un grammage :</span></label>
-            <select id="grammes" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                <option selected disabled hidden>Sélectionnez un grammage</option>
-                <option value="100">100 g need-bdd-update</option>
-                <option value="200">200 g need-bdd-update</option>
-                <option value="300">300 g need-bdd-update</option>
+            <select id="grammes" name="grammage" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required>
+                <option selected value="100">100 g</option>
+                <option value="200">200 g</option>
+                <option value="300">300 g</option>
             </select>
             <div class="flex items-center justify-center mt-2">
                 <i class="text-gray-600"><?= $product['price_kg']?></i>
@@ -63,7 +67,7 @@ require_once ('elements/close_bdd.php');
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h16"/>
                         </svg>
                     </button>
-                    <input type="text" id="counter-input" data-input-counter class="flex-shrink-0 text-gray-900 border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center" placeholder="" value="0" required />
+                    <input type="text" name="quantity" id="counter-input" data-input-counter class="flex-shrink-0 text-gray-900 border-0 bg-transparent text-sm font-normal focus:outline-none focus:ring-0 max-w-[2.5rem] text-center" placeholder="" value="1" required />
                     <button type="button" id="increment-button" data-input-counter-increment="counter-input" class="flex-shrink-0 bg-gray-100 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 focus:ring-2 focus:outline-none">
                         <svg class="w-2.5 h-2.5 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16"/>

@@ -18,7 +18,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
     $weight = strip_tags($_POST['weight']);
     // FORMULAIRE BIEN REMPLI DONC ON GERE LES DONNEES OPTIONNELLES
     // ON INITIALISE DES VARIABLES VIDES
-    $price_before_reduction = strip_tags($_POST['price_before_reduction']);
+    $price_kg = strip_tags($_POST['price_kg']);
     $temperature = strip_tags($_POST['temperature']);
     $temps = strip_tags($_POST['temps']);
     $highlight = strip_tags($_POST['highlight']);
@@ -60,8 +60,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
      require_once("../elements/open_bdd.php");
 
      // REQUETE
-     $sql = "INSERT INTO products (name, category, description, description_courte, composition, weight, image_filename, price, price_before_reduction, temperature, temps, highlight, added_by)
-    VALUES (:name, :category, :description, :description_courte, :composition, :weight, :image_filename, :price, :price_before_reduction, :temperature, :temps, :highlight, :added_by)";
+     $sql = "INSERT INTO products (name, category, description, description_courte, composition, weight, image_filename, price, price_kg, temperature, temps, highlight, added_by)
+    VALUES (:name, :category, :description, :description_courte, :composition, :weight, :image_filename, :price, :price_kg, :temperature, :temps, :highlight, :added_by)";
  
      // PREPARATION DE LA REQUETE
      $query = $db->prepare($sql);    
@@ -73,7 +73,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
          $query->bindValue(':price', $price);
          $query->bindValue(':weight', $weight);
          $query->bindValue(':image_filename', $image_filename);
-         $query->bindValue(':price_before_reduction', $price_before_reduction);
+         $query->bindValue(':price_kg', $price_kg);
          $query->bindValue(':temperature', $temperature);
          $query->bindValue(':temps', $temps);
          $query->bindValue(':highlight', $highlight);

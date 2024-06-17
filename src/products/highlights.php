@@ -22,7 +22,9 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
     <div id="right_arrow">></div>
     <?php foreach($highlights as $highlight){
     echo '<div class="highlights_products">';
+    echo '<a href="../index.php?page=product&cat=the&id=' . $highlight['id'] . '#main">';
     echo '<img src="' . $highlight['image_filename'] . '">';
+    echo '</a>';
     echo '<div class="highlights_details">';
     echo $highlight['name'];
     echo '</div>';
