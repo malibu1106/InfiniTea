@@ -68,6 +68,12 @@ echo '<a href="index.php?page=cart#main"><svg class="w-[40px] h-[40px] text-gray
     elseif(isset($_GET['page']) && $_GET['page'] === "connexion" ){
         include 'pages/connexion.php';
     }
+    elseif(isset($_GET['page']) && $_GET['page'] === "coffrets" ){
+        include 'pages/coffrets_grid.php';
+    }
+    elseif(isset($_GET['page']) && $_GET['page'] === "accessoires" ){
+        include 'pages/accessoires_grid.php';
+    }
     elseif(isset($_GET['page']) && $_GET['page'] === "cart" ){
         include 'pages/cart.php';
     }
@@ -75,6 +81,7 @@ echo '<a href="index.php?page=cart#main"><svg class="w-[40px] h-[40px] text-gray
         if($_GET['cat'] === "the"){
             include 'elements/produit_the.php';
         }
+
     }
     elseif(isset($_GET['page']) && $_GET['page'] === "inscription" ){
         include 'pages/inscription.php';
