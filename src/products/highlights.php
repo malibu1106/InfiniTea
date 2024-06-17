@@ -33,12 +33,12 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
 </section>
 
 <section class="highlights_desktop"><h3>Nos produits à la une</h3>
-<div class="p-1 flex flex-wrap items-center justify-center">
+    <div class="p-1 flex flex-wrap items-center justify-center">
 
 
 <?php foreach($highlights as $highlight){
     echo'
-    <a href="../index.php?page=product&cat=the&id=' . $highlight['id'] . '#main">;
+    <a href="../index.php?page=product&cat=the&id=' . $highlight['id'] . '#main">
     <div class="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg">
         <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
             style="transform: scale(1.5); opacity: 0.1;">
@@ -56,9 +56,8 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
             </div>
         </div>
     </div>
-    </a>';
-
-}?>  </div>
-    </section>
+    </a>';}?>
+        </div>
+</section>
 
 
