@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : ven. 14 juin 2024 à 13:50
+-- Généré le : lun. 17 juin 2024 à 06:52
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -59,7 +59,7 @@ CREATE TABLE `products` (
   `description_courte` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `composition` varchar(255) NOT NULL,
-  `price_before_reduction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `price_kg` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `price` varchar(255) NOT NULL,
   `weight` varchar(255) NOT NULL,
   `image_filename` varchar(255) NOT NULL,
@@ -73,7 +73,7 @@ CREATE TABLE `products` (
 -- Déchargement des données de la table `products`
 --
 
-INSERT INTO `products` (`id`, `name`, `category`, `description_courte`, `description`, `composition`, `price_before_reduction`, `price`, `weight`, `image_filename`, `temperature`, `temps`, `added_by`, `highlight`) VALUES
+INSERT INTO `products` (`id`, `name`, `category`, `description_courte`, `description`, `composition`, `price_kg`, `price`, `weight`, `image_filename`, `temperature`, `temps`, `added_by`, `highlight`) VALUES
 (2, 'Éclipse', 'thé noir', 'Notes de cacao et de vanille', '', '+ tard', '+ tard', '+ tard', '255g', '../images/produits/infusions.png', '90°', '2m', 5, 0),
 (3, 'Voie Lactée', 'thé blanc', 'Touches de noix de coco et d\'amande', '+tard', '+tard', '+tard', '+tard', '+tard', '../images/produits/noir.png', '+tard', '+tard', 6, 1),
 (4, 'Thé n°3', 'thé vert', '', 'the blanc test edit', 'the blanc test compo', '73€', '65€', '320g', '../images/produits/vert.png', '90°', '3m', 6, 1),
