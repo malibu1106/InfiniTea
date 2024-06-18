@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : mar. 18 juin 2024 à 10:32
+-- Généré le : mar. 18 juin 2024 à 12:16
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -44,11 +44,9 @@ CREATE TABLE `carts` (
 INSERT INTO `carts` (`id`, `product_id`, `product_name`, `product_image`, `weight`, `quantity`, `user_id`) VALUES
 (7, 5, 'Éclipse', '../images/produits/infusions.png', 200, 5, 9),
 (10, 6, 'Voie Lactée', '../images/produits/noir.png', 100, 3, 9),
-(14, 4, 'Thé n°3', '../images/produits/vert.png', 300, 5, 6),
-(16, 4, 'Thé n°3', '../images/produits/vert.png', 300, 5, 6),
-(19, 6, 'Voie Lactée', '../images/produits/noir.png', 200, 1, 11),
-(20, 6, 'Voie Lactée', '../images/produits/noir.png', 100, 1, 4),
-(21, 6, 'Voie Lactée', '../images/produits/noir.png', 100, 1, 4);
+(14, 4, 'Thé n°3', '../images/produits/vert.png', 200, 1, 6),
+(16, 4, 'Thé n°3', '../images/produits/vert.png', 200, 1, 6),
+(19, 6, 'Voie Lactée', '../images/produits/noir.png', 200, 1, 11);
 
 -- --------------------------------------------------------
 
@@ -83,21 +81,23 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 
 CREATE TABLE `contact` (
   `id` int NOT NULL,
+  `date` date DEFAULT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `message` text NOT NULL,
-  `gender` varchar(255) NOT NULL,
-  `user_id` int NOT NULL
+  `gender` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `user_id` int NOT NULL,
+  `status` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `contact`
 --
 
-INSERT INTO `contact` (`id`, `first_name`, `last_name`, `email`, `message`, `gender`, `user_id`) VALUES
-(1, 'Prénomgre', 'Nom', 'malibu1106@gmail.com', 'gregre', 'Femme', 4),
-(2, 'Prénom', 'Nom', 'gg@gg.com', 'gfdgfd', 'Femme', 0);
+INSERT INTO `contact` (`id`, `date`, `first_name`, `last_name`, `email`, `message`, `gender`, `user_id`, `status`) VALUES
+(1, NULL, 'Prénomgre', 'Nom', 'malibu1106@gmail.com', 'gregre', 'Femme', 4, 'true'),
+(2, NULL, 'Prénom', 'Nom', 'gg@gg.com', 'gfdgfd', 'Femme', 0, 'true');
 
 -- --------------------------------------------------------
 
@@ -148,7 +148,7 @@ CREATE TABLE `products` (
   `name` varchar(255) NOT NULL,
   `category` varchar(255) NOT NULL,
   `description_courte` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
+  `description` varchar(400) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `composition` varchar(255) NOT NULL,
   `price_kg` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `price` int NOT NULL,
@@ -167,7 +167,7 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `name`, `category`, `description_courte`, `description`, `composition`, `price_kg`, `price`, `weight`, `image_filename`, `temperature`, `temps`, `added_by`, `highlight`) VALUES
 (2, 'Éclipse', 'thé noir', 'Notes de cacao et de vanille', '', '+ tard', '+ tard', 8, '255g', '../images/produits/infusions.png', '90°', '2m', 5, 0),
 (3, 'Voie Lactée', 'thé blanc', 'Touches de noix de coco et d\'amande', '+tard', '+tard', '+tard', 12, '+tard', '../images/produits/noir.png', '+tard', '+tard', 6, 1),
-(4, 'Thé n°3', 'thé vert', '', 'the blanc test edit', 'the blanc test compo', '73€', 14, '320g', '../images/produits/vert.png', '90°', '3m', 6, 1),
+(4, 'Thé n°3', 'thé vert', '', 'the blanc test edit', 'the blanc test compo', '73', 14, '320g', '../images/produits/vert.png', '90°', '3m', 6, 1),
 (5, 'Éclipse', 'thé oolong', 'Notes de cacao et de vanille', '', '+ tard', '+ tard', 12, '255g', '../images/produits/infusions.png', '90°', '2m', 5, 0),
 (6, 'Voie Lactée', 'thé rooibos', 'Touches de noix de coco et d\'amande', '+tard', '+tard', '+tard', 22, '+tard', '../images/produits/noir.png', '+tard', '+tard', 6, 1),
 (7, 'Thé n°3', 'infusions', '', 'the blanc test edit', 'the blanc test compo', '73€', 17, '320g', '../images/produits/vert.png', '90°', '3m', 6, 1),
@@ -255,7 +255,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT pour la table `categories`

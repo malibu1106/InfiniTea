@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let basePrice = basePrices[index];
         let quantity = parseInt(itemsQuantityZones[index].value, 10);
         let weight = parseInt(weightSelects[index].value, 10);
-        let newPrice = basePrice * quantity * (weight / 100);
+        let newPrice = basePrice * quantity * (weight / 1000);
         productPrices[index].textContent = newPrice.toFixed(2) + ' €';
     }
 

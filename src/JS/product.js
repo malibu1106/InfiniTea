@@ -21,3 +21,17 @@ function quantityDown() {
         itemsQuantityZone.value = itemsQuantity - 1;
     }
 }
+
+let basePrice = document.getElementById('basePrice').textContent;
+let finalPriceZone = document.getElementById('finalPrice');
+let grammage = document.getElementById('grammes');
+
+document.addEventListener('click', calculPrice)
+
+function calculPrice() {
+    newPrice = itemsQuantityZone.value * basePrice * (grammage.value / 1000);
+    newPrice = newPrice.toFixed(2);
+    finalPriceZone.textContent = newPrice + " €";
+
+}
+calculPrice();

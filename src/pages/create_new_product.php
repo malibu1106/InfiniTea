@@ -24,8 +24,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
     $highlight = strip_tags($_POST['highlight']);
 
     // ET SI ELLES SONT DEFINIES DANS LE FORMULAIRE ALORS ON RECUPERE LEURS VALEURS
-    if($_POST['price_before_reduction']){
-        $price_before_reduction = strip_tags($_POST['price_before_reduction']);}
+    if($_POST['price_kg']){
+        $price_price_kg = strip_tags($_POST['price_kg']);}
     if($_POST['temperature']){
         $temperature = strip_tags($_POST['temperature']);}
     if($_POST['temps']){

@@ -10,7 +10,7 @@ else{
     $id = $_SESSION['user_id'];
 }
 
-
+$date = date('Y-m-d'); 
 
 // ON VERIFIE POST + QUE LES CHAMPS OBLIGATOIRES NE SONT PAS VIDES ET ON RECUPERE LES VALEURS DU FORMULAIRE
 if ($_SERVER['REQUEST_METHOD'] === 'POST' 
@@ -23,6 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'
     $last_name = strip_tags($_POST['last_name']);
     $email = strip_tags($_POST['email']);
     $message = strip_tags($_POST['message']);
+    $status = "false";
 
     // SI LES CHAMPS OPTIONNELS SONT REMPLIS, ALORS ON RECUPERE EGALEMENT LEURS VALEURS
     if (!empty($_POST['gender'])) {
@@ -35,8 +36,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'
     require_once ('../elements/open_bdd.php');
 
     // PREPARATION DE LA REQUETE
-    $sql = "INSERT INTO contact (user_id, first_name, last_name, email, message, gender) 
-            VALUES (:user_id, :first_name, :last_name, :email, :message, :gender)";
+    $sql = "INSERT INTO contact (user_id, first_name, last_name, email, message, gender, status, date) 
+            VALUES (:user_id, :first_name, :last_name, :email, :message, :gender, :status, :date)";
     $query = $db->prepare($sql);
     $query->bindValue(':user_id', $id);
     $query->bindValue(':first_name', $first_name);
@@ -44,6 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'
     $query->bindValue(':email', $email);
     $query->bindValue(':message', $message);
     $query->bindValue(':gender', $gender);
+    $query->bindValue(':status', $status);
+    $query->bindValue(':date', $date);
 
     // EXECUTION + CLOSE BDD
     if ($query->execute()) {

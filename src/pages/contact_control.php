@@ -2,14 +2,14 @@
 
 require_once ('elements/open_bdd.php');
 if($_SESSION['admin']){
-    $sql = "SELECT * FROM orders ORDER BY date DESC";
+    $sql = "SELECT * FROM contact ORDER BY date DESC";
  
 }
 // PREPARATION DE LA REQUETE
 $query = $db->prepare($sql);
 //EXECUTION DE LA REQUETE + STOCK DES DONNEES DANS LA VARIABLE
 $query->execute();
-$orders = $query->fetchAll(PDO::FETCH_ASSOC);
+$messages = $query->fetchAll(PDO::FETCH_ASSOC);
 require_once ('elements/close_bdd.php');
 ?>
 <div id="liste_commandes" class="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -29,71 +29,49 @@ require_once ('elements/close_bdd.php');
                     Email
                 </th>
                 <th scope="col" class="px-2 py-3">
-                    Adresse
-                </th>
-                <th scope="col" class="px-2 py-3">
                     Contenu
                 </th>
                 <th scope="col" class="px-2 py-3">
-                    Prix
-                </th>
-                <th scope="col" class="px-2 py-3">
-                    Payé
-                </th>
-                <th scope="col" class="px-2 py-3">
-                    Traitée
+                    Status
                 </th>
         
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($orders as $order){
+            <?php foreach ($messages as $message){
             
             echo '<tr class="odd:bg-white  even:bg-gray-50 border-b">';
 
                 echo '<td class="px-2 py-4">';
-                echo $order['date'];
+                echo $message['date'];
                 echo '</td>';
 
                 echo '<td scope="row" class="px-2 font-medium text-gray-900 whitespace-nowrap ">';
-                echo $order['first_name'];                
+                echo $message['first_name'];                
                 echo '</td>';
 
                 echo '<td scope="row" class="px-2 py-4 font-medium text-gray-900 whitespace-nowrap ">';
-                echo $order['last_name'];
+                echo $message['last_name'];
                 echo '</td>';
 
                 echo '<td class="px-2 py-4">';
-                echo $order['email'];
+                echo $message['email'];
                 echo '</td>';
                
                 echo '<td class="px-2 py-4">';
-                echo $order['address'];
+                echo $message['message'];
                 echo '</td>';
 
                 echo '<td class="px-2 py-4">';
-                echo $order['content'];
-                echo '</td>';
-
-                echo '<td class="px-2 py-4">';
-                echo $order['price'];
-                echo ' €';
-                echo '</td>';
-
-                echo '<td class="px-2 py-4">';
-                if($order['paid'] === "true"){
-                    echo '✅';
-                }
-                echo '</td>';
-
-                echo '<td class="px-2 py-4">';
-                if($order['processed'] === "true"){
+                if($message['status'] === "true"){
                     echo '✅';
                 }
                 else{
-                    echo '<button class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-orange-600 hover:bg-orange-800 my-2"><a href="pages/send_order.php?id=' . $order['id'] . '" class="font-medium ">Envoyer</a></button>';
+                    echo '<button class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-orange-600 hover:bg-orange-800 my-2"><a href="pages/read_message.php?id=' . $message['id'] . '" class="font-medium ">Marqué comme lu</a></button>';
                 }
                 echo '</td>';
+
+
             echo '</tr>';
         }?>
             

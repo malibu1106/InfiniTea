@@ -22,8 +22,20 @@ echo '<div class="container mx-auto mt-10">
     <div class="w-full sm:w-3/4 bg-white px-10 py-10">
       <div class="flex justify-between border-b pb-8">
         <h3>Votre panier</h3>
-        <span>1 article</span>
-      </div>
+        <span>';
+
+        if (count($cart) > 0){
+
+        echo count($cart); 
+        echo ' article';
+        if (count($cart) > 1){
+          echo 's';}
+        echo '</span>';}
+        else{
+          echo 'Votre panier est vide';
+        }
+
+      echo '</div>
       <form method="POST" action="pages/traitement_commande.php">
       <input type="hidden" name="user_id" value="'.$user_id.'">';
 
@@ -32,7 +44,7 @@ $index = 0;
 
 foreach ($cart as $cart_line){
   $id= $cart_line['product_id'];
-  $sql = "SELECT price FROM products WHERE id= :id";
+  $sql = "SELECT price_kg FROM products WHERE id= :id";
 // PREPARATION DE LA REQUETE
 $query = $db->prepare($sql);
 $query->bindValue(':id', $id);
@@ -75,7 +87,7 @@ echo
     <div class="flex items-center">
       <a href="../pages/delete_item.php?id=' . $cart_line['id'] .'"><p class="text-xs leading-3 underline text-red-500 pl-5 cursor-pointer">Supprimer</p></a>
     </div>
-    <p class="productTotal text-base font-black leading-none text-gray-800" data-product-id="' . $cart_line['product_id'] . '">' . $product['price'] . ' €</p>
+    <p class="productTotal text-base font-black leading-none text-gray-800" data-product-id="' . $cart_line['product_id'] . '">' . $product['price_kg'] . ' €</p>
   </div>
 </div>
 </div>

@@ -23,7 +23,7 @@ else{
 
 <body>
     <div id="profilAndCart">
-        <?php if(!($_SESSION['admin'] === "full" || $_SESSION['admin'] === "self")){
+        <?php if(!(isset($_SESSION['admin'])) || !($_SESSION['admin'] === "full" || $_SESSION['admin'] === "self")){
             include 'elements/profil_and_cart.php';
         }
         
@@ -86,6 +86,9 @@ else{
     }
     elseif(isset($_GET['page']) && $_GET['page'] === "commandes_control" ){
         include 'pages/commandes_control.php';
+    }
+    elseif(isset($_GET['page']) && $_GET['page'] === "contact_control" ){
+        include 'pages/contact_control.php';
     }
     elseif(isset($_GET['page']) && $_GET['page'] === "product" ){
         if($_GET['cat'] === "the"){

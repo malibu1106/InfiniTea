@@ -54,7 +54,8 @@ $_product_name =$product['name'];
                 <option value="300">300 g</option>
             </select>
             <div class="flex items-center justify-center mt-2">
-                <i class="text-gray-600"><?= $product['price_kg']?></i>
+                <span id="basePrice" style="display:none"><?= $product['price_kg']?></span>
+                <i id="finalPrice" class="text-gray-600"></i>
             </div>
             <div class="flex items-center mt-8 text-sm  text-gray-900">
                 <svg class="w-6 h-6 mr-2 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
