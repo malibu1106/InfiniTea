@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : lun. 17 juin 2024 à 06:52
+-- Généré le : mar. 18 juin 2024 à 08:50
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -20,6 +20,33 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `infinitea`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `carts`
+--
+
+CREATE TABLE `carts` (
+  `id` int NOT NULL,
+  `product_id` int NOT NULL,
+  `product_name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `product_image` varchar(255) NOT NULL,
+  `weight` int NOT NULL,
+  `quantity` int NOT NULL,
+  `user_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `carts`
+--
+
+INSERT INTO `carts` (`id`, `product_id`, `product_name`, `product_image`, `weight`, `quantity`, `user_id`) VALUES
+(7, 5, 'Éclipse', '../images/produits/infusions.png', 200, 5, 9),
+(10, 6, 'Voie Lactée', '../images/produits/noir.png', 100, 3, 9),
+(14, 4, 'Thé n°3', '../images/produits/vert.png', 300, 5, 6),
+(16, 4, 'Thé n°3', '../images/produits/vert.png', 300, 5, 6),
+(19, 6, 'Voie Lactée', '../images/produits/noir.png', 200, 1, 11);
 
 -- --------------------------------------------------------
 
@@ -49,6 +76,40 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `content` text NOT NULL,
+  `price` int NOT NULL,
+  `paid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `processed` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `user_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `orders`
+--
+
+INSERT INTO `orders` (`id`, `first_name`, `last_name`, `email`, `address`, `content`, `price`, `paid`, `processed`, `user_id`) VALUES
+(1, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
+(2, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
+(3, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
+(4, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
+(5, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 5</p><p>Product Name: Éclipse</p><p>Weight: 200 g</p><p>Quantity: 5</p></div><div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
+(6, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 5</p><p>Product Name: Éclipse</p><p>Weight: 200 g</p><p>Quantity: 5</p></div><div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
+(7, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 5</p><p>Product Name: Éclipse</p><p>Weight: 200 g</p><p>Quantity: 5</p></div><div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
+(8, 'jean', 'jeanaa', 'jean@jean.com', '10 rue des morillons', '<div class=\"product\"><p>Product ID: 5</p><p>Product Name: Éclipse</p><p>Weight: 200 g</p><p>Quantity: 5</p></div><div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, 'true', NULL, 9),
+(9, 'Jetest@jetest.com', 'Jetest@jetest.com', 'Jetest@jetest.com', '10 rue des cacahuetes', '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 200 g</p><p>Quantity: 1</p></div>', 44, 'true', NULL, 11);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `products`
 --
 
@@ -60,7 +121,7 @@ CREATE TABLE `products` (
   `description` varchar(255) NOT NULL,
   `composition` varchar(255) NOT NULL,
   `price_kg` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
-  `price` varchar(255) NOT NULL,
+  `price` int NOT NULL,
   `weight` varchar(255) NOT NULL,
   `image_filename` varchar(255) NOT NULL,
   `temperature` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
@@ -74,12 +135,14 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `category`, `description_courte`, `description`, `composition`, `price_kg`, `price`, `weight`, `image_filename`, `temperature`, `temps`, `added_by`, `highlight`) VALUES
-(2, 'Éclipse', 'thé noir', 'Notes de cacao et de vanille', '', '+ tard', '+ tard', '+ tard', '255g', '../images/produits/infusions.png', '90°', '2m', 5, 0),
-(3, 'Voie Lactée', 'thé blanc', 'Touches de noix de coco et d\'amande', '+tard', '+tard', '+tard', '+tard', '+tard', '../images/produits/noir.png', '+tard', '+tard', 6, 1),
-(4, 'Thé n°3', 'thé vert', '', 'the blanc test edit', 'the blanc test compo', '73€', '65€', '320g', '../images/produits/vert.png', '90°', '3m', 6, 1),
-(5, 'Éclipse', 'thé oolong', 'Notes de cacao et de vanille', '', '+ tard', '+ tard', '+ tard', '255g', '../images/produits/infusions.png', '90°', '2m', 5, 0),
-(6, 'Voie Lactée', 'thé rooibos', 'Touches de noix de coco et d\'amande', '+tard', '+tard', '+tard', '+tard', '+tard', '../images/produits/noir.png', '+tard', '+tard', 6, 1),
-(7, 'Thé n°3', 'infusions', '', 'the blanc test edit', 'the blanc test compo', '73€', '65€', '320g', '../images/produits/vert.png', '90°', '3m', 6, 1);
+(2, 'Éclipse', 'thé noir', 'Notes de cacao et de vanille', '', '+ tard', '+ tard', 8, '255g', '../images/produits/infusions.png', '90°', '2m', 5, 0),
+(3, 'Voie Lactée', 'thé blanc', 'Touches de noix de coco et d\'amande', '+tard', '+tard', '+tard', 12, '+tard', '../images/produits/noir.png', '+tard', '+tard', 6, 1),
+(4, 'Thé n°3', 'thé vert', '', 'the blanc test edit', 'the blanc test compo', '73€', 14, '320g', '../images/produits/vert.png', '90°', '3m', 6, 1),
+(5, 'Éclipse', 'thé oolong', 'Notes de cacao et de vanille', '', '+ tard', '+ tard', 12, '255g', '../images/produits/infusions.png', '90°', '2m', 5, 0),
+(6, 'Voie Lactée', 'thé rooibos', 'Touches de noix de coco et d\'amande', '+tard', '+tard', '+tard', 22, '+tard', '../images/produits/noir.png', '+tard', '+tard', 6, 1),
+(7, 'Thé n°3', 'infusions', '', 'the blanc test edit', 'the blanc test compo', '73€', 17, '320g', '../images/produits/vert.png', '90°', '3m', 6, 1),
+(8, 'Coffret test', 'coffrets', '', 'the blanc test edit', 'the blanc test compo', '73€', 14, '320g', '../images/produits/vert.png', '90°', '3m', 6, 1),
+(9, 'Accessoire test', 'accessoires', '', 'the blanc test edit', 'the blanc test compo', '73€', 14, '320g', '../images/produits/vert.png', '90°', '3m', 6, 1);
 
 -- --------------------------------------------------------
 
@@ -110,17 +173,30 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `adresse`, `zipcode`, `vil
 (4, 'super', 'user', '', 0, '', '', NULL, NULL, 'superuser@infinitea.com', '$2y$10$k2QgjJHq5lkBc74k8esgUuprTQVz11F9vwIWmqqcCytc0Gi09zQ96', 'full'),
 (5, 'Mathilde', 'Jourden', '', 0, '', '', NULL, NULL, 'mathilde@infinitea.com', '$2y$10$ft6XjbvMZfi2c2LDbzOPD.Lgqs7stmm5j.u5LqWYFPriQYk3OFIq2', 'self'),
 (6, 'Roberto', 'De Sousa', '', 0, '', '', NULL, NULL, 'roberto@infinitea.com', '$2y$10$riE4fdj3x0RNji6WfvLTNe/dD3/QF9OllkGCACcdjHbdtmMeTYsyu', 'self'),
-(9, 'jean', 'jeanaa', '10 rue des cacahuetes hehehe', 52145, 'Bite poil couille', 'Non Binaire', '1987-12-06', '2024-06-13', 'jean@jean.com', '$2y$10$9ir/aRNsZN1TBU05RXEJyeML5tVM/3xdpfjSzr98RQ07ZjYRaDHFu', 'self'),
-(10, 'azz', 'azz', '', 0, '', '', '2024-06-13', '2024-06-13', 'fezfezfez@lo.mo', '$2y$10$Q6b7/JV76cHmtlmRow4coOtFQL6I.llaX96JNPk.K/I7/uIYNraFK', NULL);
+(9, 'jean', 'jeanaa', '10 rue des morillons', 52145, 'Nevers', 'Non Binaire', '1987-12-06', '2024-06-13', 'jean@jean.com', '$2y$10$9ir/aRNsZN1TBU05RXEJyeML5tVM/3xdpfjSzr98RQ07ZjYRaDHFu', ''),
+(10, 'azz', 'azz', '', 0, '', '', '2024-06-13', '2024-06-13', 'fezfezfez@lo.mo', '$2y$10$Q6b7/JV76cHmtlmRow4coOtFQL6I.llaX96JNPk.K/I7/uIYNraFK', NULL),
+(11, 'Jetest@jetest.com', 'Jetest@jetest.com', NULL, NULL, NULL, '', '2024-06-18', '2024-06-18', 'Jetest@jetest.com', '$2y$10$FOqjHgaNCvBvjhWsAcfMVu9qMH3Dl6fIdR2zh/4B28XUMyy08ACu2', NULL);
 
 --
 -- Index pour les tables déchargées
 --
 
 --
+-- Index pour la table `carts`
+--
+ALTER TABLE `carts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Index pour la table `orders`
+--
+ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -140,22 +216,34 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT pour la table `carts`
+--
+ALTER TABLE `carts`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
 -- AUTO_INCREMENT pour la table `categories`
 --
 ALTER TABLE `categories`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT pour la table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
 -- AUTO_INCREMENT pour la table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
