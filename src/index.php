@@ -78,6 +78,12 @@ echo '<a href="index.php?page=cart#main"><svg class="w-[40px] h-[40px] text-gray
     elseif(isset($_GET['page']) && $_GET['page'] === "cart" ){
         include 'pages/cart.php';
     }
+    elseif(isset($_GET['page']) && $_GET['page'] === "paiement" ){
+        include 'pages/paiement.php';
+    }
+    elseif(isset($_GET['page']) && $_GET['page'] === "commandes" ){
+        include 'pages/commandes.php';
+    }
     elseif(isset($_GET['page']) && $_GET['page'] === "product" ){
         if($_GET['cat'] === "the"){
             include 'elements/produit_the.php';

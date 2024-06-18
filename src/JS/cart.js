@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let productPrices = document.querySelectorAll('.productTotal');
     let weightSelects = document.querySelectorAll('.grammes');
     let priceTotalElement = document.getElementById('priceTotal');
+    let priceTotalHiddenInput = document.getElementById('priceTotalHiddenInput'); // Ajout de cette ligne
 
     let basePrices = Array.from(productPrices).map(product => {
         let priceText = product.textContent.replace(' €', '');
@@ -67,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return total + parseFloat(priceText);
         }, 0);
         priceTotalElement.textContent = totalPrice.toFixed(2) + ' €';
+        priceTotalHiddenInput.value = totalPrice.toFixed(2); // Ajout de cette ligne
     }
 
     function updateAllPrices() {
