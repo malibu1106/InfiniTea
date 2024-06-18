@@ -5,8 +5,7 @@ session_start();
 //ON VERIFIE POST + QUE LES CHAMPS NE SONT PAS VIDES ET ON RECUPERE LES VALEURS DU FORMULAIRE
 if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
 && !empty($_POST['category']) && !empty($_POST['description']) && !empty($_POST['description_courte'])
-&& !empty($_POST['composition']) && !empty($_POST['price'])
-&& !empty($_POST['weight']) && !empty($_FILES['image_filename'])
+&& !empty($_POST['composition']) && !empty($_FILES['image_filename'])
 ){
     // FORMULAIRE BIEN REMPLI DONC ON GERE LES DONNEES OBLIGATOIRES
     $name = strip_tags($_POST['name']);
@@ -14,24 +13,33 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
     $description = strip_tags($_POST['description']);
     $description_courte = strip_tags($_POST['description_courte']);
     $composition = strip_tags($_POST['composition']);
-    $price = strip_tags($_POST['price']);
-    $weight = strip_tags($_POST['weight']);
+    
     // FORMULAIRE BIEN REMPLI DONC ON GERE LES DONNEES OPTIONNELLES
     // ON INITIALISE DES VARIABLES VIDES
-    $price_kg = strip_tags($_POST['price_kg']);
-    $temperature = strip_tags($_POST['temperature']);
-    $temps = strip_tags($_POST['temps']);
-    $highlight = strip_tags($_POST['highlight']);
+    $price_kg = "";
+    $price = "0";
+    $weight = "";
+    $temperature = "";
+    $temps = "";
+    $highlight = "0";
 
     // ET SI ELLES SONT DEFINIES DANS LE FORMULAIRE ALORS ON RECUPERE LEURS VALEURS
     if($_POST['price_kg']){
-        $price_price_kg = strip_tags($_POST['price_kg']);}
+        $price_kg = strip_tags($_POST['price_kg']);}
     if($_POST['temperature']){
         $temperature = strip_tags($_POST['temperature']);}
     if($_POST['temps']){
         $temps = strip_tags($_POST['temps']);}
     if($_POST['highlight']){
         $highlight = strip_tags($_POST['highlight']);}
+    if($_POST['price']){
+        $price = strip_tags($_POST['price']);}
+    if($_POST['weight']){
+        $weight = strip_tags($_POST['weight']);}
+
+
+
+
     // FORMULAIRE BIEN REMPLI DONC ON GERE L'ID DE L'ADMIN CONNECTÉ
     $added_by = $_SESSION['user_id'];
     // ON GERE L'IMAGE 
