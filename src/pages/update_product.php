@@ -1,9 +1,7 @@
 <?php
 // ON DEMARRE DIRECTEMENT UNE SESSION POUR GERER LES MESSAGES A AFFICHER EN CAS DE PROBLEME
 session_start();
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
+$id = $_POST['id'];
 
 
 
@@ -84,7 +82,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
 
      // REQUETE
 
-    $sql ="UPDATE products SET name = :name, category = :category, description = :description, composition = :composition, weight = :weight, image_filename = :image_filename,
+    $sql ="UPDATE products SET name = :name, category = :category, description = :description, description_courte = :description_courte, composition = :composition, weight = :weight, image_filename = :image_filename,
      price = :price, price_kg = :price_kg, temperature = :temperature, temps = :temps, highlight = :highlight WHERE id =:id";
  
      // PREPARATION DE LA REQUETE
@@ -93,6 +91,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
          $query->bindValue(':name', $name);
          $query->bindValue(':category', $category);
          $query->bindValue(':description', $description);
+         $query->bindValue(':description_courte', $description_courte);
          $query->bindValue(':composition', $composition);
          $query->bindValue(':price', $price);
          $query->bindValue(':weight', $weight);
@@ -110,7 +109,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
     }
 
 else{
-    $sql ="UPDATE products SET name = :name, category = :category, description= :description, composition = :composition, weight = :weight,
+    $sql ="UPDATE products SET name = :name, category = :category, description= :description, description_courte = :description_courte, composition = :composition, weight = :weight,
      price = :price, price_kg = :price_kg, temperature = :temperature, temps = :temps, highlight = :highlight WHERE id =:id";
  
      // PREPARATION DE LA REQUETE
@@ -119,6 +118,7 @@ else{
          $query->bindValue(':name', $name);
          $query->bindValue(':category', $category);
          $query->bindValue(':description', $description);
+         $query->bindValue(':description_courte', $description_courte);
          $query->bindValue(':composition', $composition);
          $query->bindValue(':price', $price);
          $query->bindValue(':weight', $weight);
