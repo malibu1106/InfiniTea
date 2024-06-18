@@ -5,7 +5,7 @@ session_start();
 // Vérification de l'existence de l'ID utilisateur dans la session
 if (!isset($_SESSION['user_id'])) {
     // Redirection vers la page de connexion ou une autre page appropriée
-    header('Location: ../login.php');
+    header('Location: ../pages/login.php');
     exit;
 }
 
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'
     require_once ('../elements/open_bdd.php');
 
     // PREPARATION DE LA REQUETE
-    $sql = "INSERT INTO contacts (user_id, first_name, last_name, email, message, gender) 
+    $sql = "INSERT INTO contact (user_id, first_name, last_name, email, message, gender) 
             VALUES (:user_id, :first_name, :last_name, :email, :message, :gender)";
     $query = $db->prepare($sql);
     $query->bindValue(':user_id', $id);
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'
     exit;
 } else {
     $_SESSION["message"] = "<div id='alert_message'>Veuillez remplir tous les champs obligatoires.</div>";
-    header('Location: ../index.php?page=profil');
+    header('Location: ../index.php?page=contact');
     exit;
 }
 ?>
