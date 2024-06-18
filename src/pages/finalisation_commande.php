@@ -3,6 +3,7 @@
 session_start();
 $paid = "true";
 $user_id = $_SESSION['user_id'];
+$date = date('Y-m-d'); 
 
 
 
@@ -17,10 +18,11 @@ $order_id = $query->fetch(PDO::FETCH_ASSOC);
 
 
 
-$sql ="UPDATE orders SET address = :address, paid = :paid  WHERE id =:order_id ";
+$sql ="UPDATE orders SET address = :address, paid = :paid, date = :date  WHERE id =:order_id ";
 $query = $db->prepare($sql);
 $query->bindValue(':address', $_POST['adresse']);
 $query->bindValue(':paid', $paid);
+$query->bindValue(':date', $date);
 $query->bindValue(':order_id', $order_id['id']);
 $query->execute(); // Exécute la requête
 

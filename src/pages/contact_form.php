@@ -1,15 +1,16 @@
 <?php
 // ON DEMARRE DIRECTEMENT UNE SESSION POUR GERER LES MESSAGES A AFFICHER EN CAS DE PROBLEME
-session_start(); 
+session_start();
 
 // Vérification de l'existence de l'ID utilisateur dans la session
 if (!isset($_SESSION['user_id'])) {
-    // Redirection vers la page de connexion ou une autre page appropriée
-    header('Location: ../pages/login.php');
-    exit;
+    $id = 0;
+}
+else{
+    $id = $_SESSION['user_id'];
 }
 
-$id = $_SESSION['user_id'];
+
 
 // ON VERIFIE POST + QUE LES CHAMPS OBLIGATOIRES NE SONT PAS VIDES ET ON RECUPERE LES VALEURS DU FORMULAIRE
 if ($_SERVER['REQUEST_METHOD'] === 'POST' 
@@ -53,11 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'
     require_once("../elements/close_bdd.php");
 
     // REDIRECTION
-    header('Location: ../index.php?page=profil');
+    header('Location: ../index.php');
     exit;
-} else {
-    $_SESSION["message"] = "<div id='alert_message'>Veuillez remplir tous les champs obligatoires.</div>";
-    header('Location: ../index.php?page=contact');
-    exit;
-}
+} 
 ?>

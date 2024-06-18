@@ -30,6 +30,7 @@ foreach ($data as $key => $value) {
         $productInfo .= '<p>Weight: ' . $weight . ' g</p>';
         $productInfo .= '<p>Quantity: ' . $quantity . '</p>';
         $productInfo .= '</div>';
+        $productInfo .= '</br>';
     }
 }
 

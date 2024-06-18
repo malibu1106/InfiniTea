@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : db
--- Généré le : mar. 18 juin 2024 à 08:50
+-- Généré le : mar. 18 juin 2024 à 10:32
 -- Version du serveur : 8.0.37
 -- Version de PHP : 8.2.8
 
@@ -46,7 +46,9 @@ INSERT INTO `carts` (`id`, `product_id`, `product_name`, `product_image`, `weigh
 (10, 6, 'Voie Lactée', '../images/produits/noir.png', 100, 3, 9),
 (14, 4, 'Thé n°3', '../images/produits/vert.png', 300, 5, 6),
 (16, 4, 'Thé n°3', '../images/produits/vert.png', 300, 5, 6),
-(19, 6, 'Voie Lactée', '../images/produits/noir.png', 200, 1, 11);
+(19, 6, 'Voie Lactée', '../images/produits/noir.png', 200, 1, 11),
+(20, 6, 'Voie Lactée', '../images/produits/noir.png', 100, 1, 4),
+(21, 6, 'Voie Lactée', '../images/produits/noir.png', 100, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -76,6 +78,30 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `last_name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `message` text NOT NULL,
+  `gender` varchar(255) NOT NULL,
+  `user_id` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Déchargement des données de la table `contact`
+--
+
+INSERT INTO `contact` (`id`, `first_name`, `last_name`, `email`, `message`, `gender`, `user_id`) VALUES
+(1, 'Prénomgre', 'Nom', 'malibu1106@gmail.com', 'gregre', 'Femme', 4),
+(2, 'Prénom', 'Nom', 'gg@gg.com', 'gfdgfd', 'Femme', 0);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `orders`
 --
 
@@ -87,6 +113,7 @@ CREATE TABLE `orders` (
   `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `content` text NOT NULL,
   `price` int NOT NULL,
+  `date` date DEFAULT NULL,
   `paid` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `processed` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `user_id` int NOT NULL
@@ -96,16 +123,19 @@ CREATE TABLE `orders` (
 -- Déchargement des données de la table `orders`
 --
 
-INSERT INTO `orders` (`id`, `first_name`, `last_name`, `email`, `address`, `content`, `price`, `paid`, `processed`, `user_id`) VALUES
-(1, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
-(2, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
-(3, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
-(4, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
-(5, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 5</p><p>Product Name: Éclipse</p><p>Weight: 200 g</p><p>Quantity: 5</p></div><div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
-(6, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 5</p><p>Product Name: Éclipse</p><p>Weight: 200 g</p><p>Quantity: 5</p></div><div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
-(7, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 5</p><p>Product Name: Éclipse</p><p>Weight: 200 g</p><p>Quantity: 5</p></div><div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, 9),
-(8, 'jean', 'jeanaa', 'jean@jean.com', '10 rue des morillons', '<div class=\"product\"><p>Product ID: 5</p><p>Product Name: Éclipse</p><p>Weight: 200 g</p><p>Quantity: 5</p></div><div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, 'true', NULL, 9),
-(9, 'Jetest@jetest.com', 'Jetest@jetest.com', 'Jetest@jetest.com', '10 rue des cacahuetes', '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 200 g</p><p>Quantity: 1</p></div>', 44, 'true', NULL, 11);
+INSERT INTO `orders` (`id`, `first_name`, `last_name`, `email`, `address`, `content`, `price`, `date`, `paid`, `processed`, `user_id`) VALUES
+(1, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, NULL, 9),
+(2, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, NULL, 9),
+(3, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, NULL, 9),
+(4, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, NULL, 9),
+(5, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 5</p><p>Product Name: Éclipse</p><p>Weight: 200 g</p><p>Quantity: 5</p></div><div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, NULL, 9),
+(6, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 5</p><p>Product Name: Éclipse</p><p>Weight: 200 g</p><p>Quantity: 5</p></div><div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, NULL, 9),
+(7, 'jean', 'jeanaa', 'jean@jean.com', NULL, '<div class=\"product\"><p>Product ID: 5</p><p>Product Name: Éclipse</p><p>Weight: 200 g</p><p>Quantity: 5</p></div><div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, NULL, NULL, 9),
+(8, 'jean', 'jeanaa', 'jean@jean.com', '10 rue des morillons', '<div class=\"product\"><p>Product ID: 5</p><p>Product Name: Éclipse</p><p>Weight: 200 g</p><p>Quantity: 5</p></div><div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 3</p></div>', 186, NULL, 'true', NULL, 9),
+(9, 'Jetest@jetest.com', 'Jetest@jetest.com', 'Jetest@jetest.com', '10 rue des cacahuetes', '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 200 g</p><p>Quantity: 1</p></div>', 44, NULL, 'true', NULL, 11),
+(10, 'Jetest@jetest.com', 'Jetest@jetest.com', 'Jetest@jetest.com', '10 rue des cacahuetes', '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 200 g</p><p>Quantity: 1</p></div>', 44, NULL, 'true', NULL, 11),
+(11, 'super', 'user', 'superuser@infinitea.com', '10 rue des cacahuetes', '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 1</p></div>', 22, '2024-06-18', 'true', 'true', 4),
+(12, 'super', 'user', 'superuser@infinitea.com', '10 rue des cacahuetes', '<div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 1</p></div></br><div class=\"product\"><p>Product ID: 6</p><p>Product Name: Voie Lactée</p><p>Weight: 100 g</p><p>Quantity: 1</p></div></br>', 44, '2024-06-18', 'true', NULL, 4);
 
 -- --------------------------------------------------------
 
@@ -194,6 +224,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Index pour la table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Index pour la table `orders`
 --
 ALTER TABLE `orders`
@@ -219,7 +255,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT pour la table `categories`
@@ -228,10 +264,16 @@ ALTER TABLE `categories`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
+-- AUTO_INCREMENT pour la table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT pour la table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT pour la table `products`
