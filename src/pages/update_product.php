@@ -4,36 +4,39 @@ session_start();
 $_SESSION['user_id'] = 1; // TEMPORAIRE PAR LA SUITE ON AURA DEJA DECLARÉ CETTE VARIABLE DES QU'UN UTILISATEUR SERA CONNECTÉ
 
 //ON VERIFIE POST + QUE LES CHAMPS NE SONT PAS VIDES ET ON RECUPERE LES VALEURS DU FORMULAIRE
-if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name']) && !empty($_POST['id'])
-&& !empty($_POST['category']) && !empty($_POST['description'])
-&& !empty($_POST['composition']) && !empty($_POST['price'])
-&& !empty($_POST['weight'])
+if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
+&& !empty($_POST['category']) && !empty($_POST['description']) && !empty($_POST['description_courte'])
+&& !empty($_POST['composition']) && !empty($_FILES['image_filename'])
 ){
     // FORMULAIRE BIEN REMPLI DONC ON GERE LES DONNEES OBLIGATOIRES
-    $id = strip_tags($_POST['id']);
     $name = strip_tags($_POST['name']);
     $category = strip_tags($_POST['category']);
     $description = strip_tags($_POST['description']);
+    $description_courte = strip_tags($_POST['description_courte']);
     $composition = strip_tags($_POST['composition']);
-    $price = strip_tags($_POST['price']);
-    $weight = strip_tags($_POST['weight']);
+    
     // FORMULAIRE BIEN REMPLI DONC ON GERE LES DONNEES OPTIONNELLES
     // ON INITIALISE DES VARIABLES VIDES
-    $price_before_reduction = strip_tags($_POST['price_before_reduction']);
-    $temperature = strip_tags($_POST['temperature']);
-    $temps = strip_tags($_POST['temps']);
-    $highlight = strip_tags($_POST['highlight']);
+    $price_kg = "";
+    $price = "0";
+    $weight = "";
+    $temperature = "";
+    $temps = "";
+    $highlight = "0";
 
     // ET SI ELLES SONT DEFINIES DANS LE FORMULAIRE ALORS ON RECUPERE LEURS VALEURS
-    if($_POST['price_before_reduction']){
-        $price_before_reduction = strip_tags($_POST['price_before_reduction']);}
+    if($_POST['price_kg']){
+        $price_kg = strip_tags($_POST['price_kg']);}
     if($_POST['temperature']){
         $temperature = strip_tags($_POST['temperature']);}
     if($_POST['temps']){
         $temps = strip_tags($_POST['temps']);}
     if($_POST['highlight']){
         $highlight = strip_tags($_POST['highlight']);}
-    // FORMULAIRE BIEN REMPLI DONC ON GERE L'ID DE L'ADMIN CONNECTÉ
+    if($_POST['price']){
+        $price = strip_tags($_POST['price']);}
+    if($_POST['weight']){
+        $weight = strip_tags($_POST['weight']);}
     $added_by = $_SESSION['user_id'];
     // ON GERE L'IMAGE
     if(isset($_FILES)){
