@@ -1,12 +1,16 @@
 <?php
 // ON DEMARRE DIRECTEMENT UNE SESSION POUR GERER LES MESSAGES A AFFICHER EN CAS DE PROBLEME
 session_start();
-$_SESSION['user_id'] = 1; // TEMPORAIRE PAR LA SUITE ON AURA DEJA DECLARÉ CETTE VARIABLE DES QU'UN UTILISATEUR SERA CONNECTÉ
+echo '<pre>';
+print_r($_POST);
+echo '</pre>';
+
+
 
 //ON VERIFIE POST + QUE LES CHAMPS NE SONT PAS VIDES ET ON RECUPERE LES VALEURS DU FORMULAIRE
 if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
 && !empty($_POST['category']) && !empty($_POST['description']) && !empty($_POST['description_courte'])
-&& !empty($_POST['composition']) && !empty($_FILES['image_filename'])
+&& !empty($_POST['composition'])
 ){
     // FORMULAIRE BIEN REMPLI DONC ON GERE LES DONNEES OBLIGATOIRES
     $name = strip_tags($_POST['name']);
@@ -37,6 +41,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
         $price = strip_tags($_POST['price']);}
     if($_POST['weight']){
         $weight = strip_tags($_POST['weight']);}
+        
     $added_by = $_SESSION['user_id'];
     // ON GERE L'IMAGE
     if(isset($_FILES)){
@@ -100,7 +105,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
      // EXECUTION + CLOSE BDD
      $query->execute();
 
-     $_SESSION["message"] = "<div id='alert_message'>Produit ajouté !</div>";
+     $_SESSION["message"] = "<div id='alert_message'>Produit modifié !</div>";
     
     }
 
