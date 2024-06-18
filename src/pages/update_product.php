@@ -80,7 +80,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
      // REQUETE
 
     $sql ="UPDATE products SET name = :name, category = :category, description = :description, composition = :composition, weight = :weight, image_filename = :image_filename,
-     price = :price, price_before_reduction = :price_before_reduction, temperature = :temperature, temps = :temps, highlight = :highlight WHERE id =:id";
+     price = :price, price_kg = :price_kg, temperature = :temperature, temps = :temps, highlight = :highlight WHERE id =:id";
  
      // PREPARATION DE LA REQUETE
      $query = $db->prepare($sql);
@@ -92,7 +92,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
          $query->bindValue(':price', $price);
          $query->bindValue(':weight', $weight);
          $query->bindValue(':image_filename', $image_filename);
-         $query->bindValue(':price_before_reduction', $price_before_reduction);
+         $query->bindValue(':price_kg', $price_kg);
          $query->bindValue(':temperature', $temperature);
          $query->bindValue(':temps', $temps);
          $query->bindValue(':highlight', $highlight);
@@ -106,7 +106,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
 
 else{
     $sql ="UPDATE products SET name = :name, category = :category, description= :description, composition = :composition, weight = :weight,
-     price = :price, price_before_reduction = :price_before_reduction, temperature = :temperature, temps = :temps, highlight = :highlight WHERE id =:id";
+     price = :price, price_kg = :price_kg, temperature = :temperature, temps = :temps, highlight = :highlight WHERE id =:id";
  
      // PREPARATION DE LA REQUETE
      $query = $db->prepare($sql);   
@@ -117,7 +117,7 @@ else{
          $query->bindValue(':composition', $composition);
          $query->bindValue(':price', $price);
          $query->bindValue(':weight', $weight);
-         $query->bindValue(':price_before_reduction', $price_before_reduction);
+         $query->bindValue(':price_kg', $price_kg);
          $query->bindValue(':temperature', $temperature);
          $query->bindValue(':temps', $temps);
          $query->bindValue(':highlight', $highlight);
