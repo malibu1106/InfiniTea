@@ -352,6 +352,7 @@ article {
   overflow-x: hidden;
 }
 
+#products h3 { font-size: 1em;}
 .hiddenProduct {
   transform: translateX(5000px);
 }
