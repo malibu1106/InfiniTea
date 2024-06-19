@@ -32,15 +32,15 @@ require_once ('elements/close_bdd.php');
             echo '<a href="index.php?page=product_list#main"><li>Gérer ';
             if($_SESSION['admin'] === "full"){echo 'l';}else{echo 'm';}
                 echo'es produits</li></a>';
-            echo '<a href="index.php?page=commandes_control"><li>Voir les commandes ';
+            echo '<a href="index.php?page=commandes_control#main"><li>Voir les commandes ';
             if ($unprocessed){echo '<span style="color:red">(' .count($unprocessed). ')</span>';}
             echo '</li></a>';
-            echo '<a href="index.php?page=contact_control"><li>Voir les messages ';
+            echo '<a href="index.php?page=contact_control#main"><li>Voir les messages ';
             if ($unread){echo '<span style="color:red">(' .count($unread). ')</span>';}
             echo '</li></a>';
                 if($_SESSION['admin'] === "full"){
-                    echo '<a href="index.php?page=user_control"><li>Gérer les utilisateurs</li></a>';
-                    echo '<a href="index.php?page=categories_control"><li>Gérer les catégories</li></a>';
+                    echo '<a href="index.php?page=user_control#main"><li>Gérer les utilisateurs</li></a>';
+                    echo '<a href="index.php?page=categories_control#main"><li>Gérer les catégories</li></a>';
                     
                 }
                 

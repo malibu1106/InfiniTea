@@ -1,7 +1,7 @@
 <?php include "elements/nav.php";
 
  
-    if (empty($_SESSION['admin'])){
+    // if (empty($_SESSION['admin'])){
 echo '<header>';
     
    echo '<article><div class="glowing"><h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl">
@@ -18,9 +18,9 @@ Votre thé, votre univers
 echo '</article>';
 
 echo '</header>';
-}
-else{
-  echo '<div style="margin-top:40px"></div>';
-}
+// }
+// else{
+//   echo '<div style="margin-top:40px"></div>';
+// }
 
 ?>

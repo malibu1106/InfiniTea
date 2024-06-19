@@ -21,7 +21,7 @@
          if(!empty($_SESSION['admin'])){
             
 
-                    echo '<a href="index.php?page=control_panel"><li>Gestion</li></a>';
+                    echo '<a href="index.php?page=control_panel#main"><li>Gestion</li></a>';
                     
                 }
                 

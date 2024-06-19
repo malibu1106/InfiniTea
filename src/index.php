@@ -135,8 +135,8 @@ else{
 
 
 <?php
-if(empty($_SESSION['admin'])){        
-        include 'elements/footer.php';}?>
+      
+        include 'elements/footer.php';?>
 
    
  
