@@ -22,8 +22,11 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
     <div id="left_arrow"><</div>
     <div id="right_arrow">></div>
     <?php foreach($highlights as $highlight){
+        if($highlight['category'] === "accessoires") {$cat = "accessoire";}
+        elseif($highlight['category'] === "coffrets") {$cat = "coffret";}
+        else{$cat = "the";}
     echo '<div class="highlights_products">';
-    echo '<a href="../index.php?page=product&cat=the&id=' . $highlight['id'] . '#main">';
+    echo '<a href="../index.php?page=product&cat='.$cat.'&id=' . $highlight['id'] . '#main">';
     echo '<img src="' . $highlight['image_filename'] . '">';
     echo '</a>';
     echo '<div class="highlights_details">';
@@ -38,8 +41,11 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
 <?php foreach($highlights as $highlight){
+    if($highlight['category'] === "accessoires") {$cat = "accessoire";}
+    elseif($highlight['category'] === "coffrets") {$cat = "coffret";}
+    else{$cat = "the";}
     echo'
-    <a href="../index.php?page=product&cat=the&id=' . $highlight['id'] . '#main">
+    <a href="../index.php?page=product&cat='.$cat.'&id=' . $highlight['id'] . '#main">
     <div class="flex-shrink-0 m-6 relative overflow-hidden  rounded-lg max-w-xs shadow-lg">
         <svg class="absolute bottom-0 left-0 mb-8" viewBox="0 0 375 283" fill="none"
             style="transform: scale(1.5); opacity: 0.1;">
