@@ -34,7 +34,7 @@ $coffrets = $query->fetchAll(PDO::FETCH_ASSOC);
         <div class="relative text-white px-6 pb-6 mt-6">
             <div class="flex justify-between">
                 <span class="block font-semibold text-xl">' . $coffret['name'] . '</span>
-                <span class="block rounded-full text-purple-500 text-xs font-bold px-3 py-2 leading-none flex items-center">' . $coffret['price'] . ' €</span>
+                <span class="block rounded-full text-purple-500 text-xs font-bold px-3 py-2 leading-none flex items-center">' . $coffret['price_kg'] . ' €</span>
             </div>
         </div>
     </div></a>';
