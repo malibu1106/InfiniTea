@@ -82,7 +82,7 @@ $_product_name =$product['name'];
     </div>
 </div>
 
-<script type="text/javascript" src="JS/product.js" defer></script>
+<script type="text/javascript" src="JS/product_access_coffrets.js" defer></script>
 
 
 
