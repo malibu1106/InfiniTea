@@ -222,7 +222,6 @@ article {
 #right_arrow {
   position: absolute;
   margin-top: 20%;
-  font-size: 55px;
   z-index: 50;
   cursor: pointer;
 }
