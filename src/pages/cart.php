@@ -60,13 +60,16 @@ echo
 </div>
 <div class="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center">
   <div class="flex flex-col items-start w-full">
-    <h3>' . $cart_line['product_name'] . '</h3>
-    <select name="weight'.$index.'" id="grammes" class="grammes bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-2" data-product-id="' . $cart_line['product_id'] . '">
+    <h3>' . $cart_line['product_name'] . '</h3>';
+if(!empty($cart_line['weight'])){echo
+    '<select name="weight'.$index.'" id="grammes" class="grammes bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mb-2" data-product-id="' . $cart_line['product_id'] . '">
       <option value="100" ' . ($cart_line["weight"] === 100 ? "selected" : "") . '>100 g</option>
       <option value="200" ' . ($cart_line["weight"] === 200 ? "selected" : "") . '>200 g</option>
       <option value="300" ' . ($cart_line["weight"] === 300 ? "selected" : "") . '>300 g</option>
-    </select>
-    <div class="flex flex-col items-start w-full">
+    </select>';}
+    else{echo '<input type="hidden" id="grammes" class="grammes" value="1000">';}
+
+    echo'<div class="flex flex-col items-start w-full">
       <label for="counter-input-' . $cart_line['product_id'] . '" class="flex-shrink-0 mb-2"><span>Choisissez la quanti\'thé :</span></label>
       <div class="relative flex items-center">
         <button type="button" id="decrement-button-' . $cart_line['product_id'] . '" data-input-counter-decrement="counter-input-' . $cart_line['product_id'] . '" class="decrement-button flex-shrink-0 bg-gray-100 hover:bg-gray-200 inline-flex items-center justify-center border border-gray-300 rounded-md h-5 w-5 focus:ring-gray-100 focus:ring-2 focus:outline-none">

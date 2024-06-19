@@ -31,25 +31,16 @@ $_product_name =$product['name'];
             <?= $product['description']?>
             </p>
             
-            <div class="flex justify-center w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 mb-4 bg-stone-100 p-4 rounded-lg shadow-md mt-4">
-                <div class="w-1/4 h-1/4 flex items-center justify-center">
-                    <img src="./images/icones/temperature.png" alt="autre icône">
-                </div>
-                <span class="text-center my-4"><?= $product['temperature']?></span>
-                <div class="w-1/4 h-1/4 flex items-center justify-center ml-4">
-                    <img src="./images/icones/infusion.png" alt="sachet de thé">
-                </div>
-                <span class="text-center my-4 ml-0"><?= $product['temps']?></span>
-            </div>
-            
+
         </div>
-        <form action="pages/add_to_cart.php" method="POST" class="max-w-xs mx-auto mt-4">
+        <form action="pages/add_to_cart_ac.php" method="POST" class="max-w-xs mx-auto mt-4">
             <input type="hidden" name="product_ID" value="<?= $product_ID;?>">
             <input type="hidden" name="product_name" value="<?= $_product_name;?>">
             <input type="hidden" name="product_image" value="<?= $product['image_filename']?>">
       
             <div class="flex items-center justify-center mt-2">
-                <i class="text-gray-600"><?= $product['price']?></i>
+                <span id="basePrice" style="display:none"><?= $product['price']?></span>
+                <i id="finalPrice" class="text-gray-600"></i>
             </div>
             <div class="flex items-center mt-8 text-sm  text-gray-900">
                 <svg class="w-6 h-6 mr-2 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
@@ -76,4 +67,4 @@ $_product_name =$product['name'];
     </div>
 </div>
 
-<script type="text/javascript" src="JS/product.js" defer></script>
+<script type="text/javascript" src="JS/product_access_coffrets.js" defer></script>

@@ -94,6 +94,12 @@ else{
         if($_GET['cat'] === "the"){
             include 'elements/produit_the.php';
         }
+        elseif($_GET['cat'] === "coffret"){
+            include 'elements/produit_coffrets.php';
+        }
+        elseif($_GET['cat'] === "accessoire"){
+            include 'elements/produit_accessoires.php';
+        }
 
     }
     elseif(isset($_GET['page']) && $_GET['page'] === "inscription" ){
