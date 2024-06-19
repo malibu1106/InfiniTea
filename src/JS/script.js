@@ -175,3 +175,15 @@ function displayProducts(targetDiv) {
         gap += 0.2;
     });
 }
+
+
+/* SCROLL BACKGROUND */
+// JavaScript to add the 'scrolled' class on scroll
+document.addEventListener('scroll', () => {
+
+    if (window.scrollY > 0) {
+        menuBurger.classList.add('scrolled');
+    } else {
+        menuBurger.classList.remove('scrolled');
+    }
+});

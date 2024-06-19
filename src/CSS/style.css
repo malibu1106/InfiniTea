@@ -127,12 +127,17 @@ nav {
   list-style-type: none;
   display: none;
   flex-direction: column;
-  background: rgba(147, 69, 95, 0.5);
-  backdrop-filter: blur(5px);
+  /* background: rgba(147, 69, 95, 0.5);
+  backdrop-filter: blur(5px); */
   margin: 0;
   padding: 0;
   /*TEMP POUR TEST JS*/
   height: auto;
+}
+
+.scrolled {
+  background: rgba(147, 69, 95, 0.5);
+  backdrop-filter: blur(5px);
 }
 
 #burger li {
@@ -142,6 +147,7 @@ nav {
   height: 60px;
   line-height: 60px;
 }
+
 
 
 
@@ -352,7 +358,10 @@ article {
   overflow-x: hidden;
 }
 
-#products h3 { font-size: 1em;}
+#products h3 {
+  font-size: 1em;
+}
+
 .hiddenProduct {
   transform: translateX(5000px);
 }
@@ -369,12 +378,37 @@ article {
 
 /*COFFRETS*/
 .coffret {
-  background-image: url("../images/illustrations/Coffrets.png");
-  background-size: cover;
+  position: relative;
   height: 50vh;
   max-width: 100%;
+  overflow: hidden;
+  /* Ensure the pseudo-element stays within the coffret */
+}
+
+.coffret::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/illustrations/Coffrets.png");
+  background-size: cover;
   background-position: center;
-  image-rendering: high-quality;
+  transition: transform 1s ease;
+  z-index: 1;
+
+}
+
+.coffret:hover::before {
+  transform: scale(1.1);
+
+}
+
+.coffret-content {
+  position: relative;
+  z-index: 2;
+
 }
 
 .coffret h2 {
@@ -394,12 +428,37 @@ article {
 
 /* ACCESSOIRES*/
 .accessoires {
-  background-image: url("../images/illustrations/footer2.png");
-  background-size: cover;
+  position: relative;
   height: 50vh;
   max-width: 100%;
+  overflow: hidden;
+
+}
+
+.accessoires::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../images/illustrations/footer2.png");
+  background-size: cover;
   background-position: center;
-  image-rendering: high-quality;
+  transition: transform 1s ease;
+  z-index: 1;
+
+}
+
+.accessoires:hover::before {
+  transform: scale(1.1);
+
+}
+
+.accessoires-content {
+  position: relative;
+  z-index: 2;
+
 }
 
 .accessoires h2 {
@@ -458,14 +517,14 @@ footer h3 {
   padding: 5px;
 }
 
-#ftxt a {
+/* #ftxt a {
   text-decoration: none;
   color: var(--txtcolor1);
 }
 
 #ftxt a:hover {
   text-decoration: underline;
-}
+} */
 
 .flinks {
   width: 100%;
@@ -542,6 +601,29 @@ ul.back_office_menu {
     width: unset;
   }
 
+  #burger a {
+    position: relative;
+  }
+
+  #burger a::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    bottom: 0;
+    background: var(--txtcolor1);
+    z-index: 150000;
+  }
+
+  #burger a:hover::after {
+    width: 100%;
+    height: 1px;
+    bottom: 15px;
+    left: 0;
+    transition: width 0.7s, left 0.7s, bottom 0.2s;
+  }
+
   /* CART / PROFILE BUTTONS */
 
   #profilAndCart {
@@ -560,5 +642,29 @@ ul.back_office_menu {
   /*SELECTIONS*/
   .fleche_remonter {
     display: none;
+  }
+
+  /* FOOTER */
+  .flinks a {
+    position: relative;
+  }
+
+  .flinks a::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    bottom: -5px;
+    background: var(--txtcolor1);
+    z-index: 150000;
+  }
+
+  .flinks a:hover::after {
+    width: 100%;
+    height: 1px;
+    bottom: 0px;
+    left: 0;
+    transition: width 0.7s, left 0.7s, bottom 0.2s;
   }
 }
