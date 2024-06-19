@@ -1,39 +1,45 @@
 <?php
 // ON DEMARRE DIRECTEMENT UNE SESSION POUR GERER LES MESSAGES A AFFICHER EN CAS DE PROBLEME
 session_start();
-$_SESSION['user_id'] = 1; // TEMPORAIRE PAR LA SUITE ON AURA DEJA DECLARÉ CETTE VARIABLE DES QU'UN UTILISATEUR SERA CONNECTÉ
+$id = $_POST['id'];
+
+
 
 //ON VERIFIE POST + QUE LES CHAMPS NE SONT PAS VIDES ET ON RECUPERE LES VALEURS DU FORMULAIRE
-if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name']) && !empty($_POST['id'])
-&& !empty($_POST['category']) && !empty($_POST['description'])
-&& !empty($_POST['composition']) && !empty($_POST['price'])
-&& !empty($_POST['weight'])
+if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name'])
+&& !empty($_POST['category']) && !empty($_POST['description']) && !empty($_POST['description_courte'])
+&& !empty($_POST['composition'])
 ){
     // FORMULAIRE BIEN REMPLI DONC ON GERE LES DONNEES OBLIGATOIRES
-    $id = strip_tags($_POST['id']);
     $name = strip_tags($_POST['name']);
     $category = strip_tags($_POST['category']);
     $description = strip_tags($_POST['description']);
+    $description_courte = strip_tags($_POST['description_courte']);
     $composition = strip_tags($_POST['composition']);
-    $price = strip_tags($_POST['price']);
-    $weight = strip_tags($_POST['weight']);
+    
     // FORMULAIRE BIEN REMPLI DONC ON GERE LES DONNEES OPTIONNELLES
     // ON INITIALISE DES VARIABLES VIDES
-    $price_before_reduction = strip_tags($_POST['price_before_reduction']);
-    $temperature = strip_tags($_POST['temperature']);
-    $temps = strip_tags($_POST['temps']);
-    $highlight = strip_tags($_POST['highlight']);
+    $price_kg = "";
+    $price = "0";
+    $weight = "";
+    $temperature = "";
+    $temps = "";
+    $highlight = "0";
 
     // ET SI ELLES SONT DEFINIES DANS LE FORMULAIRE ALORS ON RECUPERE LEURS VALEURS
-    if($_POST['price_before_reduction']){
-        $price_before_reduction = strip_tags($_POST['price_before_reduction']);}
+    if($_POST['price_kg']){
+        $price_kg = strip_tags($_POST['price_kg']);}
     if($_POST['temperature']){
         $temperature = strip_tags($_POST['temperature']);}
     if($_POST['temps']){
         $temps = strip_tags($_POST['temps']);}
     if($_POST['highlight']){
         $highlight = strip_tags($_POST['highlight']);}
-    // FORMULAIRE BIEN REMPLI DONC ON GERE L'ID DE L'ADMIN CONNECTÉ
+    if($_POST['price']){
+        $price = strip_tags($_POST['price']);}
+    if($_POST['weight']){
+        $weight = strip_tags($_POST['weight']);}
+        
     $added_by = $_SESSION['user_id'];
     // ON GERE L'IMAGE
     if(isset($_FILES)){
@@ -76,8 +82,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name']) && !empty($_P
 
      // REQUETE
 
-    $sql ="UPDATE products SET name = :name, category = :category, description = :description, composition = :composition, weight = :weight, image_filename = :image_filename,
-     price = :price, price_before_reduction = :price_before_reduction, temperature = :temperature, temps = :temps, highlight = :highlight WHERE id =:id";
+    $sql ="UPDATE products SET name = :name, category = :category, description = :description, description_courte = :description_courte, composition = :composition, weight = :weight, image_filename = :image_filename,
+     price = :price, price_kg = :price_kg, temperature = :temperature, temps = :temps, highlight = :highlight WHERE id =:id";
  
      // PREPARATION DE LA REQUETE
      $query = $db->prepare($sql);
@@ -85,11 +91,12 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name']) && !empty($_P
          $query->bindValue(':name', $name);
          $query->bindValue(':category', $category);
          $query->bindValue(':description', $description);
+         $query->bindValue(':description_courte', $description_courte);
          $query->bindValue(':composition', $composition);
          $query->bindValue(':price', $price);
          $query->bindValue(':weight', $weight);
          $query->bindValue(':image_filename', $image_filename);
-         $query->bindValue(':price_before_reduction', $price_before_reduction);
+         $query->bindValue(':price_kg', $price_kg);
          $query->bindValue(':temperature', $temperature);
          $query->bindValue(':temps', $temps);
          $query->bindValue(':highlight', $highlight);
@@ -97,13 +104,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['name']) && !empty($_P
      // EXECUTION + CLOSE BDD
      $query->execute();
 
-     $_SESSION["message"] = "<div id='alert_message'>Produit ajouté !</div>";
+     $_SESSION["message"] = "<div id='alert_message'>Produit modifié !</div>";
     
     }
 
 else{
-    $sql ="UPDATE products SET name = :name, category = :category, description= :description, composition = :composition, weight = :weight,
-     price = :price, price_before_reduction = :price_before_reduction, temperature = :temperature, temps = :temps, highlight = :highlight WHERE id =:id";
+    $sql ="UPDATE products SET name = :name, category = :category, description= :description, description_courte = :description_courte, composition = :composition, weight = :weight,
+     price = :price, price_kg = :price_kg, temperature = :temperature, temps = :temps, highlight = :highlight WHERE id =:id";
  
      // PREPARATION DE LA REQUETE
      $query = $db->prepare($sql);   
@@ -111,10 +118,11 @@ else{
          $query->bindValue(':name', $name);
          $query->bindValue(':category', $category);
          $query->bindValue(':description', $description);
+         $query->bindValue(':description_courte', $description_courte);
          $query->bindValue(':composition', $composition);
          $query->bindValue(':price', $price);
          $query->bindValue(':weight', $weight);
-         $query->bindValue(':price_before_reduction', $price_before_reduction);
+         $query->bindValue(':price_kg', $price_kg);
          $query->bindValue(':temperature', $temperature);
          $query->bindValue(':temps', $temps);
          $query->bindValue(':highlight', $highlight);

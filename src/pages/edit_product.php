@@ -10,6 +10,8 @@ $query->bindValue(':id', $id);
 $query->execute();
 $product = $query->fetch(PDO::FETCH_ASSOC);
 
+
+
 // categories
 $sql = "SELECT * FROM categories";
 // PREPARATION DE LA REQUETE
@@ -48,7 +50,7 @@ echo "<img width='25%' style='display: block; margin: auto;' src='$image_filenam
     </div>
 
 <label for="Catégorie" class="block mb-2 text-sm font-medium text-gray-900">Sélectionnez la catégorie</label>
-  <select id="category" name="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-700 focus:border-purple-900 block w-full p-2.5">
+  <select required id="category" name="category" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-700 focus:border-purple-900 block w-full p-2.5">
   <?php
 foreach ($categories as $categorie) {
   if($categorie['name'] === $product['category']){
@@ -61,17 +63,19 @@ echo '<option value="' . $categorie['name'] . '" required>' . $categorie['name']
 ?>
     
   </select>
- 
-  <label for="description" class="block mb-2 text-sm font-medium text-gray-900 ">Description</label>
-  <textarea id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300  " placeholder="Leave a comment..."><?=$product['description']?></textarea>
+  <label for="description_courte" class="block mb-2 text-sm font-medium text-gray-900">Description sur l'index</label>
+<textarea required id="description_courte" name="description_courte" rows="2" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300" placeholder="Leave a comment..."><?=$product['description_courte']?></textarea>
+
+<label for="description" class="block mb-2 text-sm font-medium text-gray-900">Description</label>
+<textarea required id="description" name="description" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300" placeholder="Leave a comment..."><?=$product['description']?></textarea>
 
   <label for="composition"  class="block mb-2 text-sm font-medium text-gray-900 ">Composition</label>
-  <textarea id="composition" name="composition" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 " placeholder="Leave a comment..."><?=$product['composition']?></textarea>
+  <textarea required id="composition" name="composition" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 " placeholder="Leave a comment..."><?=$product['composition']?></textarea>
  
   <div class="grid md:grid-cols-2 md:gap-6">
     <div class="relative z-0 w-full mb-5 group my-5">
         <input type="text" name="price_kg" id="price_kg" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none focus:ring-0 focus:border-purple-700 peer" value="<?=$product['price_kg']?>"placeholder=" " required />
-        <label for="price_before_reduction" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-pink-500  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Prix KG</label>
+        <label for="price_kg" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-pink-500  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Prix KG</label>
     </div>
     <div class="relative z-0 w-full mb-5 group my-5">
         <input type="text" name="price" id="price" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-purple-700 peer" value="<?=$product['price']?>" placeholder=" "  />
