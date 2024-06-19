@@ -130,6 +130,7 @@ nav {
   flex-direction: column;
   /* background: rgba(147, 69, 95, 0.5);
   backdrop-filter: blur(5px); */
+  transition: background 1.5s;
   margin: 0;
   padding: 0;
   /*TEMP POUR TEST JS*/
@@ -139,6 +140,7 @@ nav {
 .scrolled {
   background: rgba(147, 69, 95, 0.5);
   backdrop-filter: blur(5px);
+  transition: background 1.5s;
 }
 
 #burger li {
