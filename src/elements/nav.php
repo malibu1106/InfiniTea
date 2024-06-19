@@ -1,5 +1,8 @@
 <nav>
-    <button id="burgerButton">☰</button>
+    <button id="burgerButton"><svg class="w-[40px] h-[40px] text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" font-size="16" fill="#93455f">☰</text>
+</svg>
+</button>
     <ul id="burger">
         <a href="../index.php"><li>Accueil</li></a>
         <?php 

@@ -58,6 +58,7 @@ html {
   background: #f0f0f0;
 }
 
+
 /* ROOT */
 :root {
   --Ftitle: "gregoniaregular";
@@ -148,6 +149,13 @@ nav {
   line-height: 60px;
 }
 
+nav svg {
+  cursor: pointer;
+  border-radius: 50%;
+  background: #f0f0f0;
+  margin-top: 20px;
+  margin-left: 10px;
+}
 
 
 
