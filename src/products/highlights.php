@@ -41,6 +41,7 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
 <?php foreach($highlights as $highlight){
+    $price = $highlight['price'] / 10;
     if($highlight['category'] === "accessoires") {$cat = "accessoire";}
     elseif($highlight['category'] === "coffrets") {$cat = "coffret";}
     else{$cat = "the";}
@@ -59,7 +60,7 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
         <div class="relative text-white px-6 pb-6 mt-6">
             <div class="flex justify-between">
                 <span class="block font-semibold text-xl">' . $highlight['name'] . '</span>
-                <span class="block rounded-full text-purple-500 text-xs font-bold px-3 py-2 leading-none flex items-center">' . $highlight['price'] . ' €</span>
+                <span class="block rounded-full text-purple-500 text-xs font-bold px-3 py-2 leading-none flex items-center">' . $price . ' €</span>
             </div>
         </div>
     </div>
