@@ -1,3 +1,8 @@
 Pour run le serveur tailwind dans un terminal normal il suffit de faire :
 npm run build-css
 ouvrir un terminal, et commande tailwind
+
+NEED :
+-hover product detail
+-check price kg / pas kg bdd / calcul price
+-adjust access/coffrets animation
