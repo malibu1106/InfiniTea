@@ -15,7 +15,7 @@ $thes_oolong = $query->fetchAll(PDO::FETCH_ASSOC);
 <?php
     foreach ($thes_oolong as $the_oolong){
       echo '<a href="../index.php?page=product&cat=the&id=' . $the_oolong['id'] . '#main">';
-      echo '<div class="hiddenProduct w-full sm:w-1/2 md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">';
+      echo '<div class="hiddenProduct w-full sm:w-full md:w-80 lg:w-80 xl:w-80 min-w-20  mb-4 flex flex-col items-center bg-stone-100 p-4 rounded-lg shadow-md">';
       echo '<h3 class="sm:text-5xl md:text-5xl lg:text-5xl xl:text-6xl mb-1">'.$the_oolong['name'].'</h3>';
       echo '<img src="../images/feuilles/feuilles_oolong.png" alt="feuilles de thé" class="w-1/4 h-1/4 mb-2">';
       echo '<p class="h-7 text-center mb-4">'.$the_oolong['description_courte'].'</p>';
