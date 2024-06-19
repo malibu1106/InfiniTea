@@ -1,6 +1,6 @@
 <?php
 // REQUETE AVEC CE QU'IL NOUS FAUT A STOCKER EN $_SESSION SI BESOIN 
-$sql = "SELECT * FROM products WHERE category = 'thé rooibos'";
+$sql = "SELECT * FROM products WHERE category = 'rooibos'";
 
 // PREPARATION DE LA REQUETE
 $query = $db->prepare($sql);
