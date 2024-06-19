@@ -41,7 +41,7 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
 <?php foreach($highlights as $highlight){
-    $price = $highlight['price'] / 10;
+    $price = $highlight['price_kg'] / 10;
     if($highlight['category'] === "accessoires") {$cat = "accessoire";}
     elseif($highlight['category'] === "coffrets") {$cat = "coffret";}
     else{$cat = "the";}
