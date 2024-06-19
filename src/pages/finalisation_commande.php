@@ -27,6 +27,6 @@ $query->bindValue(':order_id', $order_id['id']);
 $query->execute(); // Exécute la requête
 
 $_SESSION["message"] = "<div id='alert_message'>Commande validée !</div>";
-        header('Location: ../index.php?page=commandes#main');
+        header('Location: ../index.php');
 ?>
 
