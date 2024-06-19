@@ -6,3 +6,5 @@ NEED :
 -hover product detail
 -check price kg / pas kg bdd / calcul price
 -adjust access/coffrets animation
+-titres produit highlight en mobile
+- fleches .. ?
