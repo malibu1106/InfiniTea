@@ -29,7 +29,9 @@ require_once ('elements/close_bdd.php');
 
          if(!empty($_SESSION['admin'])){            
             echo '<a href="index.php?page=add_product#main"><li>Ajouter un produit</li></a>';
-            echo '<a href="index.php?page=product_list#main"><li>Gérer mes produits</li></a>';
+            echo '<a href="index.php?page=product_list#main"><li>Gérer ';
+            if($_SESSION['admin'] === "full"){echo 'l';}else{echo 'm';}
+                echo'es produits</li></a>';
             echo '<a href="index.php?page=commandes_control"><li>Voir les commandes ';
             if ($unprocessed){echo '<span style="color:red">(' .count($unprocessed). ')</span>';}
             echo '</li></a>';
