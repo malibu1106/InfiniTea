@@ -56,7 +56,7 @@ $product = $query->fetch(PDO::FETCH_ASSOC);
 echo 
 '<div class="md:flex items-stretch py-8 md:py-10 lg:py-8 border-t border-gray-50">
 <div class="md:w-1/4 2xl:w-1/4 w-full">
-  <img src="' . $cart_line['product_image'] . '" alt="Thé" class="h-full object-center object-cover md:block hidden" />
+  <img src="' . $cart_line['product_image'] . '" alt="Thé" class="h-48 w-40 object-center object-cover md:block hidden" />
 </div>
 <div class="md:pl-3 md:w-8/12 2xl:w-3/4 flex flex-col justify-center">
   <div class="flex flex-col items-start w-full">
