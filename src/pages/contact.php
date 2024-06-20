@@ -19,18 +19,18 @@
         <label for="message" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-pink-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Votre message</label>
     </div>
 
-    <div class="relative z-0 w-full mb-5 group my-7">
+    <!-- <div class="relative z-0 w-full mb-5 group my-7">
         <label for="gender" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-pink-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Genre</label>
         <br>
         <select id="gender" name="gender" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-700 focus:border-purple-900 block w-full p-2.5">
-            <!-- Replace with user gender and options -->
-            <option value="<!-- Replace with user gender -->" selected><!-- Replace with user gender --></option>
+            
+            <option value="" selected></option>
             <option value="Homme">Homme</option>
             <option value="Femme">Femme</option>
             <option value="Non Binaire">Non Binaire</option>
             <option value="Autre">Autre</option>
         </select>
-    </div>
+    </div> -->
     
     <button type="submit" class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-purple-900 dark:hover:bg-pink-500 my-2">Envoyer</button>
 </form>

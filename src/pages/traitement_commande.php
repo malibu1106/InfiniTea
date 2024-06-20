@@ -3,6 +3,7 @@
 $data = $_POST;
 $id = $_POST['user_id'];
 
+
 // Assurez-vous que les données ont été correctement envoyées et qu'elles contiennent ce dont vous avez besoin
 if (!isset($data) || empty($data)) {
     echo "Aucune donnée reçue.";
@@ -13,24 +14,27 @@ $productInfo = ''; // Initialisation de la variable pour éviter les problèmes 
 
 // Boucle pour traiter chaque produit
 foreach ($data as $key => $value) {
-    // Vérifiez si la clé commence par 'weight'
-    if (strpos($key, 'weight') === 0) {
+    // Vérifiez si la clé commence par 'product_name'
+    if (strpos($key, 'product_name') === 0) {
         // Extraction de l'indice numérique à partir de la clé
-        $index = substr($key, 6);
-        
+        $index = substr($key, 12);
+
         // Récupération des autres valeurs associées à ce produit
         $productName = $data['product_name' . $index];
-        $productId = $data['product_id' . $index];        
+        $productId = $data['product_id' . $index];
         $quantity = $data['quantity' . $index];
-        $weight = $value;
-        
+        $weight = isset($data['weight' . $index]) ? $data['weight' . $index] : null;
+
+        // Ajout des informations du produit dans la variable $productInfo
         $productInfo .= '<div class="product">';
-        $productInfo .= '<p>Product ID: ' . $productId . '</p>';
-        $productInfo .= '<p>Product Name: ' . $productName . '</p>';
-        $productInfo .= '<p>Weight: ' . $weight . ' g</p>';
-        $productInfo .= '<p>Quantity: ' . $quantity . '</p>';
+        $productInfo .= '<p>Product ID: ' . htmlspecialchars($productId, ENT_QUOTES, 'UTF-8') . '</p>';
+        $productInfo .= '<p>Product Name: ' . htmlspecialchars($productName, ENT_QUOTES, 'UTF-8') . '</p>';
+        if ($weight !== null) {
+            $productInfo .= '<p>Weight: ' . htmlspecialchars($weight, ENT_QUOTES, 'UTF-8') . ' g</p>';
+        }
+        $productInfo .= '<p>Quantity: ' . htmlspecialchars($quantity, ENT_QUOTES, 'UTF-8') . '</p>';
         $productInfo .= '</div>';
-        $productInfo .= '</br>';
+        $productInfo .= '<br>';
     }
 }
 
