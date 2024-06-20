@@ -26,7 +26,15 @@ $query->bindValue(':date', $date);
 $query->bindValue(':order_id', $order_id['id']);
 $query->execute(); // Exécute la requête
 
+$sql = "DELETE FROM carts WHERE user_id = :user_id";
+
+// PREPARATION DE LA REQUETE
+$query = $db->prepare($sql);
+$query->bindValue(':user_id', $user_id);
+//EXECUTION DE LA REQUETE + STOCK DES DONNEES DANS LA VARIABLE
+$query->execute();
+
 $_SESSION["message"] = "<div id='alert_message'>Commande validée !</div>";
-        header('Location: ../index.php');
+        header('Location: ../index.php?page=commandes#main');
 ?>
 

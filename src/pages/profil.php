@@ -9,9 +9,25 @@ $query->bindValue(':id', $id);
 $query->execute();
 $user = $query->fetch(PDO::FETCH_ASSOC);
 
+$sql = "SELECT * FROM orders WHERE user_id = :user_id ORDER BY date DESC";
+
+// PREPARATION DE LA REQUETE
+$query = $db->prepare($sql);
+$query->bindValue(':user_id', $id);
+//EXECUTION DE LA REQUETE + STOCK DES DONNEES DANS LA VARIABLE
+$query->execute();
+
+$userOrders = $query->fetchAll(PDO::FETCH_ASSOC);
 require_once ('elements/close_bdd.php');
 
+
+if($userOrders){
+echo '<div class="max-w-md mx-auto flex justify-center">
+    <a href="index.php?page=commandes#main"><button class="mt-8 mb-8 text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-green-700 hover:bg-green-600 my-2">Mes commandes</button></a>
+</div>';}
+
 ?>
+
 <h3>Editez votre profil</h3>
 <form id="signupForm" method="POST" action="pages/edit_profile.php" enctype="multipart/form-data"class="max-w-md mx-auto">
 <div class="relative z-0 w-full mb-5 group">

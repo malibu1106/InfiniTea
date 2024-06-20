@@ -87,6 +87,9 @@ else{
     elseif(isset($_GET['page']) && $_GET['page'] === "commandes_control" ){
         include 'pages/commandes_control.php';
     }
+    elseif(isset($_GET['page']) && $_GET['page'] === "commandes" ){
+        include 'pages/commandes.php';
+    }
     elseif(isset($_GET['page']) && $_GET['page'] === "contact_control" ){
         include 'pages/contact_control.php';
     }
