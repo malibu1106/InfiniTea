@@ -77,9 +77,19 @@ $_product_name =$product['name'];
                 </div>
             </div>
             <button type="submit" class="flex-none rounded-md bg-purple-700 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-purple-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-700 mt-4">Ajouter au panier</button>
+            <a href="../index.php#main" class="flex items-center justify-center font-semibold text-pink-600 text-lg mt-10">
+  <svg class="fill-current mr-2 text-pink-600 text-lg w-4" viewBox="0 0 448 512">
+    <path d="M134.059 296H436c6.627 0 12-5.373 12-12v-56c0-6.627-5.373-12-12-12H134.059v-46.059c0-21.382-25.851-32.09-40.971-16.971L7.029 239.029c-9.373 9.373-9.373 24.569 0 33.941l86.059 86.059c15.119 15.119 40.971 4.411 40.971-16.971V296z"/>
+  </svg>
+  Retour aux produits
+</a>
+
 
         </form>
+
     </div>
+    </div>
+    
 </div>
 
 <script type="text/javascript" src="JS/product.js" defer></script>
