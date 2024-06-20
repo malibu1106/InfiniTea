@@ -2,9 +2,7 @@
 // Récupération des données depuis $_POST
 $data = $_POST;
 $id = $_POST['user_id'];
-echo '<pre>';
-print_r($_POST);
-echo '</pre>';
+
 
 // Assurez-vous que les données ont été correctement envoyées et qu'elles contiennent ce dont vous avez besoin
 if (!isset($data) || empty($data)) {
