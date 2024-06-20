@@ -39,7 +39,7 @@ $_product_name =$product['name'];
             <input type="hidden" name="product_image" value="<?= $product['image_filename']?>">
       
             <div class="flex items-center justify-center mt-2">
-                <span id="basePrice" style="display:none"><?= $product['price']?></span>
+                <span id="basePrice" style="display:none"><?= $product['price_kg']?></span>
                 <i id="finalPrice" class="text-gray-600"></i>
             </div>
             <div class="flex items-center mt-8 text-sm  text-gray-900">

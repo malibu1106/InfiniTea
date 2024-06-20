@@ -49,9 +49,9 @@ require_once ('elements/close_bdd.php');
                 echo '</td>';
                
                 echo '<td class="px-2 py-4">';
-                echo '<button class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-purple-900 hover:bg-purple-800 my-2"><a href="index.php?page=edit_product&id=' . $product['id'] . '" class="font-medium ">Editer</a></button>';
+                echo '<button class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-purple-900 hover:bg-purple-800 my-2"><a href="index.php?page=edit_product&id=' . $product['id'] . '#main" class="font-medium ">Editer</a></button>';
                 echo '<button class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-red-700  hover:bg-red-600 my-2 deleteButton" onclick="displayDeleteButton">Supprimer</button>';
-                echo '<button class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-neutral-950  hover:bg-neutral-500 my-2 deleteConfirmationButton"><a href="pages/delete_product.php?id=' . $product['id'] . '" class="font-medium">Confirmer</a></button>';
+                echo '<button class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-neutral-950  hover:bg-neutral-500 my-2 deleteConfirmationButton"><a href="pages/delete_product.php?id=' . $product['id'] . '#main" class="font-medium">Confirmer</a></button>';
                 echo '</td>';
             echo '</tr>';
         }?>

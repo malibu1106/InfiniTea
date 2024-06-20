@@ -1,5 +1,3 @@
-
-
 <div class="flex flex-col items-center justify-center my-10">
     <div class="accessoires w-full p-8 bg-gray-100 shadow-lg">
     <div class="accessoires-content">
