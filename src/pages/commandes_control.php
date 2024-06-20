@@ -41,7 +41,10 @@ require_once ('elements/close_bdd.php');
                     Payé
                 </th>
                 <th scope="col" class="px-2 py-3">
-                    Traitée
+                    Traitement
+                </th>
+                <th scope="col" class="px-2 py-3">
+                    Action
                 </th>
         
             </tr>
@@ -94,6 +97,14 @@ require_once ('elements/close_bdd.php');
                     echo '<button class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-orange-600 hover:bg-orange-800 my-2"><a href="pages/send_order.php?id=' . $order['id'] . '" class="font-medium ">Envoyer</a></button>';
                 }
                 echo '</td>';
+
+
+                echo '<td class="px-2 py-4">';
+                echo '<button class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-red-700  hover:bg-red-600 my-2 deleteButton" onclick="displayDeleteButton">Supprimer</button>';
+                echo '<button class="text-white font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center bg-neutral-950  hover:bg-neutral-500 my-2 deleteConfirmationButton"><a href="pages/delete_order.php?id=' . $order['id'] . '" class="font-medium">Confirmer</a></button>';echo '</td>';
+                
+
+
             echo '</tr>';
         }?>
             
