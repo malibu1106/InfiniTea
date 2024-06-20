@@ -36,7 +36,7 @@ $highlights = $query->fetchAll(PDO::FETCH_ASSOC);
     echo '<img src="' . $highlight['image_filename'] . '">';
     echo '</a>';
     echo '<div class="highlights_details">';
-    echo $highlight['name'];
+    echo '<span class="mt-4 block font-semibold text-xl">' . $highlight['name'] . '</span>';
     echo '</div>';
     echo '</div>';}
 ?>

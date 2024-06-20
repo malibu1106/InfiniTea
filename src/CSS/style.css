@@ -376,7 +376,9 @@ article {
 
 .displayedProduct {
   transform: translateX(0);
+  position: relative;
 }
+
 
 .fleche_remonter {
   display: block;
@@ -409,7 +411,7 @@ article {
 }
 
 .coffret:hover::before {
-  transform: scale(1.1);
+  transform: scale(1.08);
 
 }
 
@@ -459,7 +461,7 @@ article {
 }
 
 .accessoires:hover::before {
-  transform: scale(1.1);
+  transform: scale(1.08);
 
 }
 

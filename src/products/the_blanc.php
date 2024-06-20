@@ -12,6 +12,7 @@ $thes_blanc = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <div id="blanc2" class="categoryDiv"><div class="flex flex-wrap gap-8 justify-center items-center">
+  
 <?php
     foreach ($thes_blanc as $the_blanc){
       echo '<a href="../index.php?page=product&cat=the&id=' . $the_blanc['id'] . '#main">';
